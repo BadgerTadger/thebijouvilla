@@ -1,0 +1,99 @@
+﻿BODY {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #5e5e5e;
+    background-color: #e4e4e4;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+#PageContainer {
+    position: relative;
+    float: left;
+    left: 50%;
+    top: 20x;
+    width: 1000px;
+    margin: 0px 0px 0px -500px; /* half of the width */
+}
+
+#wrapper {
+    position: relative;
+    margin: auto;
+    left: 50%;
+    width: 980px;
+    margin: 0px 0px 0px -490px; /* half of the width */
+    text-align: left;
+}
+
+#mainmenu {
+    position: relative;
+    margin: auto;
+    left: 50%;
+    width: 980px;
+    margin: 0px 0px 0px -490px; /* half of the width */
+    text-align: left;
+}
+
+#footer {
+    position: absolute;
+    margin: auto;
+}
+
+H1 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+    INPUT#recherche1, #recherche2, #recherche10, #recherche20 {
+        cursor: text;
+    }
+
+SELECT {
+    color: #808080;
+    border: 1px solid #808080;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+A {
+    text-decoration: none;
+    color: #5e5e5e;
+}
+
+    A:hover {
+        text-decoration: none;
+        color: #0e0e0e;
+    }
+
+.pagination {
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.blanc {
+    color: #FFFFFF;
+}
+
+.gris11 {
+    font-size: 11px;
+}
+
+.gris12 {
+    font-size: 12px;
+}
+
+.DPE {
+    font-size: 10px;
+    text-align: right;
+    padding-right: 6px;
+    height: 20px;
+    background-image: url(../images/curseur.png);
+    background-position: right 0 10px;
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+}
+
+.noimage {
+    background-image: none;
+}
