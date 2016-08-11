@@ -108,7 +108,6 @@
             setTimeout("document.getElementById('alert').style.visibility='hidden'", 10000);
         }
 
-        // déclenche le formulaire en cas de saisie de la touche enter
         $(document).ready(function () {
             var duration = 1000;
             $("#masque").delay(500).animate({

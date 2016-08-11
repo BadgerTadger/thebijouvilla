@@ -9,8 +9,6 @@
     <meta name="KEYWORDS" content="Villa rental,South of France,thedeepsouth,Provence,deepsouth,Holidays,Languedoc,Gard,Independent,Uzes,Garrigue,Gard-Provence,Pool,Views,Tranquil,Secluded,Exclusive,Villa Lilas,Wine,">
     <meta name="DESCRIPTION" content="Stunning Villa for rent in a pretty village of Western Provence, South of France.">
     <title><%: Page.Title %> - The Bijou</title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
@@ -18,10 +16,8 @@
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery.ui.combined" />
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
                 <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
@@ -32,9 +28,10 @@
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
         <div id="PageContainer">
             <div id="mainmenu">
                 <table style="width: 100%; height: 61px">
