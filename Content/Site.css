@@ -97,3 +97,7 @@ A {
 .noimage {
     background-image: none;
 }
+
+.WarningText {
+    color: red;
+}

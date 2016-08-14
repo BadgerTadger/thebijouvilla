@@ -6,17 +6,24 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 public partial class Booking_Booking : System.Web.UI.Page
 {
     MySqlConnection conn;
     protected DataSet dsBookings;
+    DateTime startDate = DateTime.MinValue;
+    DateTime endDate = DateTime.MinValue;
+
 
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
             Calendar1.VisibleDate = DateTime.Today;
+        }
+        else
+        {
         }
         FillHolidayDataset();
     }
@@ -101,5 +108,122 @@ public partial class Booking_Booking : System.Web.UI.Page
         MonthChangedEventArgs e)
     {
         FillHolidayDataset();
+    }
+
+    protected void btnBook_Click(object sender, EventArgs e)
+    {
+        lblWarning.Text = "";
+        lblWarning.Visible = false;
+
+        if (ValidFields())
+        {
+            if(SaveBooking())
+            {
+                ClearFormFields();
+            }
+        }
+        else
+        {
+            lblWarning.Visible = true;
+        }
+    }
+
+    private bool SaveBooking()
+    {
+        Booking booking = new Booking(startDate, endDate, txtTenantName.Text, txtAddress1.Text, txtAddress2.Text,  txtTown.Text, 
+            txtCity.Text, txtCounty.Text, txtPostcode.Text, txtCountry.Text, txtLandline.Text, txtMobile.Text, txtComments.Text);
+
+        return booking.SaveBooking();
+    }
+
+    private bool ValidFields()
+    {
+        bool retVal = true;
+
+        string[] startDateSplit = txtStartDate.Text.Split('-');
+        if (startDateSplit.Length == 3)
+        {
+            startDate = new DateTime(int.Parse(startDateSplit[2]), int.Parse(startDateSplit[1]), int.Parse(startDateSplit[0]));
+        }
+        if (startDate == DateTime.MinValue)
+        {
+            retVal = false;
+            lblWarning.Text += "Start Date must be selected<br />";
+        }
+
+        string[] endDateSplit = txtEndDate.Text.Split('-');
+        if (endDateSplit.Length == 3)
+        {
+            endDate = new DateTime(int.Parse(endDateSplit[2]), int.Parse(endDateSplit[1]), int.Parse(endDateSplit[0]));
+        }
+        if (endDate == DateTime.MinValue)
+        {
+            retVal = false;
+            lblWarning.Text += "End Date must be selected<br />";
+        }
+
+        if (string.IsNullOrWhiteSpace(txtTenantName.Text))
+        {
+            retVal = false;
+            lblWarning.Text += "Please provide your name<br />";
+        }
+
+        if ((string.IsNullOrWhiteSpace(txtAddress1.Text) && string.IsNullOrWhiteSpace(txtAddress2.Text))
+            || (string.IsNullOrWhiteSpace(txtTown.Text) && string.IsNullOrWhiteSpace(txtCity.Text))
+            || (string.IsNullOrWhiteSpace(txtCounty.Text) && string.IsNullOrWhiteSpace(txtCountry.Text))
+            || string.IsNullOrWhiteSpace(txtPostcode.Text))
+        {
+            retVal = false;
+            lblWarning.Text += "Please complete your address details<br />";
+        }
+
+        if(string.IsNullOrWhiteSpace(txtEmail.Text))
+        {
+            retVal = false;
+            lblWarning.Text += "Please provide an email address";
+        }
+        else if (!IsValidEmail(txtEmail.Text))
+        {
+            retVal = false;
+            lblWarning.Text += "The email address provided is not valid";
+        }
+
+        if(string.IsNullOrWhiteSpace(txtLandline.Text) && string.IsNullOrWhiteSpace(txtMobile.Text))
+        {
+            retVal = false;
+            lblWarning.Text += "Please provide at least one phone number<br />";
+        }
+
+        return retVal;
+    }
+
+    private bool IsValidEmail(string emailaddress)
+    {
+        return Regex.IsMatch(emailaddress, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+    }
+
+    protected void btnClear_Click(object sender, EventArgs e)
+    {
+        ClearFormFields();
+    }
+
+    private void ClearFormFields()
+    {
+        lblWarning.Text = "";
+        lblWarning.Visible = false;
+        txtStartDate.Text = "";
+        txtEndDate.Text = "";
+        txtTenantName.Text = "";
+        txtAddress1.Text = "";
+        txtAddress2.Text = "";
+        txtTown.Text = "";
+        txtCity.Text = "";
+        txtCounty.Text = "";
+        txtPostcode.Text = "";
+        txtCountry.Text = "";
+        txtEmail.Text = "";
+        txtLandline.Text = "";
+        txtMobile.Text = "";
+        txtComments.Text = "";
     }
 }
