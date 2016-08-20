@@ -12,6 +12,7 @@ public partial class Booking_Booking : System.Web.UI.Page
 {
     MySqlConnection conn;
     protected DataSet dsBookings;
+    private List<DateTime> bookedDates = null;
     DateTime startDate = DateTime.MinValue;
     DateTime endDate = DateTime.MinValue;
 
@@ -76,6 +77,15 @@ public partial class Booking_Booking : System.Web.UI.Page
         try
         {
             adr.Fill(dsMonth); //opens and closes the DB connection automatically !! (fetches from pool)
+
+            if (dsMonth != null && dsMonth.Tables.Count > 0)
+            {
+                bookedDates = new List<DateTime>();
+                foreach (DataRow dr in dsMonth.Tables[0].Rows)
+                {
+                    bookedDates.Add((DateTime)dr["BookingDate"]);
+                }
+            }
         }
         catch (Exception ex)
         {
@@ -90,13 +100,11 @@ public partial class Booking_Booking : System.Web.UI.Page
 
     protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
     {
-        DateTime nextDate;
-        if (dsBookings != null && dsBookings.Tables.Count > 0)
-        {
-            foreach (DataRow dr in dsBookings.Tables[0].Rows)
+        if(bookedDates != null)
+        { 
+            foreach (DateTime bookedDate in bookedDates)
             {
-                nextDate = (DateTime)dr["BookingDate"];
-                if (nextDate == e.Day.Date)
+                if (bookedDate == e.Day.Date)
                 {
                     e.Cell.BackColor = System.Drawing.Color.Pink;
                 }
@@ -150,6 +158,13 @@ public partial class Booking_Booking : System.Web.UI.Page
             retVal = false;
             lblWarning.Text += "Start Date must be selected<br />";
         }
+        else
+        {
+            if (bookedDates != null && bookedDates.Contains(startDate))
+            {
+                lblWarning.Text += "The selected Start Date is unavailable<br />";
+            }
+        }
 
         string[] endDateSplit = txtEndDate.Text.Split('-');
         if (endDateSplit.Length == 3)
@@ -160,6 +175,25 @@ public partial class Booking_Booking : System.Web.UI.Page
         {
             retVal = false;
             lblWarning.Text += "End Date must be selected<br />";
+        }
+        else
+        {
+            if (bookedDates != null && bookedDates.Contains(endDate))
+            {
+                lblWarning.Text += "The selected End Date is unavailable<br />";
+            }
+        }
+
+        if(startDate != DateTime.MinValue && endDate != DateTime.MinValue)
+        {
+            for (DateTime date = startDate.AddDays(1); date.Date <= endDate.AddDays(-1).Date; date = date.AddDays(1))
+            {
+                if(bookedDates.Contains(date))
+                {
+                    lblWarning.Text += "The selected date range contains dates that are unavailable<br />";
+                    break;
+                }
+            }
         }
 
         if (string.IsNullOrWhiteSpace(txtTenantName.Text))

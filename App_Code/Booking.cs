@@ -120,9 +120,13 @@ public class Booking
 
     public bool SaveBooking()
     {
+        bool retVal = false;
+
         int bookingId = GetNextBookingID();
         int tenantID = InsertTenant();
-        return InsertBooking(bookingId, tenantID);
+        retVal = InsertBooking(bookingId, tenantID);
+
+        return retVal;
     }
 
     private int GetNextBookingID()
