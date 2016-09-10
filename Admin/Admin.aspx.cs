@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Data;
 
 public partial class Admin_Admin : System.Web.UI.Page
 {
-    MySqlConnection conn;
     protected DataSet dsBookings;
     public static List<DateTime> selectedDates = new List<DateTime>();
 
@@ -155,6 +150,7 @@ public partial class Admin_Admin : System.Web.UI.Page
         }
         catch (Exception ex)
         {
+            throw ex;
         }
         finally
         {
@@ -182,6 +178,7 @@ public partial class Admin_Admin : System.Web.UI.Page
         }
         catch (Exception ex)
         {
+            throw ex;
         }
         finally
         {
@@ -226,6 +223,7 @@ public partial class Admin_Admin : System.Web.UI.Page
         }
         catch (Exception ex)
         {
+            throw ex;
         }
         finally
         {

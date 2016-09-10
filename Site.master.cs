@@ -66,11 +66,15 @@ public partial class SiteMaster : MasterPage
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
-    }
-
-    protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
-    {
-        Context.GetOwinContext().Authentication.SignOut();
+        if(Convert.ToBoolean(Session["LoggedIn"])==true)
+        {
+            divAnonymous.Visible = false;
+            divLoggedIn.Visible = true;
+        }
+        else
+        {
+            divAnonymous.Visible = true;
+            divLoggedIn.Visible = false;
+        }
     }
 }

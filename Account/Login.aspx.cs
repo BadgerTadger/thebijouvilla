@@ -7,34 +7,37 @@ using thebijouvilla;
 
 public partial class Account_Login : Page
 {
-        protected void Page_Load(object sender, EventArgs e)
+    private string _logout = "";
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Session["LoggedIn"] = false;
+        if (Request.QueryString.Keys.Count > 0)
         {
-        RegisterHyperLink.NavigateUrl = "Register";
-        OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
-        var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
-        if (!String.IsNullOrEmpty(returnUrl))
-        {
-            RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
+            _logout = Request.QueryString["l"].ToString();
+            if (_logout == "1")
+            {
+                Response.Redirect("~/Default.aspx", true);
+            }
         }
     }
 
-        protected void LogIn(object sender, EventArgs e)
+    protected void LogIn(object sender, EventArgs e)
+    {
+        if (IsValid)
         {
-            if (IsValid)
+            // Validate the user password
+            User user = new User(UserName.Text, Password.Text);
+            if (user != null)
             {
-                // Validate the user password
-                var manager = new UserManager();
-                ApplicationUser user = manager.Find(UserName.Text, Password.Text);
-                if (user != null)
-                {
-                    IdentityHelper.SignIn(manager, user, RememberMe.Checked);
-                    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-                }
-                else
-                {
-                    FailureText.Text = "Invalid username or password.";
-                    ErrorMessage.Visible = true;
-                }
+                user.Login();
+                Session["LoggedIn"] = user.LoggedIn;
+                Response.Redirect("~/Default.aspx", true);
+            }
+            else
+            {
+                FailureText.Text = "Invalid username or password.";
+                ErrorMessage.Visible = true;
             }
         }
+    }
 }

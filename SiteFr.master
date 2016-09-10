@@ -36,22 +36,23 @@
             <div id="mainmenu">
                 <table style="width: 100%; height: 61px">
                     <tr valign="bottom">
-                        <td align="left" width="80"><a href="/defaultfr.aspx">ACCUEIL</a></td>
-                        <td align="left" width="200"><a href="/aboutfr.aspx">SUR THE BIJOU</a></td>
-                        <td align="left" width="200"><a href="/bookingfr.aspx">RÉSERVATION THE BIJOU</a></td>
-                        <td align="left" width="290"><a href="/regionfr.aspx">LANGUEDOC-ROUSSILLON RÉGION</a></td>
-                        <td align="left" width="130"><a href="/contactfr.aspx">CONTACT</a></td>
-                        <td align="left" width="50"><a href="/Default.aspx">
-                            <img src="/images/drapeau-uk-off.gif" alt="english version " border="0" /></a>
+                        <td align="left" width="40"><a href="/defaultfr.aspx">ACCUEIL</a></td>
+                        <td align="left" width="70"><a href="/aboutfr.aspx">SUR THE BIJOU</a></td>
+                        <td align="left" width="110"><a href="/bookingfr.aspx">RÉSERVATION THE BIJOU</a></td>
+                        <td align="left" width="150"><a href="/regionfr.aspx">LANGUEDOC-ROUSSILLON RÉGION</a></td>
+                        <td align="left" width="40"><a href="/gallery.aspx">GALERIE</a></td>
+                        <td align="left" width="60"><a href="/contactfr.aspx">CONTACT</a></td>
+                        <td align="left" width="20"><a href="/Default.aspx">
+                            <img src="/images/drapeau-uk-off.gif" alt="version anglaise " border="0" /></a>
                         </td>
-                        <td align="left" width="150">
+                        <td align="left" width="80">
                             <asp:LoginView runat="server" ViewStateMode="Disabled">
                                 <AnonymousTemplate>
                                     <a runat="server" href="~/Account/Login">Log in</a>
                                 </AnonymousTemplate>
                                 <LoggedInTemplate>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                    &nbsp;&nbsp;
+                                    &nbsp;
                         <a runat="server" href="~/Admin/Admin.aspx">Admin</a>
                                     <%--                        <ul class="nav navbar-nav navbar-right">
                             <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %>!</a></li>
@@ -66,8 +67,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="7">
-                            <img src="~/images/carre-gris.gif" width="980" height="1" border="0" alt="" /></td>
+                        <td colspan="8">
+                            <img src="/images/carre-gris.gif" width="980" height="1" border="0" alt="" /></td>
                     </tr>
                 </table>
             </div>
@@ -81,6 +82,10 @@
                 <div class="footer">
                     <table cellpadding="0" cellspacing="0" width="100%">
                         <tr>
+                            <td colspan="4">
+                                <img src="/images/carre-gris.gif" width="980" height="1" border="0" alt="" /></td>
+                        </tr>
+<%--                        <tr>
                             <td width="70"></td>
                             <td width="362" align="left">Tel: +33 (0)0 00 00 00 00</td>
                             <td width="363" align="right"><a href="mailto:contact@labruyere-immobilier.com">Email: bookings@thebijouvilla.com</a></td>
@@ -91,13 +96,20 @@
                             <td width="362" align="left"></td>
                             <td width="363" align="right">Languedoc-Roussillon, France</td>
                             <td width="80"></td>
-                        </tr>
+                        </tr>--%>
                         <tr>
-                            <td height="30">&nbsp;</td>
+                            <td width="70" height="25">&nbsp;</td>
+                            <td width="362"></td>
+                            <td width="363"></td>
+                            <td width="80"></td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td colspan="3" class="gris11" style="text-align: justify">Si vous êtes à la recherche d'une propriété dans le sud de la France ...</td>
+                            <td colspan="3" class="gris11" style="text-align: center">Vive la France!</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td height="50" colspan="3" class="gris11" style="text-align: center">Photographies de Rodney Love <a href="https://ello.co/rodneylove">https://ello.co/rodneylove</a></td>
                         </tr>
                     </table>
                 </div>

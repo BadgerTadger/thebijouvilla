@@ -10,7 +10,6 @@ using System.Text.RegularExpressions;
 
 public partial class Booking_Booking : System.Web.UI.Page
 {
-    MySqlConnection conn;
     protected DataSet dsBookings;
     private List<DateTime> bookedDates = null;
     DateTime startDate = DateTime.MinValue;

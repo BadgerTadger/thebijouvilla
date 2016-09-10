@@ -35,7 +35,6 @@ public static class Utils
                 case System.Data.ConnectionState.Closed:
                     // Connection could not be made, throw an error
                     throw new Exception("The database connection state is Closed");
-                    break;
                 default:
                     // Connection is actively doing something else
                     break;

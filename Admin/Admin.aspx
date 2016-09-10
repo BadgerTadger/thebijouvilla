@@ -172,4 +172,5 @@
                 <asp:GridView ID="gvBookings" runat="server" Width="100%"></asp:GridView>
             </div>
         </div>
+    </div>
 </asp:Content>
