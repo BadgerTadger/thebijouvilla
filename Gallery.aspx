@@ -68,7 +68,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td colspan="3" class="gris11" style="text-align: center"><a href="Gallery2.aspx">&gt;&gt;</a></td>
+                <td colspan="3" class="gris11" style="text-align: center"><a href="Gallery2.aspx">Page 2&nbsp;&gt;&gt;</a></td>
             </tr>
             <tr>
                 <td></td>

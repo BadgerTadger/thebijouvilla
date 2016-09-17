@@ -13,6 +13,7 @@
             $('#<%= txtStartDate.ClientID %>').datepicker({
                 firstDay: 6,
                 dateFormat: "dd-mm-yy",
+                minDate: 1,
                 beforeShowDay: function (date) {
                     var day = date.getDay();
                     if (date.getMonth() > 8 || date.getMonth() < 4) {
@@ -28,6 +29,7 @@
             $('#<%= txtEndDate.ClientID %>').datepicker({
                 firstDay: 6,
                 dateFormat: "dd-mm-yy",
+                minDate: 2,
                 beforeShowDay: function (date) {
                     var day = date.getDay();
                     if (date.getMonth() > 8 || date.getMonth() < 4) {

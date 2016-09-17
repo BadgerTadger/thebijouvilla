@@ -67,7 +67,8 @@ public partial class Booking_Booking : System.Web.UI.Page
             @"SELECT b.BookingDate, t.TenantName
             FROM thebijouvilla.Bookings b
             INNER JOIN thebijouvilla.Tenants t 
-            WHERE BookingDate >= '{0}' AND BookingDate < '{1}';",
+            WHERE BookingDate >= '{0}' AND BookingDate < '{1}'
+            AND Confirmed = 1;",
             firstDate.ToString("yyyy-MM-dd HH:mm:ss"),
             lastDate.ToString("yyyy-MM-dd HH:mm:ss"));
 
@@ -163,6 +164,13 @@ public partial class Booking_Booking : System.Web.UI.Page
             {
                 lblWarning.Text += "The selected Start Date is unavailable<br />";
             }
+            else
+            {
+                if(startDate < DateTime.Now)
+                {
+                    lblWarning.Text += "Start Date cannot be in the past<br />";
+                }
+            }            
         }
 
         string[] endDateSplit = txtEndDate.Text.Split('-');
@@ -180,6 +188,13 @@ public partial class Booking_Booking : System.Web.UI.Page
             if (bookedDates != null && bookedDates.Contains(endDate))
             {
                 lblWarning.Text += "The selected End Date is unavailable<br />";
+            }
+            else
+            {
+                if(endDate <= startDate.AddDays(2))
+                {
+                    lblWarning.Text += "End Date must be at least 2 days after the Start Date<br />";
+                }
             }
         }
 
@@ -203,8 +218,7 @@ public partial class Booking_Booking : System.Web.UI.Page
 
         if ((string.IsNullOrWhiteSpace(txtAddress1.Text) && string.IsNullOrWhiteSpace(txtAddress2.Text))
             || (string.IsNullOrWhiteSpace(txtTown.Text) && string.IsNullOrWhiteSpace(txtCity.Text))
-            || (string.IsNullOrWhiteSpace(txtCounty.Text) && string.IsNullOrWhiteSpace(txtCountry.Text))
-            || string.IsNullOrWhiteSpace(txtPostcode.Text))
+            || (string.IsNullOrWhiteSpace(txtCounty.Text) && string.IsNullOrWhiteSpace(txtCountry.Text)))
         {
             retVal = false;
             lblWarning.Text += "Please complete your address details<br />";
@@ -213,12 +227,12 @@ public partial class Booking_Booking : System.Web.UI.Page
         if(string.IsNullOrWhiteSpace(txtEmail.Text))
         {
             retVal = false;
-            lblWarning.Text += "Please provide an email address";
+            lblWarning.Text += "Please provide an email address<br />";
         }
         else if (!IsValidEmail(txtEmail.Text))
         {
             retVal = false;
-            lblWarning.Text += "The email address provided is not valid";
+            lblWarning.Text += "The email address provided is not valid<br />";
         }
 
         if(string.IsNullOrWhiteSpace(txtLandline.Text) && string.IsNullOrWhiteSpace(txtMobile.Text))
