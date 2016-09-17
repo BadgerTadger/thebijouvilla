@@ -198,4 +198,22 @@
                 <img src="images/TBVlogo.gif" border="0"></a>
         </div>
     </div>
+    <div class="footer">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td width="70" height="25">&nbsp;</td>
+                <td width="362"></td>
+                <td width="363"></td>
+                <td width="80"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3" class="gris11" style="text-align: center">Vive la France!</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td height="50" colspan="3" class="gris11" style="text-align: center">Photographies de Rodney Love <a href="https://ello.co/rodneylove">https://ello.co/rodneylove</a></td>
+            </tr>
+        </table>
+    </div>
 </asp:Content>
