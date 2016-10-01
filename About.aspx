@@ -26,7 +26,11 @@
                 </p>
             </td>
             <td style="padding-top: 25px;" align="center">
-                <img src="../images/Gite1.jpg" alt="The Gite" title="The Gite" border="0" />
+                <a href="Outside.aspx">
+                    <img src="../images/Gite1.jpg" alt="The Gite" title="The Gite" border="0" />
+                </a>
+                <br />
+                <a href="Outside.aspx">Click to see more pictures of outside</a>
             </td>
         </tr>
         <tr>
@@ -44,8 +48,12 @@
     </table>
     <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
-            <td style="padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px" align="justify">
+            <td style="padding-left: 13px; padding-right: 13px; text-align: center; vertical-align: top; font-size: 12px" align="center">
+                <a href="Inside.aspx">
                 <img src="../images/Covered terrace.jpg" alt="Covered Terrace" title="Covered Terrace" border="0" />
+                    </a>
+                <br />
+                <a href="Inside.aspx">Click to see more pictures of inside</a>
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px" align="justify">
                 <p>Our rental includes the exclusive use of the swimming pool, the grounds adjacent to the villa including the boules/petanque court, all bed, bath and kitchen linens and pool towels.</p>

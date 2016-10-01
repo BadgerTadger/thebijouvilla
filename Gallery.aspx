@@ -5,6 +5,15 @@
     <link rel="stylesheet" href="Content/Gallery.css" type="text/css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <table style="width: 100%; height: 100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>&nbsp;</td>
+            <td align="center" width="1000" valign="top">
+                Click on an image to see a larger version.
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
     <div class="gallery">
         <a class="gallerya" tabindex="1">
             <img class="galleryaimg" src="images/Gallery/29A.jpg"></a>
@@ -69,10 +78,6 @@
             <tr>
                 <td></td>
                 <td colspan="3" class="gris11" style="text-align: center"><a href="Gallery2.aspx">Page 2&nbsp;&gt;&gt;</a></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td height="50" colspan="3" class="gris11" style="text-align: center">Photographs by Rodney Love <a href="https://ello.co/rodneylove">https://ello.co/rodneylove</a></td>
             </tr>
         </table>
     </div>

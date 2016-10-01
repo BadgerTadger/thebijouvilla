@@ -195,7 +195,7 @@
         </div>
         <div style="position: relative; z-index: 11;">
             <a href="propriete-a-vendre-sud-france/index.php">
-                <img src="images/TBVlogo.gif" border="0"></a>
+                <img src="images/TBVlogo3.gif" border="0"></a>
         </div>
     </div>
     <div class="footer">
@@ -212,7 +212,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td height="50" colspan="3" class="gris11" style="text-align: center">Photographs by Rodney Love <a href="https://ello.co/rodneylove">https://ello.co/rodneylove</a></td>
+                <td height="50" colspan="3" class="gris11" style="text-align: center">Many thanks to Rodney Love for the beautiful photographs<br /><a href="https://ello.co/rodneylove">https://ello.co/rodneylove</a></td>
             </tr>
         </table>
     </div>

@@ -10,13 +10,16 @@ public partial class Account_Login : Page
     private string _logout = "";
     protected void Page_Load(object sender, EventArgs e)
     {
-        Session["LoggedIn"] = false;
-        if (Request.QueryString.Keys.Count > 0)
+        if (!Page.IsPostBack)
         {
-            _logout = Request.QueryString["l"].ToString();
-            if (_logout == "1")
+            Session["LoggedIn"] = false;
+            if (Request.QueryString.Keys.Count > 1)
             {
-                Response.Redirect("~/Default.aspx", true);
+                _logout = Request.QueryString["l"].ToString();
+                if (_logout == "1")
+                {
+                    Response.Redirect("~/Default.aspx", true);
+                }
             }
         }
     }
@@ -31,7 +34,7 @@ public partial class Account_Login : Page
             {
                 user.Login();
                 Session["LoggedIn"] = user.LoggedIn;
-                Response.Redirect("~/Default.aspx", true);
+                Response.Redirect("~/Admin/Admin.aspx", true);
             }
             else
             {

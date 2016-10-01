@@ -36,23 +36,23 @@
             <div id="mainmenu">
                 <table style="width: 100%; height: 61px">
                     <tr valign="bottom">
-                        <td align="left" width="30"><a href="/default.aspx">HOME</a></td>
-                        <td align="left" width="80"><a href="/about.aspx">ABOUT THE BIJOU</a></td>
-                        <td align="left" width="90"><a href="/booking.aspx">BOOKING THE BIJOU</a></td>
-                        <td align="left" width="140"><a href="/region.aspx">LANGUEDOC-ROUSSILLON REGION</a></td>
-                        <td align="left" width="40"><a href="/gallery.aspx">GALLERY</a></td>
+                        <td align="left" width="40"><a href="/default.aspx">HOME</a></td>
+                        <td align="left" width="60"><a href="/about.aspx">THE BIJOU</a></td>
+                        <td align="left" width="60"><a href="/booking.aspx">BOOKINGS</a></td>
+                        <td align="left" width="70"><a href="/region.aspx">THE REGION</a></td>
+                        <td align="left" width="55"><a href="/gallery.aspx">GALLERY</a></td>
                         <td align="left" width="60"><a href="/contact.aspx">CONTACT</a></td>
-                        <td align="left" width="20"><a href="/DefaultFr.aspx">
-                            <img src="/images/drapeau-fr-off.gif" alt="french version " border="0" /></a>
-                        </td>
+                        <td align="left" width="130">&nbsp;
+<%--                            <a href="/DefaultFr.aspx">
+                                <img src="/images/drapeau-fr-off.gif" alt="french version " border="0" />
+                            </a>--%>
+                        </td><%-- Above column widths should total 460 --%>
                         <td align="left" width="80">
                             <div id="divAnonymous" runat="server">
-                                <a runat="server" href="~/Account/Login">Log in</a>
+                                <a runat="server" href="~/Account/Login.aspx">Admin</a>
                             </div>
                             <div id="divLoggedIn" runat="server" visible="false">
-                                <a runat="server" href="~/Account/Login?l=1">Log off</a>
-                                &nbsp;
-                                <a runat="server" href="~/Admin/Admin.aspx">Admin</a>
+                                <a runat="server" href="~/Account/Login.aspx?l=1">Log Out</a>
                             </div>
                         </td>
                     </tr>
