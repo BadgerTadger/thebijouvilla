@@ -149,52 +149,52 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div id="img1">
-        <a href="propriete-a-vendre-sud-france/index.php">
+        <a href="">
             <img src="images/image1.jpg" border="0"></a>
     </div>
     <div id="img2">
-        <a href="propriete-a-vendre-sud-france/index.php">
+        <a href="">
             <img src="images/image2.jpg" border="0"></a>
     </div>
     <div id="img3">
-        <a href="propriete-a-vendre-sud-france/index.php">
+        <a href="">
             <img src="images/image3.jpg" border="0"></a>
     </div>
     <div id="img4">
-        <a href="propriete-a-vendre-sud-france/index.php">
+        <a href="">
             <img src="images/image4.jpg" border="0"></a>
     </div>
     <div id="img5">
-        <a href="propriete-a-vendre-sud-france/index.php">
+        <a href="">
             <img src="images/image5.jpg" border="0"></a>
     </div>
     <div id="img6">
-        <a href="propriete-a-vendre-sud-france/index.php">
+        <a href="">
             <img src="images/image6.jpg" border="0"></a>
     </div>
     <div id="img7">
-        <a href="propriete-a-vendre-sud-france/index.php">
+        <a href="">
             <img src="images/image7.jpg" border="0"></a>
     </div>
     <div id="img8">
-        <a href="propriete-a-vendre-sud-france/index.php">
+        <a href="">
             <img src="images/image8.jpg" border="0"></a>
     </div>
     <div id="img9">
-        <a href="propriete-a-vendre-sud-france/index.php">
+        <a href="">
             <img src="images/image9.jpg" border="0"></a>
     </div>
     <div id="img10">
-        <a href="propriete-a-vendre-sud-france/index.php">
+        <a href="">
             <img src="images/image10.jpg" border="0"></a>
     </div>
     <div id="logo">
         <div id="masque">
-            <a href="propriete-a-vendre-sud-france/index.php">
+            <a href="">
                 <img src="images/fond-masque.png" border="0"></a>
         </div>
         <div style="position: relative; z-index: 11;">
-            <a href="propriete-a-vendre-sud-france/index.php">
+            <a href="">
                 <img src="images/TBVlogo.gif" border="0"></a>
         </div>
     </div>
