@@ -62,4 +62,6 @@ public static class Utils
 
         return mySqlConnection;
     }
+
+    public static DateTime SelectedDate { get; set; }
 }

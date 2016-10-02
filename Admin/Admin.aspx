@@ -3,21 +3,6 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <h2><%: Title %>.</h2>
-        <h3>Rates</h3>
-        <asp:RadioButtonList ID="rblRateFrequency" runat="server" CssClass="rbl" AutoPostBack="true" OnSelectedIndexChanged="rblRateFrequency_SelectedIndexChanged">
-            <asp:ListItem Text="Weekly" Value="w" Selected="True" />
-            <asp:ListItem Text="Daily" Value="d" />
-        </asp:RadioButtonList>
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <asp:GridView ID="gvRates" runat="server"></asp:GridView>
-            </div>
-            <div class="col-md-2"></div>
-        </div>
-        <div class="row">
-            <p>&nbsp;</p>
-        </div>
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
@@ -27,6 +12,38 @@
                 <asp:Label runat="server" ID="lblStatus" />
             </div>
             <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+            <p>&nbsp;</p>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="RowID"
+                    OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCancelingEdit="GridView1_RowCancelingEdit"
+                    OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
+                    OnRowDataBound="GridView1_RowDataBound" >
+                    <Columns>
+                        <asp:BoundField DataField="RowID" HeaderText="Row ID" ReadOnly="true" />
+                        <asp:BoundField DataField="BookingID" HeaderText="Booking ID" />
+                        <asp:BoundField DataField="TenantID" HeaderText="Tenant ID" />
+                        <asp:BoundField DataField="Rate" HeaderText="Rate" />
+                        <asp:BoundField DataField="BookingDate" HeaderText="Booking Date" />
+                        <asp:BoundField DataField="Agency" HeaderText="Agency" />
+                        <asp:TemplateField HeaderText="Confirmed">
+                            <ItemTemplate>
+                                <asp:Label ID="lblConfirmed" runat="server" Text='<%# Eval("Confirmed") %>'
+                                    Enabled="false" />
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:CheckBox ID="chkEditConfirmed" runat="server" />
+                            </EditItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField DataField="Comments" HeaderText="Comments" />
+                        <asp:CommandField ShowEditButton="true" />
+                        <asp:CommandField ShowDeleteButton="true" />
+                    </Columns>
+                </asp:GridView>
+            </div>
         </div>
         <div class="row">
             <p>&nbsp;</p>
@@ -163,14 +180,6 @@
                 </asp:Table>
             </div>
             <div class="col-md-2"></div>
-        </div>
-        <div class="row">
-            <p>&nbsp;</p>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <asp:GridView ID="gvBookings" runat="server" Width="100%"></asp:GridView>
-            </div>
         </div>
     </div>
 </asp:Content>
