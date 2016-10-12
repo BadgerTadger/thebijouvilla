@@ -523,4 +523,33 @@ public partial class Admin_Admin : System.Web.UI.Page
         endDate = new DateTime();
         divAddDates.Visible = false;
     }
+
+    protected void btnConfirmAll_Click(object sender, EventArgs e)
+    {
+        Booking booking = new Booking(Utils.bookingID);
+        booking.ToggleConfirm(true);
+        LoadBookingsGrid(Utils.SelectedDate);
+        FillHolidayDataset();
+    }
+
+    protected void btnUnconfirmAll_Click(object sender, EventArgs e)
+    {
+        Booking booking = new Booking(Utils.bookingID);
+        booking.ToggleConfirm(false);
+        LoadBookingsGrid(Utils.SelectedDate);
+        FillHolidayDataset();
+    }
+
+    protected void btnDeleteAll_Click(object sender, EventArgs e)
+    {
+        Booking booking = new Booking(Utils.bookingID);
+        booking.Delete();
+        LoadBookingsGrid(Utils.SelectedDate);
+        FillHolidayDataset();
+    }
+
+    protected void btnEditRates_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Admin/Rates.aspx", true);
+    }
 }

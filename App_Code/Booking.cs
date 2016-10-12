@@ -9,6 +9,13 @@ using System.Web;
 /// </summary>
 public class Booking
 {
+    private int _bookingID;
+    public int BookingID
+    {
+        get { return _bookingID; }
+        set { _bookingID = value; }
+    }
+
     private DateTime _startDate;
     public DateTime StartDate
     {
@@ -105,6 +112,11 @@ public class Booking
     {
         get { return _comments; }
         set { _comments = value; }
+    }
+
+    public Booking(int bookingID)
+    {
+        _bookingID = bookingID;
     }
 
     public Booking(DateTime startDate, DateTime endDate)
@@ -260,6 +272,53 @@ public class Booking
         }
 
         return retVal;
+    }
+
+    public void ToggleConfirm(bool confirm)
+    {
+        string query = @"UPDATE Bookings SET Confirmed=?Confirmed WHERE BookingID=?BookingID";
+
+        string connString = Utils.ConnString;
+        using (MySqlConnection connection = new MySqlConnection(connString))
+        {
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("?Confirmed", confirm);
+                command.Parameters.AddWithValue("?BookingID", _bookingID);
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+    }
+
+    public void Delete()
+    {
+        string query = @"DELETE FROM Bookings WHERE BookingID=?BookingID";
+
+        string connString = Utils.ConnString;
+        using (MySqlConnection connection = new MySqlConnection(connString))
+        {
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("?BookingID", _bookingID);
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    throw ex;
+                }
+            }
+        }
     }
 
     private decimal GetRate(DateTime bookingDate)

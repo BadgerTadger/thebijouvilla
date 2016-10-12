@@ -29,6 +29,11 @@
     <div>
         <h2><%: Title %>.</h2>
         <div class="row">
+            <div class="col-md-12">
+                <asp:Button ID="btnEditRates" runat="server" Text="Edit Rates" OnClick="btnEditRates_Click" />
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <asp:Calendar ID="Calendar1" OnDayRender="Calendar1_DayRender"
@@ -71,6 +76,12 @@
             </div>
             <div class="col-md-12">
                 <asp:Button ID="btnAddDates" runat="server" Text="Add Dates To Booking" OnClick="btnAddDates_Click" />
+                &nbsp;
+                <asp:Button ID="btnConfirmAll" runat="server" Text="Confirm All Dates" OnClick="btnConfirmAll_Click" />
+                &nbsp;
+                <asp:Button ID="btnUnconfirmAll" runat="server" Text="Unconfirm All Dates" OnClick="btnUnconfirmAll_Click" />
+                &nbsp;
+                <asp:Button ID="btnDeleteAll" runat="server" Text="Delete All Dates" OnClick="btnDeleteAll_Click" />
             </div>
         </div>
         <div runat="server" id="divAddDates" class="row" visible="false">
