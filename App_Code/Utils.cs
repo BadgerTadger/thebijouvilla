@@ -64,4 +64,6 @@ public static class Utils
     }
 
     public static DateTime SelectedDate { get; set; }
+    public static int bookingID { get; set; }
+    public static int tenantID { get; set; }
 }

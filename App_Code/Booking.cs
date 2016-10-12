@@ -79,6 +79,13 @@ public class Booking
         set { _country = value; }
     }
 
+    private string _email;
+    public string Email
+    {
+        get { return _email; }
+        set { _email = value; }
+    }
+
     private string _landline;
     public string Landline
     {
@@ -100,8 +107,14 @@ public class Booking
         set { _comments = value; }
     }
 
+    public Booking(DateTime startDate, DateTime endDate)
+    {
+        _startDate = startDate;
+        _endDate = endDate;
+    }
+
     public Booking(DateTime startDate, DateTime endDate, string tenantName, string address1, string address2, string town,
-        string city, string county, string postcode, string country, string landline, string mobile, string comments)
+        string city, string county, string postcode, string country, string email, string landline, string mobile, string comments)
     {
         _startDate = startDate;
         _endDate = endDate;
@@ -113,6 +126,7 @@ public class Booking
         _county = county;
         _postcode = postcode;
         _country = country;
+        _email = email;
         _landline = landline;
         _mobile = mobile;
         _comments = comments;
@@ -124,7 +138,7 @@ public class Booking
 
         int bookingId = GetNextBookingID();
         int tenantID = InsertTenant();
-        retVal = InsertBooking(bookingId, tenantID);
+        retVal = InsertBooking(bookingId, tenantID, "", "");
 
         return retVal;
     }
@@ -178,7 +192,7 @@ public class Booking
                 command.Parameters.AddWithValue("?County", _county);
                 command.Parameters.AddWithValue("?Postcode", _postcode);
                 command.Parameters.AddWithValue("?Country", _country);
-                command.Parameters.AddWithValue("?Email", _endDate);
+                command.Parameters.AddWithValue("?Email", _email);
                 command.Parameters.AddWithValue("?Landline", _landline);
                 command.Parameters.AddWithValue("?Mobile", _mobile);
                 command.Parameters.AddWithValue("?Comments", _comments);
@@ -198,16 +212,27 @@ public class Booking
         return retVal;
     }
 
-    private bool InsertBooking(int bookingId, int tenantID)
+    public bool InsertBooking(int bookingId, int tenantID, string agency, string comments)
+    {
+        return InsertBooking(bookingId, tenantID, agency, comments, false);
+    }
+
+    public bool InsertBooking(int bookingId, int tenantID, bool confirm)
+    {
+        return InsertBooking(bookingId, tenantID, "", "", confirm);
+    }
+
+    public bool InsertBooking(int bookingId, int tenantID, string agency, string comments, bool confirm)
     {
         bool retVal = true;
-        string query = @"INSERT INTO Bookings(BookingID,TenantID,BookingDate)
-                    VALUES(?BookingID,?TenantID,?BookingDate)";
+        string query = @"INSERT INTO Bookings(BookingID,TenantID,Rate,BookingDate,Agency,Confirmed,Comments)
+                    VALUES(?BookingID,?TenantID,?Rate,?BookingDate,?Agency,?Confirmed,?Comments)";
 
         string connString = Utils.ConnString;
         double days = (_endDate - _startDate).TotalDays;
-        for (int i = 0; i < (days); i++)
+        for (int i = 0; i <= (days); i++)
         {
+            decimal rate = GetRate(_startDate.AddDays(i));
             using (MySqlConnection connection = new MySqlConnection(connString))
             {
                 using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -215,7 +240,11 @@ public class Booking
                     connection.Open();
                     command.Parameters.AddWithValue("?BookingID", bookingId);
                     command.Parameters.AddWithValue("?TenantID", tenantID);
+                    command.Parameters.AddWithValue("?Rate", rate);
                     command.Parameters.AddWithValue("?BookingDate", _startDate.AddDays(i));
+                    command.Parameters.AddWithValue("?Agency", agency);
+                    command.Parameters.AddWithValue("?Confirmed", confirm);
+                    command.Parameters.AddWithValue("?Comments", comments);
                     try
                     {
                         command.ExecuteNonQuery();
@@ -231,5 +260,11 @@ public class Booking
         }
 
         return retVal;
+    }
+
+    private decimal GetRate(DateTime bookingDate)
+    {
+        Rates rates = new Rates();
+        return rates.GetRateForBooking(bookingDate);
     }
 }

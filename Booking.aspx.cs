@@ -139,7 +139,7 @@ public partial class Booking_Booking : System.Web.UI.Page
     private bool SaveBooking()
     {
         Booking booking = new Booking(startDate, endDate, txtTenantName.Text, txtAddress1.Text, txtAddress2.Text,  txtTown.Text, 
-            txtCity.Text, txtCounty.Text, txtPostcode.Text, txtCountry.Text, txtLandline.Text, txtMobile.Text, txtComments.Text);
+            txtCity.Text, txtCounty.Text, txtPostcode.Text, txtCountry.Text, txtEmail.Text, txtLandline.Text, txtMobile.Text, txtComments.Text);
 
         return booking.SaveBooking();
     }
