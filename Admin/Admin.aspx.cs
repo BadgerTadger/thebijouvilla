@@ -255,7 +255,6 @@ public partial class Admin_Admin : System.Web.UI.Page
 
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
-
         LoadBookingsGrid(Utils.SelectedDate);
         int rowid = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value.ToString());
 

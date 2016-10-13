@@ -20,6 +20,10 @@ public partial class Admin_Rates : System.Web.UI.Page
         {
             Response.Redirect("~/Default.aspx", true);
         }
+        if(!Page.IsPostBack)
+        {
+            LoadRatesGrid();
+        }
     }
 
     protected void btnAdmin_Click(object sender, EventArgs e)
@@ -125,17 +129,73 @@ public partial class Admin_Rates : System.Web.UI.Page
 
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
+        LoadRatesGrid();
+        int rateid = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value.ToString());
 
+        try
+        {
+            cn.Open();
+            MySqlCommand cmd = new MySqlCommand("delete FROM Rates where RateID='" + rateid + "'", cn);
+            cmd.ExecuteNonQuery();
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            cn.Dispose();
+        }
+
+        LoadRatesGrid();
     }
 
     protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
     {
-
+        GridView1.EditIndex = e.NewEditIndex;
+        //LoadRatesGrid();
     }
 
     protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
+        try
+        {
+            GridViewRow row = (GridViewRow)GridView1.Rows[e.RowIndex];
+            string textRateID = row.Cells[0].Text;
+            TextBox textStartDate = (TextBox)row.Cells[1].Controls[0];
+            TextBox textEndDate = (TextBox)row.Cells[2].Controls[0];
+            TextBox textRate = (TextBox)row.Cells[3].Controls[0];
 
+            DateTime startDate;
+            DateTime.TryParse(textStartDate.Text, out startDate);
+            DateTime endDate;
+            DateTime.TryParse(textEndDate.Text, out endDate);
+            Decimal rate = 0M;
+            Decimal.TryParse(textRate.Text, out rate);
+            int rateID = 0;
+            int.TryParse(textRateID, out rateID);
+
+            GridView1.EditIndex = -1;
+            cn.Open();
+            string sqlCmd = @"UPDATE Rates Set 
+                StartDate = ?StartDate,
+                EndDate = ?EndDate, 
+                Rate = ?Rate, 
+                WHERE RateID = ?RateID ";
+            MySqlCommand cmd = new MySqlCommand(sqlCmd, cn);
+            cmd.Parameters.AddWithValue("StartDate", startDate);
+            cmd.Parameters.AddWithValue("EndDate", endDate);
+            cmd.Parameters.AddWithValue("Rate", rate);
+            cmd.Parameters.AddWithValue("RateID", rateID);
+            cmd.ExecuteNonQuery();
+            cn.Close();
+
+            LoadRatesGrid();
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
     }
 
     protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
