@@ -52,29 +52,25 @@ public class Rates
                     VALUES(?RateID,?StartDate,?EndDate,?Rate)";
 
         string connString = Utils.ConnString;
-        double days = (endDate - startDate).TotalDays;
-        for (int i = 0; i <= (days); i++)
+        using (MySqlConnection connection = new MySqlConnection(connString))
         {
-            using (MySqlConnection connection = new MySqlConnection(connString))
+            using (MySqlCommand command = new MySqlCommand(query, connection))
             {
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                connection.Open();
+                command.Parameters.AddWithValue("?RateID", rateId);
+                command.Parameters.AddWithValue("?StartDate", startDate);
+                command.Parameters.AddWithValue("?EndDate", endDate);
+                command.Parameters.AddWithValue("?Rate", rate);
+                try
                 {
-                    connection.Open();
-                    command.Parameters.AddWithValue("?RateID", rateId);
-                    command.Parameters.AddWithValue("?StartDate", startDate);
-                    command.Parameters.AddWithValue("?EndDate", endDate);
-                    command.Parameters.AddWithValue("?Rate", rate);
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                    catch (MySqlException ex)
-                    {
-                        throw ex;
-                    }
+                    command.ExecuteNonQuery();
                 }
-                connection.Close();
+                catch (MySqlException ex)
+                {
+                    throw ex;
+                }
             }
+            connection.Close();
         }
     }
 

@@ -138,7 +138,7 @@ public partial class Admin_Admin : System.Web.UI.Page
             }
             else
             {
-                lblStatus.Text = string.Format("{0} is already booked", selDate.ToShortDateString());
+                lblStatus.Text = string.Format("{0} is already booked", selDate.ToString("yyyy-MM-dd"));
                 LoadTenantData(selDate);
                 LoadBookingsGrid(selDate);
             }
@@ -157,14 +157,16 @@ public partial class Admin_Admin : System.Web.UI.Page
 
     private void LoadBookingsGrid(DateTime selDate)
     {
+        divDebug.InnerHtml += "In LoadBookingsGrid";
         try
         {
-            string sqlCmd = string.Format(@"SELECT RowID, BookingID, TenantID, DATE_FORMAT(BookingDate,'%d/%m/%Y') as BookingDate, Rate, Agency,
+            string sqlCmd = @"SELECT RowID, BookingID, TenantID, DATE_FORMAT(BookingDate,'%d/%m/%Y') as BookingDate, Rate, Agency,
                 CASE WHEN Confirmed = 1 THEN 'True' ELSE 'False' END AS Confirmed, Comments FROM thebijouvilla.Bookings WHERE BookingID = 
-                (SELECT BookingID FROM thebijouvilla.Bookings WHERE BookingDate = '{0}') ORDER BY BookingDate;", selDate.ToString("yyyy-MM-dd HH:mm:ss"));
+                (SELECT BookingID FROM thebijouvilla.Bookings WHERE BookingDate = ?BookingDate) ORDER BY BookingDate;";
             cn.Open();
             MySqlDataAdapter adr = new MySqlDataAdapter(sqlCmd, cn);
             adr.SelectCommand.CommandType = CommandType.Text;
+            adr.SelectCommand.Parameters.AddWithValue("?BookingDate", selDate);
             DataSet ds = new DataSet();
             adr.Fill(ds); //opens and closes the DB connection automatically !! (fetches from pool)
             if (ds.Tables[0].Rows.Count > 0)
@@ -247,7 +249,10 @@ public partial class Admin_Admin : System.Web.UI.Page
 
     protected void Calendar1_SelectionChanged(object sender, EventArgs e)
     {
-        Utils.SelectedDate = Calendar1.SelectedDate;
+        DateTime selDate = new DateTime(Calendar1.SelectedDate.Year, Calendar1.SelectedDate.Month, Calendar1.SelectedDate.Day);
+        Utils.SelectedDate = selDate; 
+        divDebug.InnerHtml += "<p>Calendar1_SelectionChanged</p>";
+        divDebug.InnerHtml += string.Format("<p>{0}</p>", Utils.SelectedDate);
         GridView1.DataSource = null;
         LoadBookingsGrid(Utils.SelectedDate);
         FillHolidayDataset();        
@@ -344,7 +349,7 @@ public partial class Admin_Admin : System.Web.UI.Page
             if ((e.Row.RowState & DataControlRowState.Edit) > 0)
             {
                 DateTime bd = DateTime.Parse(drview[3].ToString());
-                e.Row.Cells[3].Text = bd.ToString("dd/MM/yyyy");
+                e.Row.Cells[3].Text = bd.ToString("yyyy-MM-dd");
                 CheckBox chkb = (CheckBox)e.Row.FindControl("chkEditConfirmed");
                 if (drview[6].ToString() == "True")
                 { chkb.Checked = true; }
@@ -357,7 +362,7 @@ public partial class Admin_Admin : System.Web.UI.Page
                 DateTime.TryParse(drview[3].ToString(), out bd);
                 if (bd != DateTime.MinValue)
                 {
-                    e.Row.Cells[3].Text = bd.ToString("dd/MM/yyyy");
+                    e.Row.Cells[3].Text = bd.ToString("yyyy-MM-dd");
                 }
             }
         }

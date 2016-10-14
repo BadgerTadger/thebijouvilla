@@ -153,7 +153,7 @@ public partial class Admin_Rates : System.Web.UI.Page
     protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
     {
         GridView1.EditIndex = e.NewEditIndex;
-        //LoadRatesGrid();
+        LoadRatesGrid();
     }
 
     protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -162,29 +162,19 @@ public partial class Admin_Rates : System.Web.UI.Page
         {
             GridViewRow row = (GridViewRow)GridView1.Rows[e.RowIndex];
             string textRateID = row.Cells[0].Text;
-            TextBox textStartDate = (TextBox)row.Cells[1].Controls[0];
-            TextBox textEndDate = (TextBox)row.Cells[2].Controls[0];
             TextBox textRate = (TextBox)row.Cells[3].Controls[0];
 
-            DateTime startDate;
-            DateTime.TryParse(textStartDate.Text, out startDate);
-            DateTime endDate;
-            DateTime.TryParse(textEndDate.Text, out endDate);
-            Decimal rate = 0M;
-            Decimal.TryParse(textRate.Text, out rate);
+            decimal rate = 0M;
+            decimal.TryParse(textRate.Text, out rate);
             int rateID = 0;
             int.TryParse(textRateID, out rateID);
 
             GridView1.EditIndex = -1;
             cn.Open();
-            string sqlCmd = @"UPDATE Rates Set 
-                StartDate = ?StartDate,
-                EndDate = ?EndDate, 
-                Rate = ?Rate, 
+            string sqlCmd = @"UPDATE Rates Set                 
+                Rate = ?Rate
                 WHERE RateID = ?RateID ";
             MySqlCommand cmd = new MySqlCommand(sqlCmd, cn);
-            cmd.Parameters.AddWithValue("StartDate", startDate);
-            cmd.Parameters.AddWithValue("EndDate", endDate);
             cmd.Parameters.AddWithValue("Rate", rate);
             cmd.Parameters.AddWithValue("RateID", rateID);
             cmd.ExecuteNonQuery();
@@ -206,9 +196,9 @@ public partial class Admin_Rates : System.Web.UI.Page
             if ((e.Row.RowState & DataControlRowState.Edit) > 0)
             {
                 DateTime sd = DateTime.Parse(drview[1].ToString());
-                e.Row.Cells[1].Text = sd.ToString("dd/MM/yyyy");
+                e.Row.Cells[1].Text = sd.ToString("yyyy-MM-dd");
                 DateTime ed = DateTime.Parse(drview[2].ToString());
-                e.Row.Cells[2].Text = ed.ToString("dd/MM/yyyy");
+                e.Row.Cells[2].Text = ed.ToString("yyyy-MM-dd");
             }
             else
             {
@@ -217,13 +207,13 @@ public partial class Admin_Rates : System.Web.UI.Page
                 DateTime.TryParse(drview[1].ToString(), out sd);
                 if (sd != DateTime.MinValue)
                 {
-                    e.Row.Cells[1].Text = sd.ToString("dd/MM/yyyy");
+                    e.Row.Cells[1].Text = sd.ToString("yyyy-MM-dd");
                 }
                 DateTime ed = DateTime.MinValue;
                 DateTime.TryParse(drview[2].ToString(), out ed);
                 if (ed != DateTime.MinValue)
                 {
-                    e.Row.Cells[2].Text = ed.ToString("dd/MM/yyyy");
+                    e.Row.Cells[2].Text = ed.ToString("yyyy-MM-dd");
                 }
             }
         }
@@ -233,7 +223,7 @@ public partial class Admin_Rates : System.Web.UI.Page
     {
         try
         {
-            string sqlCmd = @"SELECT RateID, StartDate, EndDate, Rate FROM Rates";
+            string sqlCmd = @"SELECT RateID, StartDate, EndDate, Rate FROM Rates ORDER BY StartDate";
             cn.Open();
             MySqlDataAdapter adr = new MySqlDataAdapter(sqlCmd, cn);
             adr.SelectCommand.CommandType = CommandType.Text;

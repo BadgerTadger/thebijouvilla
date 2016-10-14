@@ -12,7 +12,7 @@
         $(function () {
             $('#<%= txtStartDate.ClientID %>').datepicker({
                 firstDay: 6,
-                dateFormat: "dd-mm-yy",
+                dateFormat: "yy-mm-dd",
                 minDate: 1,
                 beforeShowDay: function (date) {
                     var day = date.getDay();
@@ -28,7 +28,7 @@
         $(function () {
             $('#<%= txtEndDate.ClientID %>').datepicker({
                 firstDay: 6,
-                dateFormat: "dd-mm-yy",
+                dateFormat: "yy-mm-dd",
                 minDate: 2,
                 beforeShowDay: function (date) {
                     var day = date.getDay();
@@ -44,6 +44,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="Server">
+    <asp:Button ID="Button1" runat="server" Text="Test Email" OnClick="Button1_OnClick" />
     <table style="width: 100%; height: 100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
             <td>&nbsp;</td>

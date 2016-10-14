@@ -128,6 +128,7 @@ public partial class Booking_Booking : System.Web.UI.Page
             if(SaveBooking())
             {
                 ClearFormFields();
+                Response.Redirect("~/ThankYou.aspx", true);
             }
         }
         else
@@ -141,7 +142,14 @@ public partial class Booking_Booking : System.Web.UI.Page
         Booking booking = new Booking(startDate, endDate, txtTenantName.Text, txtAddress1.Text, txtAddress2.Text,  txtTown.Text, 
             txtCity.Text, txtCounty.Text, txtPostcode.Text, txtCountry.Text, txtEmail.Text, txtLandline.Text, txtMobile.Text, txtComments.Text);
 
-        return booking.SaveBooking();
+        if (booking.SaveBooking())
+        {
+            if (booking.SendEmail())
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private bool ValidFields()
@@ -272,5 +280,11 @@ public partial class Booking_Booking : System.Web.UI.Page
         txtLandline.Text = "";
         txtMobile.Text = "";
         txtComments.Text = "";
+    }
+
+    protected void Button1_OnClick(object sender, EventArgs e)
+    {
+        Booking booking = new Booking();
+        booking.SendEmail();
     }
 }

@@ -12,14 +12,14 @@
         $(function () {
             $('#<%= txtStartDate.ClientID %>').datepicker({
                 firstDay: 6,
-                dateFormat: "dd-mm-yy",
+                dateFormat: "yy-mm-dd",
                 minDate: 1
             });
         });
         $(function () {
             $('#<%= txtEndDate.ClientID %>').datepicker({
                 firstDay: 6,
-                dateFormat: "dd-mm-yy",
+                dateFormat: "yy-mm-dd",
                 minDate: 2
             });
         });
@@ -41,8 +41,8 @@
                     OnRowDataBound="GridView1_RowDataBound">
                     <Columns>
                         <asp:BoundField DataField="RateID" HeaderText="Row ID" ReadOnly="true" />
-                        <asp:BoundField DataField="StartDate" HeaderText="Effective From" />
-                        <asp:BoundField DataField="EndDate" HeaderText="Effective To" />
+                        <asp:BoundField DataField="StartDate" HeaderText="Effective From" ReadOnly="true" />
+                        <asp:BoundField DataField="EndDate" HeaderText="Effective To" ReadOnly="true" />
                         <asp:BoundField DataField="Rate" HeaderText="Rate" />
                         <asp:CommandField ShowEditButton="true" />
                         <asp:CommandField ShowDeleteButton="true" />
@@ -50,7 +50,7 @@
                 </asp:GridView>
             </div>
             <div class="col-md-12">
-                <asp:Button ID="btnAddRates" runat="server" Text="Add Dates To Booking" OnClick="btnAddRates_Click" />
+                <asp:Button ID="btnAddRates" runat="server" Text="Add New Rates" OnClick="btnAddRates_Click" />
             </div>
         </div>
         <div runat="server" id="divAddRates" class="row" visible="false">

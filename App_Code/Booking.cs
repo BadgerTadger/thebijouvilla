@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 
 /// <summary>
@@ -117,6 +118,10 @@ public class Booking
     public Booking(int bookingID)
     {
         _bookingID = bookingID;
+    }
+
+    public Booking()
+    {
     }
 
     public Booking(DateTime startDate, DateTime endDate)
@@ -325,5 +330,41 @@ public class Booking
     {
         Rates rates = new Rates();
         return rates.GetRateForBooking(bookingDate);
+    }
+
+    private string EmailBody()
+    {
+        string retVal = "";
+
+        retVal = string.Format(@"Booking Dates: {0} to {1}<br />Name: {2}<br />Email: {3}",
+            _startDate.ToString("yyyy-MM-dd"), _endDate.ToString("yyyy-MM-dd"), _tenantName, _email);
+
+        return retVal;
+    }
+
+    public bool SendEmail()
+    {
+        bool retVal = false;
+
+        try
+        {
+            MailAddress fAddress = new MailAddress("bookings@thebijouvilla.com");
+            MailAddress tAddress = new MailAddress("darencantrell@gmail.com");
+            MailMessage message = new MailMessage(fAddress, tAddress);
+            message.IsBodyHtml = true;
+            message.Subject = "Online Booking Request";
+            message.Body = EmailBody();
+
+            SmtpClient client = new SmtpClient("relay-hosting.secureserver.net", 25);
+            client.Send(message);
+
+            retVal = true;
+        }
+        catch (Exception ex)
+        {
+            throw ex;            
+        }
+
+        return retVal;
     }
 }

@@ -12,14 +12,14 @@
         $(function () {
             $('#<%= txtStartDate.ClientID %>').datepicker({
                 firstDay: 6,
-                dateFormat: "dd-mm-yy",
+                dateFormat: "yy-mm-dd",
                 minDate: 1
             });
         });
         $(function () {
             $('#<%= txtEndDate.ClientID %>').datepicker({
                 firstDay: 6,
-                dateFormat: "dd-mm-yy",
+                dateFormat: "yy-mm-dd",
                 minDate: 2
             });
         });
@@ -44,6 +44,10 @@
             <div class="col-md-2"></div>
         </div>
         <div class="row">
+            <p>&nbsp;</p>
+            <div id="divDebug" runat="server">
+                
+            </div>
             <p>&nbsp;</p>
         </div>
         <div id="divGrid" runat="server" class="row" visible="false">
