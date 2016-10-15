@@ -114,7 +114,7 @@ public partial class Admin_Admin : System.Web.UI.Page
                     {
                         if (int.Parse(dr["Confirmed"].ToString()) == 1)
                         {
-                            e.Cell.BackColor = System.Drawing.Color.LightGreen;
+                            e.Cell.BackColor = System.Drawing.Color.Red;
                         }
                         else
                         {
@@ -180,8 +180,8 @@ public partial class Admin_Admin : System.Web.UI.Page
 
                 if (dt.Rows.Count == 1)
                 {
-                    int bookingID = int.Parse(dt.Rows[0]["BookingID"].ToString());
-                    LoadBookingsGrid(bookingID);
+                    _selectedBookingID = int.Parse(dt.Rows[0]["BookingID"].ToString());
+                    LoadBookingsGrid(_selectedBookingID);
                 }
                 else if (dt.Rows.Count > 1)
                 {

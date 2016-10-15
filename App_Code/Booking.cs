@@ -27,7 +27,7 @@ public class Booking
         set { _bookingID = value; }
     }
 
-    private DateTime _bookingDate;            
+    private DateTime _bookingDate;
     public DateTime BookingDate
     {
         get { return _bookingDate; }
@@ -127,9 +127,13 @@ public class Booking
     {
         bool retVal = false;
 
-        int bookingId = GetNextBookingID();
+        _bookingID = GetNextBookingID();
         int tenantID = _tenant.Insert();
-        retVal = InsertBooking(bookingId, tenantID, "", "");
+        if(InsertBooking(_bookingID, tenantID, "", ""))
+        {
+            Utils.bookingID = _bookingID;
+            retVal = true;
+        }
 
         return retVal;
     }
@@ -335,7 +339,7 @@ public class Booking
         }
         catch (Exception ex)
         {
-            throw ex;            
+            throw ex;
         }
 
         return retVal;

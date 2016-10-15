@@ -196,6 +196,42 @@ public class Tenant
         return retVal;
     }
 
+    public List<DateTimeConfirmed> HasBookings()
+    {
+        List<DateTimeConfirmed> dtcList = new List<DateTimeConfirmed>();
+
+        try
+        {
+            string sqlCmd = @"SELECT BookingDate, Confirmed FROM thebijouvilla.Bookings
+                            WHERE TenantID = ?TenantID";
+
+            cn.Open();
+            MySqlDataAdapter adr = new MySqlDataAdapter(sqlCmd, cn);
+            adr.SelectCommand.CommandType = CommandType.Text;
+            adr.SelectCommand.Parameters.AddWithValue("?TenantID", _tenantID);
+            DataSet ds = new DataSet();
+            adr.Fill(ds); //opens and closes the DB connection automatically !! (fetches from pool)
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    DateTimeConfirmed dtc = new DateTimeConfirmed((DateTime)row["BookingDate"], row["Confirmed"].ToString() == "1");
+                    dtcList.Add(dtc);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            cn.Dispose(); // return connection to pool
+        }
+
+        return dtcList;
+    }
+
     public void DeleteTenant()
     {
         try

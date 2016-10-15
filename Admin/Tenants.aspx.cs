@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -66,10 +64,25 @@ public partial class Admin_Tenants : System.Web.UI.Page
 
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
+        lblWarning.Visible = false;
         LoadTenantsGrid();
         int tenantid = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value.ToString());
         Tenant tenant = new Tenant(tenantid);
-        tenant.DeleteTenant();
+        tenant.GetTenant();
+        List<DateTimeConfirmed> dtcList = tenant.HasBookings();
+        if (dtcList.Count > 0)
+        {
+            lblWarning.Text = string.Format("The following bookings must be deleted before you can delete {0}<br />", tenant.TenantName);
+            foreach (DateTimeConfirmed dtc in dtcList)
+            {
+                lblWarning.Text += string.Format("{0} - {1}<br />", dtc.BookedDate.ToString("dd/MM/yyyy"), dtc.Confirmed ? "Confirmed" : "Pending");
+            }
+            lblWarning.Visible = true;
+        }
+        else
+        {
+            tenant.DeleteTenant();
+        }
         LoadTenantsGrid();
     }
 

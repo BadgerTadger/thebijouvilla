@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Tenants.aspx.cs" Inherits="Admin_Tenants" %>
+﻿<%@ Page Title="Tenants" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Tenants.aspx.cs" Inherits="Admin_Tenants" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <div>
         <h2><%: Title %>.</h2>
         <div class="row">
@@ -13,7 +13,7 @@
         <div id="divGrid" runat="server" class="row" visible="false">
             <div class="col-md-12">
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="TenantID"
-                    OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" 
+                    OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting"
                     OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     OnRowDataBound="GridView1_RowDataBound">
                     <Columns>
@@ -35,6 +35,7 @@
                     </Columns>
                 </asp:GridView>
             </div>
+            <asp:Label ID="lblWarning" CssClass="WarningText" runat="server" Text="" Visible="false"></asp:Label>
             <div class="col-md-12">
                 <asp:Button ID="btnAddTenant" runat="server" Text="Add New Tenant" OnClick="btnAddTenant_Click" />
             </div>
@@ -158,7 +159,6 @@
                         </td>
                     </tr>
                 </table>
-                <asp:Label ID="lblWarning" CssClass="WarningText" runat="server" Text="" Visible="false"></asp:Label>
             </div>
         </div>
     </div>

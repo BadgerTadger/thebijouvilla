@@ -9,9 +9,10 @@ using System.Diagnostics;
 public partial class Booking_Booking : System.Web.UI.Page
 {
     protected DataSet dsBookings;
-    private List<DateTime> bookedDates = null;
+    private List<DateTimeConfirmed> bookedDates = null;
     DateTime startDate = DateTime.MinValue;
     DateTime endDate = DateTime.MinValue;
+    int _bookingID = 0;
 
 
     protected void Page_Load(object sender, EventArgs e)
@@ -62,11 +63,10 @@ public partial class Booking_Booking : System.Web.UI.Page
         DataSet dsMonth = new DataSet();
         MySqlConnection cn = new MySqlConnection(Utils.ConnString);
         string sqlCmd = string.Format(
-            @"SELECT b.BookingDate, t.TenantName
+            @"SELECT b.BookingDate, b.Confirmed, t.TenantName
             FROM thebijouvilla.Bookings b
             INNER JOIN thebijouvilla.Tenants t 
-            WHERE BookingDate >= '{0}' AND BookingDate < '{1}'
-            AND Confirmed = 1;",
+            WHERE BookingDate >= '{0}' AND BookingDate < '{1}'",
             firstDate.ToString("yyyy-MM-dd HH:mm:ss"),
             lastDate.ToString("yyyy-MM-dd HH:mm:ss"));
 
@@ -78,10 +78,11 @@ public partial class Booking_Booking : System.Web.UI.Page
 
             if (dsMonth != null && dsMonth.Tables.Count > 0)
             {
-                bookedDates = new List<DateTime>();
+                bookedDates = new List<DateTimeConfirmed>();
                 foreach (DataRow dr in dsMonth.Tables[0].Rows)
                 {
-                    bookedDates.Add((DateTime)dr["BookingDate"]);
+                    DateTimeConfirmed dtc = new DateTimeConfirmed((DateTime)dr["BookingDate"], dr["Confirmed"].ToString() == "1");
+                    bookedDates.Add(dtc);
                 }
             }
         }
@@ -98,13 +99,27 @@ public partial class Booking_Booking : System.Web.UI.Page
 
     protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
     {
-        if(bookedDates != null)
-        { 
-            foreach (DateTime bookedDate in bookedDates)
+        if (e.Day.IsOtherMonth)
+        {
+            e.Cell.Text = "";
+        }
+        else
+        {
+            if (bookedDates != null)
             {
-                if (bookedDate == e.Day.Date)
+                foreach (DateTimeConfirmed dtc in bookedDates)
                 {
-                    e.Cell.BackColor = System.Drawing.Color.Pink;
+                    if (dtc.BookedDate == e.Day.Date)
+                    {
+                        if (dtc.Confirmed)
+                        {
+                            e.Cell.BackColor = System.Drawing.Color.Red;
+                        }
+                        else
+                        {
+                            e.Cell.BackColor = System.Drawing.Color.Pink;
+                        }
+                    }
                 }
             }
         }
@@ -123,7 +138,7 @@ public partial class Booking_Booking : System.Web.UI.Page
 
         if (ValidFields())
         {
-            if(SaveBooking())
+            if (SaveBooking())
             {
                 ClearFormFields();
                 Response.Redirect("~/ThankYou.aspx", true);
@@ -137,12 +152,12 @@ public partial class Booking_Booking : System.Web.UI.Page
 
     private bool SaveBooking()
     {
-        Booking booking = new Booking(startDate, endDate, txtTenantName.Text, txtAddress1.Text, txtAddress2.Text,  txtTown.Text, 
+        Booking booking = new Booking(startDate, endDate, txtTenantName.Text, txtAddress1.Text, txtAddress2.Text, txtTown.Text,
             txtCity.Text, txtCounty.Text, txtPostcode.Text, txtCountry.Text, txtEmail.Text, txtLandline.Text, txtMobile.Text, txtComments.Text);
 
         if (booking.SaveBooking())
         {
-            if(Debugger.IsAttached)
+            if (Debugger.IsAttached)
             {
                 return true;
             }
@@ -172,19 +187,26 @@ public partial class Booking_Booking : System.Web.UI.Page
         }
         else
         {
-            if (bookedDates != null && bookedDates.Contains(startDate))
+            if (bookedDates != null)
             {
-                retVal = false;
-                lblWarning.Text += "The selected Start Date is unavailable<br />";
+                foreach (DateTimeConfirmed dtc in bookedDates)
+                {
+                    if (dtc.BookedDate == startDate)
+                    {
+                        retVal = false;
+                        lblWarning.Text += "The selected Start Date is unavailable<br />";
+                        break;
+                    }
+                }
             }
             else
             {
-                if(startDate < DateTime.Now)
+                if (startDate < DateTime.Now)
                 {
                     retVal = false;
                     lblWarning.Text += "Start Date cannot be in the past<br />";
                 }
-            }            
+            }
         }
 
         if (retVal)
@@ -216,14 +238,21 @@ public partial class Booking_Booking : System.Web.UI.Page
         //    }
         //}
 
-        if(startDate != DateTime.MinValue && endDate != DateTime.MinValue)
+        if (startDate != DateTime.MinValue && endDate != DateTime.MinValue)
         {
             for (DateTime date = startDate.AddDays(1); date.Date <= endDate.AddDays(-1).Date; date = date.AddDays(1))
             {
-                if(bookedDates.Contains(date))
+                if (bookedDates != null)
                 {
-                    lblWarning.Text += "The selected date range contains dates that are unavailable<br />";
-                    break;
+                    foreach (DateTimeConfirmed dtc in bookedDates)
+                    {
+                        if (dtc.BookedDate == date)
+                        {
+                            retVal = false;
+                            lblWarning.Text += "The selected date range contains dates that are unavailable<br />";
+                            break;
+                        }
+                    }
                 }
             }
         }
@@ -242,7 +271,7 @@ public partial class Booking_Booking : System.Web.UI.Page
             lblWarning.Text += "Please complete your address details<br />";
         }
 
-        if(string.IsNullOrWhiteSpace(txtEmail.Text))
+        if (string.IsNullOrWhiteSpace(txtEmail.Text))
         {
             retVal = false;
             lblWarning.Text += "Please provide an email address<br />";
@@ -253,7 +282,7 @@ public partial class Booking_Booking : System.Web.UI.Page
             lblWarning.Text += "The email address provided is not valid<br />";
         }
 
-        if(string.IsNullOrWhiteSpace(txtLandline.Text) && string.IsNullOrWhiteSpace(txtMobile.Text))
+        if (string.IsNullOrWhiteSpace(txtLandline.Text) && string.IsNullOrWhiteSpace(txtMobile.Text))
         {
             retVal = false;
             lblWarning.Text += "Please provide at least one phone number<br />";

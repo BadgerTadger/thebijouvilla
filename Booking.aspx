@@ -72,7 +72,12 @@
                     </tr>
                     <tr>
                         <td style="vertical-align:top">
-                            <p>Use the calendar to the right to find available dates. Dates shown in pink are not available</p>
+                            <p>
+                                Use the calendar to the right to find available dates.<br />
+                                Dates shown in Pink are provisionally booked.<br />
+                                (Please email us at <a href="mailto:info@thebijouvilla.com">info@thebijouvilla.com</a> if you would like to be contacted if these dates become available.)<br />
+                                Dates shown in red are not available.
+                            </p>
                         </td>
                         <td>&nbsp;</td>
                         <td>
