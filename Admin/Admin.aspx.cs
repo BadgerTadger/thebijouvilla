@@ -12,6 +12,8 @@ public partial class Admin_Admin : System.Web.UI.Page
     private List<DateTime> bookedDates = null;
     DateTime startDate = DateTime.MinValue;
     DateTime endDate = DateTime.MinValue;
+    int _selectedTenantID = 0;
+    int _selectedBookingID = 0;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -96,53 +98,61 @@ public partial class Admin_Admin : System.Web.UI.Page
 
     protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
     {
-        DateTime nextDate;
-        if (dsBookings != null && dsBookings.Tables.Count > 0)
+        if (e.Day.IsOtherMonth)
         {
-            foreach (DataRow dr in dsBookings.Tables[0].Rows)
-            {
-                nextDate = (DateTime)dr["BookingDate"];
-                if (nextDate == e.Day.Date)
-                {
-                    if (int.Parse(dr["Confirmed"].ToString()) == 1)
-                    {
-                        e.Cell.BackColor = System.Drawing.Color.LightGreen;
-                    }
-                    else
-                    {
-                        e.Cell.BackColor = System.Drawing.Color.Pink;
-                    }
-                }
-            }
+            e.Cell.Text = "";
         }
-        if (e.Day.IsSelected == true)
+        else
         {
-            DateTime selDate = e.Day.Date;
-            bool alreadyBooked = false;
-            if (dsBookings != null)
+            DateTime nextDate;
+            if (dsBookings != null && dsBookings.Tables.Count > 0)
             {
                 foreach (DataRow dr in dsBookings.Tables[0].Rows)
                 {
-                    DateTime dDate;
-                    dDate = (DateTime)dr["BookingDate"];
-                    if (dDate == selDate)
+                    nextDate = (DateTime)dr["BookingDate"];
+                    if (nextDate == e.Day.Date)
                     {
-                        alreadyBooked = true;
+                        if (int.Parse(dr["Confirmed"].ToString()) == 1)
+                        {
+                            e.Cell.BackColor = System.Drawing.Color.LightGreen;
+                        }
+                        else
+                        {
+                            e.Cell.BackColor = System.Drawing.Color.Pink;
+                        }
                     }
+
                 }
             }
+            if (e.Day.IsSelected == true)
+            {
+                DateTime selDate = e.Day.Date;
+                bool alreadyBooked = false;
+                if (dsBookings != null)
+                {
+                    foreach (DataRow dr in dsBookings.Tables[0].Rows)
+                    {
+                        DateTime dDate;
+                        dDate = (DateTime)dr["BookingDate"];
+                        if (dDate == selDate)
+                        {
+                            alreadyBooked = true;
+                        }
+                    }
+                }
 
-            if (!alreadyBooked)
-            {
-                selectedDates.Add(selDate);
+                if (!alreadyBooked)
+                {
+                    selectedDates.Add(selDate);
+                }
+                else
+                {
+                    lblStatus.Text = string.Format("{0} is already booked", selDate.ToString("dd/MM/yyyy"));
+                    LoadTenantData(selDate);
+                    LoadBookingsGrid(selDate);
+                }
+                Session["SelectedDates"] = selectedDates;
             }
-            else
-            {
-                lblStatus.Text = string.Format("{0} is already booked", selDate.ToString("yyyy-MM-dd"));
-                LoadTenantData(selDate);
-                LoadBookingsGrid(selDate);
-            }
-            Session["SelectedDates"] = selectedDates;
         }
     }
 
@@ -157,16 +167,76 @@ public partial class Admin_Admin : System.Web.UI.Page
 
     private void LoadBookingsGrid(DateTime selDate)
     {
-        divDebug.InnerHtml += "In LoadBookingsGrid";
+        if (_selectedBookingID == 0)
+        {
+            string sqlCmd = string.Format("SELECT BookingID FROM thebijouvilla.Bookings WHERE BookingDate = '{0}'; ", selDate.ToString("yyyy-MM-dd HH:mm:ss"));
+
+            MySqlDataAdapter adr = new MySqlDataAdapter(sqlCmd, cn);
+            adr.SelectCommand.CommandType = CommandType.Text;
+            DataTable dt = new DataTable();
+            try
+            {
+                adr.Fill(dt); //opens and closes the DB connection automatically !! (fetches from pool)
+
+                if (dt.Rows.Count == 1)
+                {
+                    int bookingID = int.Parse(dt.Rows[0]["BookingID"].ToString());
+                    LoadBookingsGrid(bookingID);
+                }
+                else if (dt.Rows.Count > 1)
+                {
+                    divBookingButtons.Controls.Clear();
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        Booking booking = new Booking(int.Parse(row["BookingID"].ToString()));
+                        booking.GetBooking();
+
+                        Button button = new Button();
+                        button.Text = booking.Tenant.TenantName;
+                        button.ID = booking.Tenant.TenantID.ToString();
+                        button.Click += new EventHandler(Booking_Click);
+
+                        divBookingButtons.Controls.Add(button);
+                        Literal br = new Literal();
+                        br.Text = "<br />";
+                        divBookingButtons.Controls.Add(br);
+                        divBookingSelection.Visible = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cn.Dispose(); // return connection to pool
+            }
+        }
+        else
+        {
+            LoadBookingsGrid(_selectedBookingID);
+        }
+    }
+
+    protected void Booking_Click(object sender, EventArgs e)
+    {
+        Button button = sender as Button;
+        _selectedBookingID = int.Parse(button.ID);
+        LoadBookingsGrid(_selectedBookingID);
+    }
+
+    private void LoadBookingsGrid(int bookingID)
+    {
         try
         {
             string sqlCmd = @"SELECT RowID, BookingID, TenantID, DATE_FORMAT(BookingDate,'%d/%m/%Y') as BookingDate, Rate, Agency,
                 CASE WHEN Confirmed = 1 THEN 'True' ELSE 'False' END AS Confirmed, Comments FROM thebijouvilla.Bookings WHERE BookingID = 
-                (SELECT BookingID FROM thebijouvilla.Bookings WHERE BookingDate = ?BookingDate) ORDER BY BookingDate;";
+                ?BookingID ORDER BY RowID;";
             cn.Open();
             MySqlDataAdapter adr = new MySqlDataAdapter(sqlCmd, cn);
             adr.SelectCommand.CommandType = CommandType.Text;
-            adr.SelectCommand.Parameters.AddWithValue("?BookingDate", selDate);
+            adr.SelectCommand.Parameters.AddWithValue("?BookingID", bookingID);
             DataSet ds = new DataSet();
             adr.Fill(ds); //opens and closes the DB connection automatically !! (fetches from pool)
             if (ds.Tables[0].Rows.Count > 0)
@@ -205,57 +275,96 @@ public partial class Admin_Admin : System.Web.UI.Page
 
     private void LoadTenantData(DateTime selDate)
     {
-        try
+        if (_selectedTenantID == 0)
         {
-            string sqlCmd = string.Format(@"SELECT DISTINCT t.TenantID, t.TenantName, t.Address1, t.Address2, t.Town, t.City, t.County,
-                t.PostCode, t.Country, t.Email, t.Landline, t.Mobile, t.Comments, t.PreviousTenant
-                FROM thebijouvilla.Bookings b INNER JOIN thebijouvilla.Tenants t ON b.TenantID = t.TenantID
-                WHERE t.TenantID = (SELECT TenantID FROM thebijouvilla.Bookings WHERE BookingDate = '{0}');", selDate.ToString("yyyy-MM-dd HH:mm:ss"));
+            string sqlCmd = string.Format("SELECT TenantID FROM thebijouvilla.Bookings WHERE BookingDate = '{0}'; ", selDate.ToString("yyyy-MM-dd HH:mm:ss"));
 
             MySqlDataAdapter adr = new MySqlDataAdapter(sqlCmd, cn);
             adr.SelectCommand.CommandType = CommandType.Text;
             DataTable dt = new DataTable();
-            adr.Fill(dt); //opens and closes the DB connection automatically !! (fetches from pool)
-
-            if (dt.Rows.Count > 0)
+            try
             {
-                divTenant.Visible = true;
-                hdnTenantID.Value = dt.Rows[0]["TenantID"].ToString();
-                txtName.Text = dt.Rows[0]["TenantName"].ToString();
-                txtAddress1.Text = dt.Rows[0]["Address1"].ToString();
-                txtAddress2.Text = dt.Rows[0]["Address2"].ToString();
-                txtTown.Text = dt.Rows[0]["Town"].ToString();
-                txtCity.Text = dt.Rows[0]["City"].ToString();
-                txtCounty.Text = dt.Rows[0]["County"].ToString();
-                txtPostcode.Text = dt.Rows[0]["PostCode"].ToString();
-                txtCountry.Text = dt.Rows[0]["Country"].ToString();
-                txtEmail.Text = dt.Rows[0]["Email"].ToString();
-                txtLandline.Text = dt.Rows[0]["Landline"].ToString();
-                txtMobile.Text = dt.Rows[0]["Mobile"].ToString();
-                txtComments.Text = dt.Rows[0]["Comments"].ToString();
-                chkPreviousTenant.Checked = dt.Rows[0]["Comments"].ToString() == "1";
-            }
+                adr.Fill(dt); //opens and closes the DB connection automatically !! (fetches from pool)
 
+                if (dt.Rows.Count == 1)
+                {
+                    int tenantID = int.Parse(dt.Rows[0]["TenantID"].ToString());
+                    LoadTenantData(tenantID);
+                }
+                else if (dt.Rows.Count > 1)
+                {
+                    divTenantButtons.Controls.Clear();
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        Tenant tenant = new Tenant(int.Parse(row["TenantID"].ToString()));
+                        tenant.GetTenant();
+
+                        Button button = new Button();
+                        button.Text = tenant.TenantName;
+                        button.ID = tenant.TenantID.ToString();
+                        button.Font.Size = FontUnit.Point(7);
+                        button.ControlStyle.CssClass = "button";
+                        button.Click += new EventHandler(Tenant_Click);
+
+                        divTenantButtons.Controls.Add(button);
+                        Literal br = new Literal();
+                        br.Text = "<br />";
+                        divTenantButtons.Controls.Add(br);
+                        divTenantSelection.Visible = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cn.Dispose(); // return connection to pool
+            }
         }
-        catch (Exception ex)
+        else
         {
-            throw ex;
+            LoadTenantData(_selectedTenantID);
         }
-        finally
-        {
-            cn.Dispose(); // return connection to pool
-        }
+    }
+
+    protected void Tenant_Click(object sender, EventArgs e)
+    {
+        Button button = sender as Button;
+        _selectedTenantID = int.Parse(button.ID);
+        LoadTenantData(_selectedTenantID);
+    }
+
+    private void LoadTenantData(int tenantID)
+    {
+        Tenant tenant = new Tenant(tenantID);
+        tenant.GetTenant();
+
+        divTenant.Visible = true;
+        hdnTenantID.Value = tenantID.ToString();
+        txtName.Text = tenant.TenantName;
+        txtAddress1.Text = tenant.Address1;
+        txtAddress2.Text = tenant.Address2;
+        txtTown.Text = tenant.Town;
+        txtCity.Text = tenant.City;
+        txtCounty.Text = tenant.County;
+        txtPostcode.Text = tenant.Postcode;
+        txtCountry.Text = tenant.Country;
+        txtEmail.Text = tenant.Email;
+        txtLandline.Text = tenant.Landline;
+        txtMobile.Text = tenant.Mobile;
+        txtComments.Text = tenant.Comments;
+        chkPreviousTenant.Checked = tenant.PreviousTenant;
     }
 
     protected void Calendar1_SelectionChanged(object sender, EventArgs e)
     {
         DateTime selDate = new DateTime(Calendar1.SelectedDate.Year, Calendar1.SelectedDate.Month, Calendar1.SelectedDate.Day);
-        Utils.SelectedDate = selDate; 
-        divDebug.InnerHtml += "<p>Calendar1_SelectionChanged</p>";
-        divDebug.InnerHtml += string.Format("<p>{0}</p>", Utils.SelectedDate);
+        Utils.SelectedDate = selDate;
         GridView1.DataSource = null;
         LoadBookingsGrid(Utils.SelectedDate);
-        FillHolidayDataset();        
+        FillHolidayDataset();
     }
 
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -349,7 +458,7 @@ public partial class Admin_Admin : System.Web.UI.Page
             if ((e.Row.RowState & DataControlRowState.Edit) > 0)
             {
                 DateTime bd = DateTime.Parse(drview[3].ToString());
-                e.Row.Cells[3].Text = bd.ToString("yyyy-MM-dd");
+                e.Row.Cells[3].Text = bd.ToString("dd/MM/yyyy");
                 CheckBox chkb = (CheckBox)e.Row.FindControl("chkEditConfirmed");
                 if (drview[6].ToString() == "True")
                 { chkb.Checked = true; }
@@ -362,7 +471,7 @@ public partial class Admin_Admin : System.Web.UI.Page
                 DateTime.TryParse(drview[3].ToString(), out bd);
                 if (bd != DateTime.MinValue)
                 {
-                    e.Row.Cells[3].Text = bd.ToString("yyyy-MM-dd");
+                    e.Row.Cells[3].Text = bd.ToString("dd/MM/yyyy");
                 }
             }
         }
@@ -421,7 +530,7 @@ public partial class Admin_Admin : System.Web.UI.Page
     {
         bool retVal = true;
 
-        string[] startDateSplit = txtStartDate.Text.Split('-');
+        string[] startDateSplit = txtStartDate.Text.Split('/');
         if (startDateSplit.Length == 3)
         {
             startDate = new DateTime(int.Parse(startDateSplit[2]), int.Parse(startDateSplit[1]), int.Parse(startDateSplit[0]));
@@ -448,7 +557,7 @@ public partial class Admin_Admin : System.Web.UI.Page
             }
         }
 
-        string[] endDateSplit = txtEndDate.Text.Split('-');
+        string[] endDateSplit = txtEndDate.Text.Split('/');
         if (endDateSplit.Length == 3)
         {
             endDate = new DateTime(int.Parse(endDateSplit[2]), int.Parse(endDateSplit[1]), int.Parse(endDateSplit[0]));
@@ -555,5 +664,10 @@ public partial class Admin_Admin : System.Web.UI.Page
     protected void btnEditRates_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/Admin/Rates.aspx", true);
+    }
+
+    protected void btnEditTenants_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Admin/Tenants.aspx", true);
     }
 }

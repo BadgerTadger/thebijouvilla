@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
     <link href="Content/Site.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
@@ -12,27 +11,28 @@
         $(function () {
             $('#<%= txtStartDate.ClientID %>').datepicker({
                 firstDay: 6,
-                dateFormat: "yy-mm-dd",
+                dateFormat: "dd/mm/yy",
                 minDate: 1,
                 beforeShowDay: function (date) {
                     var day = date.getDay();
-                    if (date.getMonth() > 8 || date.getMonth() < 4) {
-                        return [true, ""];
-                    }
-                    else {
-                        return [day == 6, ""];
-                    }
+                    //if (date.getMonth() > 7 || date.getMonth() < 6) {
+                    //    return [true, ""];
+                    //}
+                    //else {
+                    //    return [day == 6, ""];
+                    //}
+                    return [day == 6, ""];
                 }
             });
         });
-        $(function () {
+        <%--        $(function () {
             $('#<%= txtEndDate.ClientID %>').datepicker({
                 firstDay: 6,
-                dateFormat: "yy-mm-dd",
+                dateFormat: dd/mm/yy",
                 minDate: 2,
                 beforeShowDay: function (date) {
                     var day = date.getDay();
-                    if (date.getMonth() > 8 || date.getMonth() < 4) {
+                    if (date.getMonth() > 7 || date.getMonth() < 6) {
                         return [true, ""];
                     }
                     else {
@@ -40,55 +40,81 @@
                     }
                 }
             });
-        });
+        });--%>
     </script>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="Server">
-    <asp:Button ID="Button1" runat="server" Text="Test Email" OnClick="Button1_OnClick" />
     <table style="width: 100%; height: 100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
             <td>&nbsp;</td>
             <td align="center" width="1000" valign="top">
-                <h4>Please complete the form below and click the &quot;Book&quot; button at the bottom.</h4>
-                <table>
+                <table style="width: 80%; height: 100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td width="70%">
-                            <p>Use the calendar to the right to find available dates. Dates shown in pink are not available</p>
+                        <td colspan="3">
                             <p>
-                                Select the start and end dates that you would like to stay at The Bijou.<br />
-                                During peak season, booking dates should be Saturday to Saturday.<br />
-
+                                Rates for 2017.<br />
+                                January to April €1000 per week.*<br />
+                                May and June €1250 per week.*<br />
+                                July and August €1550 per week.<br />
+                                September and October €1250 per week.*<br />
+                                November and December €1000 per week.*<br />
                             </p>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="Label1" runat="server" Text="Start Date"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:TextBox ID="txtStartDate" runat="server"></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="Label2" runat="server" Text="End Date"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:TextBox ID="txtEndDate" runat="server"></asp:TextBox>
-                                    </td>
-                                </tr>
-                            </table>
                         </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <p>
+                                Bookings are 1600 Saturday to 1100 Saturday.<br />
+                                For off-peak periods marked * shorter periods may be possible.<br />
+                                To confirm availability, request a booking or to request availability and rates for shorter periods, use the request form below or e mail the owners at <a href="mailto:info@thebijouvilla.com">info@thebijouvilla.com</a>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align:top">
+                            <p>Use the calendar to the right to find available dates. Dates shown in pink are not available</p>
+                        </td>
+                        <td>&nbsp;</td>
                         <td>
                             <asp:Calendar ID="Calendar1" OnDayRender="Calendar1_DayRender"
-                                runat="server" Width="30%" OnVisibleMonthChanged="Calendar1_VisibleMonthChanged" SelectionMode="None" FirstDayOfWeek="Saturday"></asp:Calendar>
+                                runat="server" Width="40%" OnVisibleMonthChanged="Calendar1_VisibleMonthChanged" SelectionMode="None" FirstDayOfWeek="Saturday"></asp:Calendar>
                             <asp:Label runat="server" ID="lblStatus" />
                         </td>
                     </tr>
                 </table>
-                <table>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    <table style="width: 100%; height: 100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>&nbsp;</td>
+            <td align="center" width="1000" valign="top">
+                <table style="width: 80%; height: 100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td width="30%"></td>
                         <td></td>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="2">
+                            <h4>Please complete the form below and click the &quot;Book&quot; button at the bottom.</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p>
+                                Select the beginning of the week that you would like to stay at The Bijou.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="Label1" runat="server" Text="Start Date"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtStartDate" runat="server"></asp:TextBox>
+                            <asp:HiddenField ID="txtEndDate" runat="server" />
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -185,7 +211,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <asp:Label ID="Label14" runat="server" Text="Comments"></asp:Label>
+                            <asp:Label ID="Label14" runat="server" Text="Comments - (include preferred dates if booking during off-peak periods)"></asp:Label>
                         </td>
                     </tr>
                     <tr>

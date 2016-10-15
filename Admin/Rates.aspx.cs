@@ -69,7 +69,7 @@ public partial class Admin_Rates : System.Web.UI.Page
     {
         bool retVal = true;
 
-        string[] startDateSplit = txtStartDate.Text.Split('-');
+        string[] startDateSplit = txtStartDate.Text.Split('/');
         if (startDateSplit.Length == 3)
         {
             startDate = new DateTime(int.Parse(startDateSplit[2]), int.Parse(startDateSplit[1]), int.Parse(startDateSplit[0]));
@@ -88,7 +88,7 @@ public partial class Admin_Rates : System.Web.UI.Page
             }
         }
 
-        string[] endDateSplit = txtEndDate.Text.Split('-');
+        string[] endDateSplit = txtEndDate.Text.Split('/');
         if (endDateSplit.Length == 3)
         {
             endDate = new DateTime(int.Parse(endDateSplit[2]), int.Parse(endDateSplit[1]), int.Parse(endDateSplit[0]));
@@ -196,9 +196,9 @@ public partial class Admin_Rates : System.Web.UI.Page
             if ((e.Row.RowState & DataControlRowState.Edit) > 0)
             {
                 DateTime sd = DateTime.Parse(drview[1].ToString());
-                e.Row.Cells[1].Text = sd.ToString("yyyy-MM-dd");
+                e.Row.Cells[1].Text = sd.ToString("dd/MM/yyyy");
                 DateTime ed = DateTime.Parse(drview[2].ToString());
-                e.Row.Cells[2].Text = ed.ToString("yyyy-MM-dd");
+                e.Row.Cells[2].Text = ed.ToString("dd/MM/yyyy");
             }
             else
             {
@@ -207,13 +207,13 @@ public partial class Admin_Rates : System.Web.UI.Page
                 DateTime.TryParse(drview[1].ToString(), out sd);
                 if (sd != DateTime.MinValue)
                 {
-                    e.Row.Cells[1].Text = sd.ToString("yyyy-MM-dd");
+                    e.Row.Cells[1].Text = sd.ToString("dd/MM/yyyy");
                 }
                 DateTime ed = DateTime.MinValue;
                 DateTime.TryParse(drview[2].ToString(), out ed);
                 if (ed != DateTime.MinValue)
                 {
-                    e.Row.Cells[2].Text = ed.ToString("yyyy-MM-dd");
+                    e.Row.Cells[2].Text = ed.ToString("dd/MM/yyyy");
                 }
             }
         }

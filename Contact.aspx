@@ -15,8 +15,8 @@
         GPS: Latitude 44.0814 Longitude 04.5762<br />
     </address>
 
+    <h3>Or by email at:</h3>
     <address>
-        <h3>Or by email at:</h3>
         <strong>Email:</strong>   <a href="mailto:info@thebijouvilla.com">info@thebijouvilla.com</a><br />
     </address>
 </asp:Content>

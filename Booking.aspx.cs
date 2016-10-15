@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using MySql.Data.MySqlClient;
-using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 public partial class Booking_Booking : System.Web.UI.Page
 {
@@ -144,7 +142,11 @@ public partial class Booking_Booking : System.Web.UI.Page
 
         if (booking.SaveBooking())
         {
-            if (booking.SendEmail())
+            if(Debugger.IsAttached)
+            {
+                return true;
+            }
+            else if (booking.SendEmail())
             {
                 return true;
             }
@@ -154,9 +156,11 @@ public partial class Booking_Booking : System.Web.UI.Page
 
     private bool ValidFields()
     {
+        lblWarning.Text = "";
+        lblWarning.Visible = false;
         bool retVal = true;
 
-        string[] startDateSplit = txtStartDate.Text.Split('-');
+        string[] startDateSplit = txtStartDate.Text.Split('/');
         if (startDateSplit.Length == 3)
         {
             startDate = new DateTime(int.Parse(startDateSplit[2]), int.Parse(startDateSplit[1]), int.Parse(startDateSplit[0]));
@@ -170,41 +174,47 @@ public partial class Booking_Booking : System.Web.UI.Page
         {
             if (bookedDates != null && bookedDates.Contains(startDate))
             {
+                retVal = false;
                 lblWarning.Text += "The selected Start Date is unavailable<br />";
             }
             else
             {
                 if(startDate < DateTime.Now)
                 {
+                    retVal = false;
                     lblWarning.Text += "Start Date cannot be in the past<br />";
                 }
             }            
         }
 
-        string[] endDateSplit = txtEndDate.Text.Split('-');
-        if (endDateSplit.Length == 3)
+        if (retVal)
         {
-            endDate = new DateTime(int.Parse(endDateSplit[2]), int.Parse(endDateSplit[1]), int.Parse(endDateSplit[0]));
-        }
-        if (endDate == DateTime.MinValue)
-        {
-            retVal = false;
-            lblWarning.Text += "End Date must be selected<br />";
-        }
-        else
-        {
-            if (bookedDates != null && bookedDates.Contains(endDate))
+            txtEndDate.Value = startDate.AddDays(6).ToString("dd/MM/yyyy");
+            string[] endDateSplit = txtEndDate.Value.Split('/');
+            if (endDateSplit.Length == 3)
             {
-                lblWarning.Text += "The selected End Date is unavailable<br />";
-            }
-            else
-            {
-                if(endDate <= startDate.AddDays(2))
-                {
-                    lblWarning.Text += "End Date must be at least 2 days after the Start Date<br />";
-                }
+                endDate = new DateTime(int.Parse(endDateSplit[2]), int.Parse(endDateSplit[1]), int.Parse(endDateSplit[0]));
             }
         }
+        //if (endDate == DateTime.MinValue)
+        //{
+        //    retVal = false;
+        //    lblWarning.Text += "End Date must be selected<br />";
+        //}
+        //else
+        //{
+        //    if (bookedDates != null && bookedDates.Contains(endDate))
+        //    {
+        //        lblWarning.Text += "The selected End Date is unavailable<br />";
+        //    }
+        //    else
+        //    {
+        //        if(endDate <= startDate.AddDays(2))
+        //        {
+        //            lblWarning.Text += "End Date must be at least 2 days after the Start Date<br />";
+        //        }
+        //    }
+        //}
 
         if(startDate != DateTime.MinValue && endDate != DateTime.MinValue)
         {
@@ -237,7 +247,7 @@ public partial class Booking_Booking : System.Web.UI.Page
             retVal = false;
             lblWarning.Text += "Please provide an email address<br />";
         }
-        else if (!IsValidEmail(txtEmail.Text))
+        else if (!Utils.IsValidEmail(txtEmail.Text))
         {
             retVal = false;
             lblWarning.Text += "The email address provided is not valid<br />";
@@ -252,11 +262,6 @@ public partial class Booking_Booking : System.Web.UI.Page
         return retVal;
     }
 
-    private bool IsValidEmail(string emailaddress)
-    {
-        return Regex.IsMatch(emailaddress, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
-    }
-
     protected void btnClear_Click(object sender, EventArgs e)
     {
         ClearFormFields();
@@ -267,7 +272,7 @@ public partial class Booking_Booking : System.Web.UI.Page
         lblWarning.Text = "";
         lblWarning.Visible = false;
         txtStartDate.Text = "";
-        txtEndDate.Text = "";
+        txtEndDate.Value = "";
         txtTenantName.Text = "";
         txtAddress1.Text = "";
         txtAddress2.Text = "";
@@ -280,11 +285,5 @@ public partial class Booking_Booking : System.Web.UI.Page
         txtLandline.Text = "";
         txtMobile.Text = "";
         txtComments.Text = "";
-    }
-
-    protected void Button1_OnClick(object sender, EventArgs e)
-    {
-        Booking booking = new Booking();
-        booking.SendEmail();
     }
 }

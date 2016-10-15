@@ -12,14 +12,14 @@
         $(function () {
             $('#<%= txtStartDate.ClientID %>').datepicker({
                 firstDay: 6,
-                dateFormat: "yy-mm-dd",
+                dateFormat: "dd/mm/yy",
                 minDate: 1
             });
         });
         $(function () {
             $('#<%= txtEndDate.ClientID %>').datepicker({
                 firstDay: 6,
-                dateFormat: "yy-mm-dd",
+                dateFormat: "dd/mm/yy",
                 minDate: 2
             });
         });
@@ -40,7 +40,7 @@
                     OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating"
                     OnRowDataBound="GridView1_RowDataBound">
                     <Columns>
-                        <asp:BoundField DataField="RateID" HeaderText="Row ID" ReadOnly="true" />
+                        <asp:BoundField DataField="RateID" HeaderText="Rate ID" ReadOnly="true" />
                         <asp:BoundField DataField="StartDate" HeaderText="Effective From" ReadOnly="true" />
                         <asp:BoundField DataField="EndDate" HeaderText="Effective To" ReadOnly="true" />
                         <asp:BoundField DataField="Rate" HeaderText="Rate" />

@@ -12,14 +12,14 @@
         $(function () {
             $('#<%= txtStartDate.ClientID %>').datepicker({
                 firstDay: 6,
-                dateFormat: "yy-mm-dd",
+                dateFormat: "dd/mm/yy",
                 minDate: 1
             });
         });
         $(function () {
             $('#<%= txtEndDate.ClientID %>').datepicker({
                 firstDay: 6,
-                dateFormat: "yy-mm-dd",
+                dateFormat: "dd/mm/yy",
                 minDate: 2
             });
         });
@@ -31,6 +31,8 @@
         <div class="row">
             <div class="col-md-12">
                 <asp:Button ID="btnEditRates" runat="server" Text="Edit Rates" OnClick="btnEditRates_Click" />
+                &nbsp;
+                <asp:Button ID="btnEditTenants" runat="server" Text="Edit Tenants" OnClick="btnEditTenants_Click" />
             </div>
         </div>
         <div class="row">
@@ -45,10 +47,14 @@
         </div>
         <div class="row">
             <p>&nbsp;</p>
-            <div id="divDebug" runat="server">
-                
-            </div>
-            <p>&nbsp;</p>
+        </div>
+        <div id="divBookingSelection" runat="server" class="row" visible="false">
+            <asp:Label ID="Label4" runat="server" Text="Please select the Booking"></asp:Label>
+            <div id="divBookingButtons" runat="server"></div>
+        </div>
+        <div id="divTenantSelection" runat="server" class="row" visible="false">
+            <asp:Label ID="Label3" runat="server" Text="Please select the Tenant"></asp:Label>
+            <div id="divTenantButtons" runat="server"></div>
         </div>
         <div id="divGrid" runat="server" class="row" visible="false">
             <div class="col-md-12">

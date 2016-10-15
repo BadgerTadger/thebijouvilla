@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 /// <summary>
 /// Summary description for Utils
@@ -44,11 +45,11 @@ public static class Utils
         }
         catch (MySqlException mySqlException)
         {
-            // Use the mySqlException object to handle specific MySql errors
+            throw mySqlException;
         }
-        catch (Exception exception)
+        catch (Exception ex)
         {
-            // Use the exception object to handle all other non-MySql specific errors
+            throw ex;
         }
         finally
         {
@@ -66,4 +67,9 @@ public static class Utils
     public static DateTime SelectedDate { get; set; }
     public static int bookingID { get; set; }
     public static int tenantID { get; set; }
+
+    public static bool IsValidEmail(string emailaddress)
+    {
+        return Regex.IsMatch(emailaddress, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+    }
 }
