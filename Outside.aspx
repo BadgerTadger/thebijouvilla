@@ -1,8 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Outside.aspx.cs" Inherits="Outside" %>
+﻿<%@ Page Title="Outside" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Outside.aspx.cs" Inherits="Outside" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <h2><%: Title %>.</h2>
+    <p><a href="Inside.aspx">Click here to see pictures of inside</a></p>
     <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
             <td style="padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px">
@@ -98,7 +100,7 @@
                 <p>
                     <strong>The Garden and Views: </strong>Thanks to the loving care of the British owners the garden has a provencal feel with olive trees, 
                     vine and Mediteranean plants among typical slate walls but is lush enough to provide a profusion of colours and fragrances throughout the year.  
-                    It sets up beautifully the views of rolling hills.<br />  
+                    It sets up beautifully the views of rolling hills.<br />
                     The sunsets are spectacular with a different stunning twilight every evening as the sun sinks behind the Oppidum (Roman ruins), bathing the villa in a golden glow.
                 </p>
             </td>
@@ -145,5 +147,6 @@
             </td>
         </tr>
     </table>
+    <p><a href="Inside.aspx">Click here to see pictures of inside</a></p>
 </asp:Content>
 

@@ -3,6 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <h2><%: Title %>.</h2>
+    <p><a href="Outside.aspx">Click here to see pictures of outside</a></p>
     <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
             <td style="padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px">
@@ -141,5 +143,6 @@
             </td>
         </tr>
     </table>
+    <p><a href="Outside.aspx">Click here to see pictures of outside</a></p>
 </asp:Content>
 
