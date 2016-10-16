@@ -76,7 +76,7 @@ public class Rates
 
     private int GetNextRateID()
     {
-        int retVal = -1;
+        int retVal = 0;
 
         string query = "SELECT CASE WHEN MAX(Rates.RateID) IS NULL THEN 0 ELSE MAX(Rates.RateID) END AS RateID FROM Rates";
         string connString = Utils.ConnString;

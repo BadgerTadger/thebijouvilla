@@ -203,7 +203,7 @@ public class Tenant
         try
         {
             string sqlCmd = @"SELECT BookingDate, Confirmed FROM thebijouvilla.Bookings
-                            WHERE TenantID = ?TenantID";
+                            WHERE TenantID = ?TenantID ORDER BY BookingDate";
 
             cn.Open();
             MySqlDataAdapter adr = new MySqlDataAdapter(sqlCmd, cn);
@@ -293,9 +293,9 @@ public class Tenant
 
     private int GetNextTenantID()
     {
-        int retVal = -1;
+        int retVal = 0;
 
-        string query = "SELECT CASE WHEN MAX(Rates.RateID) IS NULL THEN 0 ELSE MAX(Rates.RateID) END AS RateID FROM Rates";
+        string query = "SELECT CASE WHEN MAX(Tenants.TenantID) IS NULL THEN 0 ELSE MAX(Tenants.TenantID) END AS TenantID FROM Tenants";
         string connString = Utils.ConnString;
         using (MySqlConnection connection = new MySqlConnection(connString))
         {
@@ -324,18 +324,18 @@ public class Tenant
     {
         cn.Open();
         string sqlCmd = @"UPDATE Tenants Set                 
-                TenantName = ?TenantName
-                Address1 = ?Address1
-                Address2 = ?Address2
-                Town = ?Town
-                City = ?City
-                County = ?County
-                Postcode = ?Postcode
-                Country = ?Country
-                Email = ?Email
-                Landline = ?Landline
-                Mobile = ?Mobile
-                Comments = ?Comments
+                TenantName = ?TenantName,
+                Address1 = ?Address1,
+                Address2 = ?Address2,
+                Town = ?Town,
+                City = ?City,
+                County = ?County,
+                Postcode = ?Postcode,
+                Country = ?Country,
+                Email = ?Email,
+                Landline = ?Landline,
+                Mobile = ?Mobile,
+                Comments = ?Comments,
                 PreviousTenant = ?PreviousTenant
                 WHERE TenantID = ?TenantID ";
         MySqlCommand cmd = new MySqlCommand(sqlCmd, cn);
@@ -352,7 +352,7 @@ public class Tenant
         cmd.Parameters.AddWithValue("Mobile", _mobile);
         cmd.Parameters.AddWithValue("Comments", _comments);
         cmd.Parameters.AddWithValue("PreviousTenant", _previousTenant);
-        cmd.Parameters.AddWithValue("RateID", _tenantID);
+        cmd.Parameters.AddWithValue("TenantID", _tenantID);
         try
         {
             cmd.ExecuteNonQuery();

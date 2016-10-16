@@ -48,14 +48,6 @@
         <div class="row">
             <p>&nbsp;</p>
         </div>
-        <div id="divBookingSelection" runat="server" class="row" visible="false">
-            <asp:Label ID="Label4" runat="server" Text="Please select the Booking"></asp:Label>
-            <div id="divBookingButtons" runat="server"></div>
-        </div>
-        <div id="divTenantSelection" runat="server" class="row" visible="false">
-            <asp:Label ID="Label3" runat="server" Text="Please select the Tenant"></asp:Label>
-            <div id="divTenantButtons" runat="server"></div>
-        </div>
         <div id="divGrid" runat="server" class="row" visible="false">
             <div class="col-md-12">
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="RowID"

@@ -35,11 +35,11 @@
                     </Columns>
                 </asp:GridView>
             </div>
-            <asp:Label ID="lblWarning" CssClass="WarningText" runat="server" Text="" Visible="false"></asp:Label>
             <div class="col-md-12">
                 <asp:Button ID="btnAddTenant" runat="server" Text="Add New Tenant" OnClick="btnAddTenant_Click" />
             </div>
         </div>
+        <asp:Label ID="lblWarning" CssClass="WarningText" runat="server" Text="" Visible="false"></asp:Label>
         <div runat="server" id="divAddTenant" class="row" visible="false">
             <div class="col-md-12">
                 <table>

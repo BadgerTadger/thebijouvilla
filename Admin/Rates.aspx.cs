@@ -21,6 +21,8 @@ public partial class Admin_Rates : System.Web.UI.Page
         {
             LoadRatesGrid();
         }
+        lblWarning.Text = "";
+        lblWarning.Visible = false;
     }
 
     protected void btnAdmin_Click(object sender, EventArgs e)
@@ -234,14 +236,8 @@ public partial class Admin_Rates : System.Web.UI.Page
             }
             else
             {
-                ds.Tables[0].Rows.Add(ds.Tables[0].NewRow());
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
-                int columncount = GridView1.Rows[0].Cells.Count;
-                GridView1.Rows[0].Cells.Clear();
-                GridView1.Rows[0].Cells.Add(new TableCell());
-                GridView1.Rows[0].Cells[0].ColumnSpan = columncount;
-                GridView1.Rows[0].Cells[0].Text = "No Records Found";
+                lblWarning.Text = "No Records Found";
+                lblWarning.Visible = true;
                 divGrid.Visible = false;
             }
 

@@ -12,8 +12,6 @@ public partial class Admin_Admin : System.Web.UI.Page
     private List<DateTime> bookedDates = null;
     DateTime startDate = DateTime.MinValue;
     DateTime endDate = DateTime.MinValue;
-    int _selectedTenantID = 0;
-    int _selectedBookingID = 0;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -167,63 +165,33 @@ public partial class Admin_Admin : System.Web.UI.Page
 
     private void LoadBookingsGrid(DateTime selDate)
     {
-        if (_selectedBookingID == 0)
+        string sqlCmd = string.Format("SELECT MIN(BookingID) AS BookingID FROM thebijouvilla.Bookings WHERE BookingDate = '{0}'; ", selDate.ToString("yyyy-MM-dd HH:mm:ss"));
+
+        MySqlDataAdapter adr = new MySqlDataAdapter(sqlCmd, cn);
+        adr.SelectCommand.CommandType = CommandType.Text;
+        DataTable dt = new DataTable();
+        try
         {
-            string sqlCmd = string.Format("SELECT BookingID FROM thebijouvilla.Bookings WHERE BookingDate = '{0}'; ", selDate.ToString("yyyy-MM-dd HH:mm:ss"));
+            adr.Fill(dt); //opens and closes the DB connection automatically !! (fetches from pool)
 
-            MySqlDataAdapter adr = new MySqlDataAdapter(sqlCmd, cn);
-            adr.SelectCommand.CommandType = CommandType.Text;
-            DataTable dt = new DataTable();
-            try
+            if (dt.Rows.Count == 1)
             {
-                adr.Fill(dt); //opens and closes the DB connection automatically !! (fetches from pool)
-
-                if (dt.Rows.Count == 1)
+                int bookingID;
+                int.TryParse(dt.Rows[0]["BookingID"].ToString(), out bookingID);
+                if (bookingID > 0)
                 {
-                    _selectedBookingID = int.Parse(dt.Rows[0]["BookingID"].ToString());
-                    LoadBookingsGrid(_selectedBookingID);
-                }
-                else if (dt.Rows.Count > 1)
-                {
-                    divBookingButtons.Controls.Clear();
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        Booking booking = new Booking(int.Parse(row["BookingID"].ToString()));
-                        booking.GetBooking();
-
-                        Button button = new Button();
-                        button.Text = booking.Tenant.TenantName;
-                        button.ID = booking.Tenant.TenantID.ToString();
-                        button.Click += new EventHandler(Booking_Click);
-
-                        divBookingButtons.Controls.Add(button);
-                        Literal br = new Literal();
-                        br.Text = "<br />";
-                        divBookingButtons.Controls.Add(br);
-                        divBookingSelection.Visible = true;
-                    }
+                    LoadBookingsGrid(bookingID);
                 }
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                cn.Dispose(); // return connection to pool
-            }
         }
-        else
+        catch (Exception ex)
         {
-            LoadBookingsGrid(_selectedBookingID);
+            throw ex;
         }
-    }
-
-    protected void Booking_Click(object sender, EventArgs e)
-    {
-        Button button = sender as Button;
-        _selectedBookingID = int.Parse(button.ID);
-        LoadBookingsGrid(_selectedBookingID);
+        finally
+        {
+            cn.Dispose(); // return connection to pool
+        }
     }
 
     private void LoadBookingsGrid(int bookingID)
@@ -251,14 +219,7 @@ public partial class Admin_Admin : System.Web.UI.Page
             {
                 Utils.bookingID = 0;
                 Utils.tenantID = 0;
-                ds.Tables[0].Rows.Add(ds.Tables[0].NewRow());
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
-                int columncount = GridView1.Rows[0].Cells.Count;
-                GridView1.Rows[0].Cells.Clear();
-                GridView1.Rows[0].Cells.Add(new TableCell());
-                GridView1.Rows[0].Cells[0].ColumnSpan = columncount;
-                GridView1.Rows[0].Cells[0].Text = "No Records Found";
+                lblStatus.Text = "No Records Found";
                 divGrid.Visible = false;
             }
 
@@ -275,65 +236,33 @@ public partial class Admin_Admin : System.Web.UI.Page
 
     private void LoadTenantData(DateTime selDate)
     {
-        if (_selectedTenantID == 0)
+        string sqlCmd = string.Format("SELECT MIN(TenantID) AS TenantID FROM thebijouvilla.Bookings WHERE BookingDate = '{0}'; ", selDate.ToString("yyyy-MM-dd HH:mm:ss"));
+
+        MySqlDataAdapter adr = new MySqlDataAdapter(sqlCmd, cn);
+        adr.SelectCommand.CommandType = CommandType.Text;
+        DataTable dt = new DataTable();
+        try
         {
-            string sqlCmd = string.Format("SELECT TenantID FROM thebijouvilla.Bookings WHERE BookingDate = '{0}'; ", selDate.ToString("yyyy-MM-dd HH:mm:ss"));
+            adr.Fill(dt); //opens and closes the DB connection automatically !! (fetches from pool)
 
-            MySqlDataAdapter adr = new MySqlDataAdapter(sqlCmd, cn);
-            adr.SelectCommand.CommandType = CommandType.Text;
-            DataTable dt = new DataTable();
-            try
+            if (dt.Rows.Count == 1)
             {
-                adr.Fill(dt); //opens and closes the DB connection automatically !! (fetches from pool)
-
-                if (dt.Rows.Count == 1)
+                int tenantID;
+                int.TryParse(dt.Rows[0]["TenantID"].ToString(), out tenantID);
+                if (tenantID > 0)
                 {
-                    int tenantID = int.Parse(dt.Rows[0]["TenantID"].ToString());
                     LoadTenantData(tenantID);
                 }
-                else if (dt.Rows.Count > 1)
-                {
-                    divTenantButtons.Controls.Clear();
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        Tenant tenant = new Tenant(int.Parse(row["TenantID"].ToString()));
-                        tenant.GetTenant();
-
-                        Button button = new Button();
-                        button.Text = tenant.TenantName;
-                        button.ID = tenant.TenantID.ToString();
-                        button.Font.Size = FontUnit.Point(7);
-                        button.ControlStyle.CssClass = "button";
-                        button.Click += new EventHandler(Tenant_Click);
-
-                        divTenantButtons.Controls.Add(button);
-                        Literal br = new Literal();
-                        br.Text = "<br />";
-                        divTenantButtons.Controls.Add(br);
-                        divTenantSelection.Visible = true;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                cn.Dispose(); // return connection to pool
             }
         }
-        else
+        catch (Exception ex)
         {
-            LoadTenantData(_selectedTenantID);
+            throw ex;
         }
-    }
-
-    protected void Tenant_Click(object sender, EventArgs e)
-    {
-        Button button = sender as Button;
-        _selectedTenantID = int.Parse(button.ID);
-        LoadTenantData(_selectedTenantID);
+        finally
+        {
+            cn.Dispose(); // return connection to pool
+        }
     }
 
     private void LoadTenantData(int tenantID)

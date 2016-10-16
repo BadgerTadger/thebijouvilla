@@ -179,7 +179,7 @@ public class Booking
 
     private int GetNextBookingID()
     {
-        int retVal = -1;
+        int retVal = 0;
 
         string query = "SELECT CASE WHEN MAX(Bookings.BookingID) IS NULL THEN 0 ELSE MAX(Bookings.BookingID) END AS BookingId FROM Bookings";
         string connString = Utils.ConnString;
