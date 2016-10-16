@@ -114,7 +114,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="Label1" runat="server" Text="Start Date"></asp:Label>
+                            <asp:Label ID="Label1" runat="server" Text="Start Date (click to select)"></asp:Label>
                         </td>
                         <td>
                             <asp:TextBox ID="txtStartDate" runat="server"></asp:TextBox>

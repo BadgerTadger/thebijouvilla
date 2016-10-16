@@ -326,7 +326,7 @@ public class Booking
         try
         {
             MailAddress fAddress = new MailAddress("bookings@thebijouvilla.com");
-            MailAddress tAddress = new MailAddress("darencantrell@gmail.com");
+            MailAddress tAddress = new MailAddress("info@thebijouvilla.com");
             MailMessage message = new MailMessage(fAddress, tAddress);
             message.IsBodyHtml = true;
             message.Subject = "Online Booking Request";

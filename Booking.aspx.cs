@@ -157,11 +157,7 @@ public partial class Booking_Booking : System.Web.UI.Page
 
         if (booking.SaveBooking())
         {
-            if (Debugger.IsAttached)
-            {
-                return true;
-            }
-            else if (booking.SendEmail())
+            if (booking.SendEmail())
             {
                 return true;
             }
