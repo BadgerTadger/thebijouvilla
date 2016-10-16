@@ -27,7 +27,7 @@
             </td>
             <td style="padding-top: 25px;" align="center">
                 <a href="Outside.aspx">
-                    <img src="../images/Gite1.jpg" alt="The Gite" title="The Gite" border="0" />
+                <img src="../images/Covered terrace.jpg" alt="Outside" title="Outside" border="0" />
                 </a>
                 <br />
                 <a href="Outside.aspx">Click to see more pictures of outside</a>
@@ -50,7 +50,7 @@
         <tr>
             <td style="padding-left: 13px; padding-right: 13px; text-align: center; vertical-align: top; font-size: 12px" align="center">
                 <a href="Inside.aspx">
-                <img src="../images/Covered terrace.jpg" alt="Covered Terrace" title="Covered Terrace" border="0" />
+                <img src="../images/3A_SMALL.jpg" alt="Inside" title="Inside" border="0" />
                     </a>
                 <br />
                 <a href="Inside.aspx">Click to see more pictures of inside</a>
