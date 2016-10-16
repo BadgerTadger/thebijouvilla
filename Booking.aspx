@@ -71,7 +71,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="vertical-align:top">
+                        <td style="vertical-align: top">
                             <p>
                                 Use the calendar to the right to find available dates.<br />
                                 Dates shown in Pink are provisionally booked.<br />
@@ -222,6 +222,16 @@
                     <tr>
                         <td colspan="2">
                             <asp:TextBox ID="txtComments" runat="server" TextMode="MultiLine" Rows="10" Width="800"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <asp:Label ID="Label2" runat="server" Text="Please tell us how you heard about us. (Agency, Recommendation, Search Engine etc.)"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <asp:TextBox ID="txtAgency" runat="server" TextMode="MultiLine" Rows="2" Width="800"></asp:TextBox>
                         </td>
                     </tr>
                 </table>

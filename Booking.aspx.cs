@@ -153,7 +153,7 @@ public partial class Booking_Booking : System.Web.UI.Page
     private bool SaveBooking()
     {
         Booking booking = new Booking(startDate, endDate, txtTenantName.Text, txtAddress1.Text, txtAddress2.Text, txtTown.Text,
-            txtCity.Text, txtCounty.Text, txtPostcode.Text, txtCountry.Text, txtEmail.Text, txtLandline.Text, txtMobile.Text, txtComments.Text);
+            txtCity.Text, txtCounty.Text, txtPostcode.Text, txtCountry.Text, txtEmail.Text, txtLandline.Text, txtMobile.Text, txtComments.Text, txtAgency.Text);
 
         if (booking.SaveBooking())
         {
@@ -175,36 +175,48 @@ public partial class Booking_Booking : System.Web.UI.Page
         lblWarning.Visible = false;
         bool retVal = true;
 
-        string[] startDateSplit = txtStartDate.Text.Split('/');
-        if (startDateSplit.Length == 3)
-        {
-            startDate = new DateTime(int.Parse(startDateSplit[2]), int.Parse(startDateSplit[1]), int.Parse(startDateSplit[0]));
-        }
-        if (startDate == DateTime.MinValue)
+        DateTime enteredDate;
+        DateTime.TryParse(txtStartDate.Text, out enteredDate);
+        if (enteredDate == DateTime.MinValue)
         {
             retVal = false;
-            lblWarning.Text += "Start Date must be selected<br />";
+            lblWarning.Text += "Start Date is not selected or is not a valid date<br />";
         }
         else
         {
-            if (bookedDates != null)
+            string[] startDateSplit = txtStartDate.Text.Split('/');
+            if (startDateSplit.Length == 3)
             {
-                foreach (DateTimeConfirmed dtc in bookedDates)
-                {
-                    if (dtc.BookedDate == startDate)
-                    {
-                        retVal = false;
-                        lblWarning.Text += "The selected Start Date is unavailable<br />";
-                        break;
-                    }
-                }
+                startDate = new DateTime(int.Parse(startDateSplit[2]), int.Parse(startDateSplit[1]), int.Parse(startDateSplit[0]));
+            }
+            if (startDate == DateTime.MinValue)
+            {
+                retVal = false;
+                lblWarning.Text += "Start Date must be selected<br />";
+            }
+            else if (startDate.DayOfWeek != DayOfWeek.Saturday)
+            {
+                retVal = false;
+                lblWarning.Text += "Start Date must be a Saturday<br />";
+            }
+            else if (startDate < DateTime.Now)
+            {
+                retVal = false;
+                lblWarning.Text += "Start Date cannot be in the past<br />";
             }
             else
             {
-                if (startDate < DateTime.Now)
+                if (bookedDates != null)
                 {
-                    retVal = false;
-                    lblWarning.Text += "Start Date cannot be in the past<br />";
+                    foreach (DateTimeConfirmed dtc in bookedDates)
+                    {
+                        if (dtc.BookedDate == startDate)
+                        {
+                            retVal = false;
+                            lblWarning.Text += "The selected Start Date is unavailable<br />";
+                            break;
+                        }
+                    }
                 }
             }
         }
@@ -250,6 +262,10 @@ public partial class Booking_Booking : System.Web.UI.Page
                         {
                             retVal = false;
                             lblWarning.Text += "The selected date range contains dates that are unavailable<br />";
+                            break;
+                        }
+                        if(!retVal)
+                        {
                             break;
                         }
                     }

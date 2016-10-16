@@ -103,11 +103,11 @@ public class Booking
     }
 
     public Booking(DateTime startDate, DateTime endDate, string tenantName, string address1, string address2, string town,
-        string city, string county, string postcode, string country, string email, string landline, string mobile, string comments)
+        string city, string county, string postcode, string country, string email, string landline, string mobile, string comments, string agency)
     {
         _startDate = startDate;
         _endDate = endDate;
-
+        _agency = agency;
         _tenant = new Tenant();
         _tenant.TenantName = tenantName;
         _tenant.Address1 = address1;
@@ -129,7 +129,7 @@ public class Booking
 
         _bookingID = GetNextBookingID();
         int tenantID = _tenant.Insert();
-        if(InsertBooking(_bookingID, tenantID, "", ""))
+        if(InsertBooking(_bookingID, tenantID, _agency, _comments))
         {
             Utils.bookingID = _bookingID;
             retVal = true;
