@@ -16,40 +16,40 @@
     </table>
     <div class="gallery">
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/29A.jpg"></a>
+            <img class="galleryaimg" src="images/Gallery/Salon2.jpg" />
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/5A.jpg" /></a>
+            <img class="galleryaimg" src="images/Gallery/Kitchendining.jpg" />
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/avignon.png" />
+            <img class="galleryaimg" src="images/Gallery/Diningsalon.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Camargue1.jpg" />
+            <img class="galleryaimg" src="images/Gallery/Salon.jpg" />
+        </a>
+
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/Gitebed1.jpg" />
+        </a>
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/Diningkitchen.jpg" />
+        </a>
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/Gitebed2.jpg" />
+        </a>
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/25_SMALL.jpg" />
         </a>
 
         <a class="gallerya" tabindex="1">
             <img class="galleryaimg" src="images/Gallery/Covered%20terrace.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Diningkitchen.jpg" />
+            <img class="galleryaimg" src="images/Gallery/Gitesunterrace.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Diningsalon.jpg" />
+            <img class="galleryaimg" src="images/Gallery/14_SMALL.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/ello-hdpi-5da91a04.jpg" />
-        </a>
-
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/ello-hdpi-cfb7fb3f.jpg" />
-        </a>
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/ello-hdpi-eac18384.jpg" />
-        </a>
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Gaujac%20castle.jpg" />
-        </a>
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Gaujac%20village.jpg" />
+            <img class="galleryaimg" src="images/Gallery/PPSPool-640x480.jpg" />
         </a>
 
         <a class="gallerya" tabindex="1">
@@ -59,10 +59,10 @@
             <img class="galleryaimg" src="images/Gallery/Gite3.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Gitebed1.jpg" />
+            <img class="galleryaimg" src="images/Gallery/Oak.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Gitebed2.jpg" />
+            <img class="galleryaimg" src="images/Gallery/Pool.jpg" />
         </a>
         <span class="closed">+</span>
         <span class="closed-layer"></span>

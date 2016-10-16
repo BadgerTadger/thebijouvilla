@@ -92,22 +92,6 @@
     </style>
 
     <script lang="javascript" type="text/javascript">
-
-        var btoff = new Image();
-        var bton = new Image();
-
-        btoff.src = "../images/bouton-ok-off.gif";
-        bton.src = "../images/bouton-ok-on.gif";
-        var t = 0;
-
-        function zap(f) {
-            if (f.recherche1.value.length == 2) f.recherche2.focus();
-        }
-
-        function effacement() {
-            setTimeout("document.getElementById('alert').style.visibility='hidden'", 10000);
-        }
-
         $(document).ready(function () {
             var duration = 1000;
             $("#masque").delay(500).animate({

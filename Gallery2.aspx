@@ -16,11 +16,11 @@
     </table>
     <div class="gallery">
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Gitesunterrace.jpg" />
+            <img class="galleryaimg" src="images/Gallery/29A.jpg"></a>
         <a class="gallerya" tabindex="1">
             <img class="galleryaimg" src="images/Gallery/gorges%20Ardeche.jpg" />
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Kitchendining.jpg" />
+            <img class="galleryaimg" src="images/Gallery/5A.jpg" /></a>
         </a>
         <a class="gallerya" tabindex="1">
             <img class="galleryaimg" src="images/Gallery/languedoc-roussillon%201.jpg" />
@@ -40,13 +40,13 @@
         </a>
 
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Pool.jpg" />
+            <img class="galleryaimg" src="images/Gallery/avignon.png" />
         </a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Salon.jpg" />
+            <img class="galleryaimg" src="images/Gallery/Camargue1.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Salon2.jpg" />
+            <img class="galleryaimg" src="images/Gallery/ello-hdpi-5da91a04.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
             <img class="galleryaimg" src="images/Gallery/Sunflower%20region.jpg" />
