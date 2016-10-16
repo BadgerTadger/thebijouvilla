@@ -255,14 +255,15 @@ public class Tenant
         int retVal = -1;
         int tenantId = GetNextTenantID();
 
-        string query = @"INSERT INTO Tenants(TenantName,Address1,Address2,Town,City,County,PostCode,Country,Email,Landline,Mobile,Comments,PreviousTenant)
-                VALUES(?TenantName,?Address1,?Address2,?Town,?City,?County,?PostCode,?Country,?Email,?Landline,?Mobile,?Comments,?PreviousTenant)";
+        string query = @"INSERT INTO Tenants(TenantID,TenantName,Address1,Address2,Town,City,County,PostCode,Country,Email,Landline,Mobile,Comments,PreviousTenant)
+                VALUES(?TenantID,?TenantName,?Address1,?Address2,?Town,?City,?County,?PostCode,?Country,?Email,?Landline,?Mobile,?Comments,?PreviousTenant)";
 
         string connString = Utils.ConnString;
         using (MySqlConnection connection = new MySqlConnection(connString))
         {
             using (MySqlCommand command = new MySqlCommand(query, connection))
             {
+                command.Parameters.AddWithValue("?TenantID", tenantId);
                 command.Parameters.AddWithValue("?TenantName", _tenantName);
                 command.Parameters.AddWithValue("?Address1", _address1);
                 command.Parameters.AddWithValue("?Address2", _address2);
@@ -280,7 +281,7 @@ public class Tenant
                 {
                     connection.Open();
                     command.ExecuteNonQuery();
-                    retVal = Convert.ToInt32(command.LastInsertedId);
+                    retVal = tenantId;
                 }
                 catch (MySqlException ex)
                 {
