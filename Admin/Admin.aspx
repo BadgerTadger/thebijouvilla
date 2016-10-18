@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <link href="Content/Site.css" rel="stylesheet" />
+    <link href="../Content/Site.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script>
@@ -23,9 +22,28 @@
                 minDate: 2
             });
         });
+        $(function () {
+            $("#dialog-confirm").dialog({
+                resizable: false,
+                height: "auto",
+                width: 400,
+                modal: true,
+                buttons: {
+                    "Delete all items": function () {
+                        $(this).dialog("close");
+                    },
+                    Cancel: function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+        });
     </script>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div id="dialog-confirm" title="Delete The Entire Booking?">
+        <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 12px 12px 20px 0;"></span>The booking will be permanently deleted and cannot be recovered. Are you sure?</p>
+    </div>
     <div>
         <h2><%: Title %>.</h2>
         <div class="row">
@@ -83,7 +101,7 @@
                 &nbsp;
                 <asp:Button ID="btnUnconfirmAll" runat="server" Text="Unconfirm All Dates" OnClick="btnUnconfirmAll_Click" />
                 &nbsp;
-                <asp:Button ID="btnDeleteAll" runat="server" Text="Delete All Dates" OnClick="btnDeleteAll_Click" />
+                <asp:Button ID="btnDeleteAll" runat="server" Text="Delete Entire Booking" OnClientClick="confirmDeleteBooking();" OnClick="btnDeleteAll_Click" />
             </div>
         </div>
         <div runat="server" id="divAddDates" class="row" visible="false">

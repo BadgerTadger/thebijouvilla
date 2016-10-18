@@ -292,6 +292,10 @@ public partial class Admin_Admin : System.Web.UI.Page
         DateTime selDate = new DateTime(Calendar1.SelectedDate.Year, Calendar1.SelectedDate.Month, Calendar1.SelectedDate.Day);
         Utils.SelectedDate = selDate;
         GridView1.DataSource = null;
+        Utils.bookingID = 0;
+        Utils.tenantID = 0;
+        lblStatus.Text = "No Records Found";
+        divGrid.Visible = false;
         LoadBookingsGrid(Utils.SelectedDate);
         FillHolidayDataset();
     }
