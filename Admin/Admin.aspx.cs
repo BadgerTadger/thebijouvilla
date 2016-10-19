@@ -159,6 +159,8 @@ public partial class Admin_Admin : System.Web.UI.Page
     {
         Utils.SelectedDate = new DateTime();
         GridView1.DataSource = null;
+        lblStatus.Text = "No Records Found";
+        divGrid.Visible = false;
         LoadBookingsGrid(Utils.SelectedDate);
         FillHolidayDataset();
     }

@@ -22,37 +22,47 @@
                 minDate: 2
             });
         });
-        $(document).ready(function () {
+        $(function () {
+            $("[id*=btnDeleteAll]").removeAttr("onclick");
             $("#dialog").dialog({
+                modal: true,
                 autoOpen: false,
-                modal: true
+                title: "Delete The Entire Booking?",
+                width: 350,
+                height: 170,
+                buttons: [
+                {
+                    id: "Yes",
+                    text: "Yes",
+                    click: function () {
+                        $("[id*=btnDeleteAll]").attr("rel", "delete");
+                        $("[id*=btnDeleteAll]").click();
+                    }
+                },
+                {
+                    id: "No",
+                    text: "No",
+                    click: function () {
+                        $(this).dialog('close');
+                    }
+                }
+                ]
+            });
+            $("[id*=btnDeleteAll]").click(function () {
+                if ($(this).attr("rel") != "delete") {
+                    $('#dialog').dialog('open');
+                    return false;
+                } else {
+                    __doPostBack(this.name, '');
+                }
             });
         });
-
-        function confirmDelete() {
-            //$("#dialog").dialog({
-            //    buttons: {
-            //        "Confirm": function () {
-            //            $(this).dialog("close");
-            //            return true;
-            //        },
-            //        "Cancel": function () {
-            //            $(this).dialog("close");
-            //            return false;
-            //        }
-            //    }
-            //});
-
-            //$("#dialog").dialog("open");
-
-            return confirm("The booking will be permanently deleted and cannot be recovered. Are you sure?")
-        };
     </script>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-<%--    <div id="dialog" title="Delete The Entire Booking?">
+    <div id="dialog" style="display: none">
         <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 12px 12px 20px 0;"></span>The booking will be permanently deleted and cannot be recovered. Are you sure?</p>
-    </div>--%>
+    </div>
     <div>
         <h2><%: Title %>.</h2>
         <div class="row">
@@ -106,7 +116,7 @@
             <div class="col-md-12">
                 <asp:Button ID="btnAddDates" runat="server" Text="Add Dates To Booking" OnClick="btnAddDates_Click" />
                 &nbsp;
-                <asp:Button ID="btnConfirmAll" runat="server" Text="Confirm All Dates" OnClientClick="if (!confirmDelete()) return false;" OnClick="btnConfirmAll_Click" />
+                <asp:Button ID="btnConfirmAll" runat="server" Text="Confirm All Dates" OnClick="btnConfirmAll_Click" />
                 &nbsp;
                 <asp:Button ID="btnUnconfirmAll" runat="server" Text="Unconfirm All Dates" OnClick="btnUnconfirmAll_Click" />
                 &nbsp;
