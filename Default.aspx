@@ -196,7 +196,11 @@
             </tr>
             <tr>
                 <td></td>
-                <td height="50" colspan="3" class="gris11" style="text-align: center">Many thanks to Rodney Love for the beautiful photographs<br /><a href="https://ello.co/rodneylove">https://ello.co/rodneylove</a></td>
+                <td height="50" colspan="3" class="gris11" style="text-align: center">Many thanks to Rodney Love for the beautiful photographs<br /><a target="_blank" href="https://ello.co/rodneylove">https://ello.co/rodneylove</a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td height="50" colspan="3" class="gris8" style="text-align: right">Website by Daren Cantrell - 2016</td>
             </tr>
         </table>
     </div>

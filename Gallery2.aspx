@@ -9,14 +9,14 @@
         <tr>
             <td>&nbsp;</td>
             <td align="center" width="1000" valign="top">
-                Click on an image to see a larger version.
+                Click on an image to see a larger version
             </td>
             <td>&nbsp;</td>
         </tr>
     </table>
     <div class="gallery">
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/29A.jpg"></a>
+            <img class="galleryaimg" src="images/Gallery/Town.jpg"></a>
         <a class="gallerya" tabindex="1">
             <img class="galleryaimg" src="images/Gallery/gorges%20Ardeche.jpg" />
         <a class="gallerya" tabindex="1">
@@ -46,7 +46,7 @@
             <img class="galleryaimg" src="images/Gallery/Camargue1.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/ello-hdpi-5da91a04.jpg" />
+            <img class="galleryaimg" src="images/Gallery/Building.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
             <img class="galleryaimg" src="images/Gallery/Sunflower%20region.jpg" />

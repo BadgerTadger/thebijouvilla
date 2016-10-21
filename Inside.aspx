@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-    <h2><%: Title %>.</h2>
+    <h2><%: Title %></h2>
     <p><a href="Outside.aspx">Click here to see pictures of outside</a></p>
     <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
@@ -13,7 +13,7 @@
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p>
                     <strong>Salon: </strong>The salon has a magnificent cathedral ceiling and huge arched french windows opening onto the terrace and garden. 
-                    The beam adds character to the room without making it rustic. Features include A two seater sofa and three armchairs, 
+                    The beam adds character to the room without making it rustic. Features include a two seater sofa and three armchairs, 
                     coffee table. A 42" plasma TV/DVD/Home Cinema system, UK Freesat system as well as French channels. WI FI is available throughout the gite.
                 </p>
             </td>
@@ -40,7 +40,7 @@
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p>
-                    <strong>Kitchen: </strong>The kitchen is well equipped with a large fridge/freezer, electric cooker, gas oven, micro wave, a Nespresso machine, dishwasher, 
+                    <strong>Kitchen: </strong>The kitchen is well equipped with a large fridge/freezer, electric cooker, micro wave, a Nespresso machine, toaster, kettle, dishwasher, 
                     washing machine, a fixed table for 4, plenty of crockery and kitchen appliances, iron and ironing board
                 </p>
             </td>

@@ -9,7 +9,7 @@
         <tr>
             <td>&nbsp;</td>
             <td align="center" width="1000" valign="top">
-                Click on an image to see a larger version.
+                Click on an image to see a larger version
             </td>
             <td>&nbsp;</td>
         </tr>

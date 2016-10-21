@@ -76,7 +76,8 @@
                                 Use the calendar to the right to find available dates.<br />
                                 Dates shown in Pink are provisionally booked.<br />
                                 (Please email us at <a href="mailto:info@thebijouvilla.com">info@thebijouvilla.com</a> if you would like to be contacted if these dates become available.)<br />
-                                Dates shown in red are not available.
+                                Dates shown in red are not available.<br />
+                                On receipt of your reservation, we will e-mail you with payment details so that you can confirm your booking. Reservations are held for one week and confirmed upon proof of payment.
                             </p>
                         </td>
                         <td>&nbsp;</td>
@@ -102,7 +103,7 @@
                     </tr>
                     <tr>
                         <td align="center" colspan="2">
-                            <h4>Please complete the form below and click the &quot;Book&quot; button at the bottom.</h4>
+                            <h4>Please complete the form below and click the &quot;Reservation&quot; button at the bottom.</h4>
                         </td>
                     </tr>
                     <tr>
@@ -237,7 +238,7 @@
                 </table>
                 <asp:Label ID="lblWarning" CssClass="WarningText" runat="server" Text="" Visible="false"></asp:Label>
                 <p>
-                    <asp:Button ID="btnBook" runat="server" Text="Book" OnClick="btnBook_Click" />
+                    <asp:Button ID="btnBook" runat="server" Text="Reservation" OnClick="btnBook_Click" />
                     <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" />
                 </p>
             </td>

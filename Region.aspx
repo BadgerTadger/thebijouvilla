@@ -40,7 +40,7 @@
                 <p>Call in at Arles on the way back and have a look at the Roman theatre, amphitheatre and the museum of ancient history. Be aware at Easter and the first week of September when they have "Bull running" in the streets preceding each Corrida.</p>
                 <p>The Dutch impressionist Van Gogh lived at Arles and completed much of his better known work here. The town is justifiably proud of its artistic cultural links displaying much of Vincent's presence here. Oddly, none of his works are on display at Arles!</p>
                 <p>Golf, kayaking, swimming, hiking, cycling, tennis, nature walks and wine tastings are amongst the more popular pursuits in the region.</p>
-                <p>Near Gaujac you will find three of the officially nominated “Ten most beautiful villages of France” (Aigueze, La Roque sur Ceze, Montclus).</p>
+                <p>Near Gaujac you will find four of the officially nominated “Ten most beautiful villages of France” (Aigueze, La Roque sur Ceze, Montclus and Lussan).</p>
             </td>
         </tr>
     </table>

@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-    <h2><%: Title %>.</h2>
+    <h2><%: Title %></h2>
     <p><a href="Inside.aspx">Click here to see pictures of inside</a></p>
     <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
@@ -34,7 +34,7 @@
                 <p></p>
             </td>
         </tr>
-        <tr>
+<%--        <tr>
             <td style="padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px">
                 <img src="../images/Bacchus-480x480.jpg" width="450" alt="Outside" title="Outside" border="0" />
             </td>
@@ -50,7 +50,7 @@
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p></p>
             </td>
-        </tr>
+        </tr>--%>
         <tr>
             <td width="50%" style="padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px">
                 <img src="../images/14_SMALL.jpg" width="450" alt="Outside" title="Outside" border="0" />
@@ -99,8 +99,8 @@
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p>
                     <strong>The Garden and Views: </strong>Thanks to the loving care of the British owners the garden has a provencal feel with olive trees, 
-                    vine and Mediteranean plants among typical slate walls but is lush enough to provide a profusion of colours and fragrances throughout the year.  
-                    It sets up beautifully the views of rolling hills.<br />
+                    vines and Mediteranean plants among typical stone walls but is lush enough to provide a profusion of colours and fragrances throughout the year.  
+                    It sets up beautifully the views of the rolling hills.<br />
                     The sunsets are spectacular with a different stunning twilight every evening as the sun sinks behind the Oppidum (Roman ruins), bathing the villa in a golden glow.
                 </p>
             </td>
