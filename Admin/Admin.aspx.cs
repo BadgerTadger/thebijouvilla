@@ -592,6 +592,7 @@ public partial class Admin_Admin : System.Web.UI.Page
     {
         Booking booking = new Booking(Utils.bookingID);
         booking.Delete();
+        divGrid.Visible = false;
         LoadBookingsGrid(Utils.SelectedDate);
         FillHolidayDataset();
     }
