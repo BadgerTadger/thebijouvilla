@@ -286,7 +286,7 @@ public partial class Admin_Admin : System.Web.UI.Page
         txtLandline.Text = tenant.Landline;
         txtMobile.Text = tenant.Mobile;
         txtComments.Text = tenant.Comments;
-        chkPreviousTenant.Checked = tenant.PreviousTenant;
+        //chkPreviousTenant.Checked = tenant.PreviousTenant;
     }
 
     protected void Calendar1_SelectionChanged(object sender, EventArgs e)
@@ -426,7 +426,8 @@ public partial class Admin_Admin : System.Web.UI.Page
         string landline = txtLandline.Text;
         string mobile = txtMobile.Text;
         string comments = txtComments.Text;
-        bool previousTenant = chkPreviousTenant.Checked;
+        //bool previousTenant = chkPreviousTenant.Checked;
+        bool previousTenant = false;
         cn.Open();
         string sqlCmd = @"UPDATE Tenants Set TenantName = ?TenantName, Address1 = ?Address1, Address2 = ?Address2,
                         Town = ?Town, City = ?City, County = ?County, PostCode = ?Postcode, Country = ?Country,

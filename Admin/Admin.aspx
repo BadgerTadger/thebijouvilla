@@ -258,14 +258,14 @@
                             <asp:TextBox TextMode="MultiLine" Rows="3" runat="server" ID="txtComments" Width="250" />
                         </asp:TableCell>
                     </asp:TableRow>
-                    <asp:TableRow>
+<%--                    <asp:TableRow>
                         <asp:TableCell>
                             <asp:Label runat="server">Previous Tenant?</asp:Label>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:CheckBox ID="chkPreviousTenant" runat="server" />
                         </asp:TableCell>
-                    </asp:TableRow>
+                    </asp:TableRow>--%>
                 </asp:Table>
                 <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
                 &nbsp;

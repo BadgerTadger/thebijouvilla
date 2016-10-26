@@ -52,7 +52,7 @@
                     <tr>
                         <td colspan="3">
                             <p>
-                                <strong>Rates for 2017.</strong><br />
+                                <strong>Rates for 2017</strong><br />
                                 January to April €1000 per week.*<br />
                                 May and June €1250 per week.*<br />
                                 July and August €1550 per week.<br />
@@ -64,9 +64,9 @@
                     <tr>
                         <td colspan="3">
                             <p>
-                                <strong>Bookings are 1600 Saturday to 1100 Saturday.</strong><br />
+                                <strong>Bookings are 1600 Saturday to 1100 Saturday</strong><br />
                                 For off-peak periods marked * shorter periods may be possible.<br />
-                                To confirm availability, request a booking or to request availability and rates for shorter periods, use the request form below or e mail the owners at <a href="mailto:info@thebijouvilla.com">info@thebijouvilla.com</a>
+                                To confirm availability, request a booking or to request availability and rates for shorter periods, use the request form below or e-mail the owners at <a href="mailto:info@thebijouvilla.com">info@thebijouvilla.com</a>
                             </p>
                         </td>
                     </tr>
@@ -74,7 +74,7 @@
                         <td style="vertical-align: top">
                             <p>
                                 Use the calendar to the right to find available dates.<br />
-                                Dates shown in Pink are provisionally booked.<br />
+                                Dates shown in pink are provisionally booked.<br />
                                 (Please email us at <a href="mailto:info@thebijouvilla.com">info@thebijouvilla.com</a> if you would like to be contacted if these dates become available.)<br />
                                 Dates shown in red are not available.<br />
                                 On receipt of your reservation, we will e-mail you with payment details so that you can confirm your booking. Reservations are held for one week and confirmed upon proof of payment.

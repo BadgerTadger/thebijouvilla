@@ -11,7 +11,8 @@
                     The Bijou is an elegant villa located within the extraordinary beauty, tranquillity and opulence of Languedoc Roussillon, France.
                 <p>
                     Although connected to the owners' house via a covered terrace, The Bijou is an independent dwelling with its own gates, driveway, parking for 3 cars and entrance door.
-                    <br />
+                </p>
+                <p>
                     Relax, barbecue and dine alfresco under the magnificent 300 year old oak tree after an energetic game of Petanque!
                 <p>
                     The views are spectacular with a different stunning twilight every evening as the sun sinks behind the Oppidum (Roman ruins), bathing the villa in a golden glow. 
@@ -45,7 +46,7 @@
                     A fully fitted dining/kitchen area and a magnificent salon with a "cathedral" ceiling.
                 </p>
                 <p>
-                    Features include Electric cooker, microwave oven, fridge-freezer, dishwasher, washing machine, Nespresso coffee machine. There is also a 4-burner gas barbeque on the covered terrace.
+                    Features include: electric cooker, microwave oven, fridge-freezer, dishwasher, washing machine, Nespresso coffee machine. There is also a 4-burner gas barbeque on the covered terrace.
                 </p>
                 <p>
                     For your comfort you will find Wi-Fi access, a 42" plasma TV/DVD/Home Cinema system and a UK Freesat system.
@@ -67,7 +68,7 @@
                 <p>
                     On request we will gladly shop for your first necessity before your arrival.
                     <br />
-                    Bookings for the Gaujac restaurant ‘La Maison’, need to be made well in advance.
+                    Bookings for the Gaujac restaurant ‘La Maison’ need to be made well in advance.
                     <br />
                     Should you wish to enjoy manicure, pedicure, head massage, it can be arranged for you.
                     <br />
@@ -76,7 +77,7 @@
                 <p>
                     The Bijou has been designed to comfortably accommodate four adults. 
                     <br />
-                    is a non-smoking villa and no pets are allowed as 3 pussy cats are living next door. 
+                    It is a non-smoking villa and no pets are allowed as 3 pussy cats are living next door. 
                     <br />
                     We regret that the villa is not wheelchair friendly and a car is highly desirable (available to rent at airports and TGV stations).
                 </p>
