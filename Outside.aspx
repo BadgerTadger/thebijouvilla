@@ -99,7 +99,7 @@
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p>
                     <strong>The Garden and Views: </strong>Thanks to the loving care of the British owners the garden has a provencal feel with olive trees, 
-                    vines and Mediteranean plants among typical stone walls but is lush enough to provide a profusion of colours and fragrances throughout the year.  
+                    vines and Mediterranean plants among typical stone walls but is lush enough to provide a profusion of colours and fragrances throughout the year.  
                     It sets up beautifully the views of the rolling hills.<br />
                     The sunsets are spectacular with a different stunning twilight every evening as the sun sinks behind the Oppidum (Roman ruins), bathing the villa in a golden glow.
                 </p>

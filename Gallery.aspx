@@ -16,53 +16,53 @@
     </table>
     <div class="gallery">
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Salon2.jpg" />
+            <img class="galleryaimg" src="images/Gallery/Town.jpg"></a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Kitchendining.jpg" />
+            <img class="galleryaimg" src="images/Gallery/gorges%20Ardeche.jpg" />
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Diningsalon.jpg" />
+            <img class="galleryaimg" src="images/Gallery/5A.jpg" /></a>
         </a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Salon.jpg" />
-        </a>
-
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Gitebed1.jpg" />
-        </a>
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Diningkitchen.jpg" />
-        </a>
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Gitebed2.jpg" />
-        </a>
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/25_SMALL.jpg" />
+            <img class="galleryaimg" src="images/Gallery/languedoc-roussillon%201.jpg" />
         </a>
 
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Covered%20terrace.jpg" />
+            <img class="galleryaimg" src="images/Gallery/lavender%20region.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Gitesunterrace.jpg" />
-        </a>
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/14_SMALL.jpg" />
-        </a>
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/PPSPool-640x480.jpg" />
-        </a>
-
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Gite2.jpg" />
-        </a>
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Gite3.jpg" />
+            <img class="galleryaimg" src="images/Gallery/Nimes.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
             <img class="galleryaimg" src="images/Gallery/Oak.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Pool.jpg" />
+            <img class="galleryaimg" src="images/Gallery/Pont%20du%20Gard%20free.jpg" />
+        </a>
+
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/avignon.png" />
+        </a>
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/Camargue1.jpg" />
+        </a>
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/Building.jpg" />
+        </a>
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/Sunflower%20region.jpg" />
+        </a>
+
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/Uzes%20atmosphere.jpg" />
+        </a>
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/Uzes%20market.jpg" />
+        </a>
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/uzes%20market2.jpg" />
+        </a>
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/uzesmarket3.jpg" />
         </a>
         <span class="closed">+</span>
         <span class="closed-layer"></span>
@@ -82,4 +82,3 @@
         </table>
     </div>
 </asp:Content>
-

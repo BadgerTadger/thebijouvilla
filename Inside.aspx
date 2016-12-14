@@ -14,7 +14,7 @@
                 <p>
                     <strong>Salon: </strong>The salon has a magnificent cathedral ceiling and huge arched french windows opening onto the terrace and garden. 
                     The beam adds character to the room without making it rustic. Features include a two seater sofa and three armchairs, 
-                    coffee table. A 42" plasma TV/DVD/Home Cinema system, UK Freesat system as well as French channels. WI FI is available throughout the gite.
+                    coffee table. A 42" plasma TV/DVD/Home Cinema system and UK Freesat system. WI FI is available throughout the gite.
                 </p>
             </td>
         </tr>
