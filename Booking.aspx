@@ -51,14 +51,126 @@
                 <table style="width: 80%; height: 100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td colspan="3">
-                            <p>
-                                <strong>Rates for 2017.</strong><br />
-                                January to April €1000 per week.*<br />
-                                May and June €1250 per week.*<br />
-                                July and August €1550 per week.<br />
-                                September and October €1250 per week.*<br />
-                                November and December €1000 per week.*<br />
-                            </p>
+                            <table style="width: 100%; height: 100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td colspan="3">
+                                        <p>
+                                            <strong>Rates for 2017.</strong><br />
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Rate Period</strong></td>
+                                    <td><strong>Minimum Rate</strong></td>
+                                    <td><strong>Additional Night</strong></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Low Season</strong></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>31-Dec-2016 - 29-Apr-2017</td>
+                                    <td>&#8364;428.58</td>
+                                    <td>From &#8364;142.86</td>
+                                </tr>
+                                <tr>
+                                    <td><em>3 nights minimum stay</em></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Mid Season</strong></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>30-Apr-2017 - 03-Jun-2017</td>
+                                    <td>&#8364;471.42</td>
+                                    <td>From &#8364;157.14</td>
+                                </tr>
+                                <tr>
+                                    <td><em>3 nights minimum stay</em></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>High Season</strong></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>4-Jun-2017 - 23-Sep-2017</td>
+                                    <td>&#8364;1249.99</td>
+                                    <td>From &#8364;178.57</td>
+                                </tr>
+                                <tr>
+                                    <td><em>7 nights minimum stay</em></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Autumn</strong></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>24-Sep-2017 - 28-Oct-2017</td>
+                                    <td>&#8364;471.42</td>
+                                    <td>From &#8364;157.14</td>
+                                </tr>
+                                <tr>
+                                    <td><em>3 nights minimum stay</em></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Winter</strong></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>29-Oct-2016 - 30-Dec-2017</td>
+                                    <td>&#8364;428.58</td>
+                                    <td>From &#8364;142.86</td>
+                                </tr>
+                                <tr>
+                                    <td><em>3 nights minimum stay</em></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>My standard rate</strong></td>
+                                    <td>&#8364;1000.02</td>
+                                    <td>From &#8364;142.86</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <p>&nbsp;</p>
                         </td>
                     </tr>
                     <tr>
@@ -78,6 +190,11 @@
                                 (Please email us at <a href="mailto:info@thebijouvilla.com">info@thebijouvilla.com</a> if you would like to be contacted if these dates become available.)<br />
                                 Dates shown in red are not available.<br />
                                 On receipt of your reservation, we will e-mail you with payment details so that you can confirm your booking. Reservations are held for one week and confirmed upon proof of payment.
+                            </p>
+                            <p>
+                                <strong>Payment Terms</strong><br />
+                                50&#37; at Booking<br />
+                                50&#37; 60 days before arrival
                             </p>
                         </td>
                         <td>&nbsp;</td>
