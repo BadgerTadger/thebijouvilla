@@ -171,21 +171,12 @@
                     <tr>
                         <td colspan="3">
                             <p>&nbsp;</p>
-                            <p>
-                                <strong>Rates for 2017</strong><br />
-                                January to April €1000 per week.*<br />
-                                May and June €1250 per week.*<br />
-                                July and August €1550 per week.<br />
-                                September and October €1250 per week.*<br />
-                                November and December €1000 per week.*<br />
-                            </p>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="3">
                             <p>
                                 <strong>Bookings are 1600 Saturday to 1100 Saturday</strong><br />
-                                For off-peak periods marked * shorter periods may be possible.<br />
                                 To confirm availability, request a booking or to request availability and rates for shorter periods, use the request form below or e-mail the owners at <a href="mailto:info@thebijouvilla.com">info@thebijouvilla.com</a>
                             </p>
                         </td>
