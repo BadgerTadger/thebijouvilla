@@ -81,7 +81,9 @@
                     <br />
                     We regret that the villa is not wheelchair friendly and a car is highly desirable (available to rent at airports and TGV stations).
                 </p>
-                </>
+                <p>
+                    Languages spoken, English, French, German and Italian.
+                </p>
             </td>
         </tr>
     </table>

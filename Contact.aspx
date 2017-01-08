@@ -20,4 +20,5 @@
         <strong>Email:</strong>   <a href="mailto:info@thebijouvilla.com">info@thebijouvilla.com</a><br />
     </address>
     <h3>By filling the form under bookings</h3>
+    <p>Languages spoken, English, French, German and Italian.</p>
 </asp:Content>
