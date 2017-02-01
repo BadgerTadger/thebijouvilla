@@ -43,6 +43,7 @@
                 <p>The Dutch impressionist Van Gogh lived at Arles and completed much of his better known work here. The town is justifiably proud of its artistic cultural links displaying much of Vincent's presence here. Oddly, none of his works are on display at Arles!</p>
                 <p>Golf, kayaking, swimming, hiking, cycling, tennis, nature walks and wine tastings are amongst the more popular pursuits in the region.</p>
                 <p>Near Gaujac you will find four of the officially nominated “Ten most beautiful villages of France” (Aigueze, La Roque sur Ceze, Montclus and Lussan).</p>
+                <p>If you are taken by the romantic landscapes of 'First dates hotel' on Channel 4, then be aware that the village is close by and even reachable by bicycle.</p>
             </td>
         </tr>
     </table>

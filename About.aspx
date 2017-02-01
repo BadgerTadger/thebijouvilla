@@ -10,7 +10,7 @@
                 <p>
                     The Bijou is an elegant villa located within the extraordinary beauty, tranquillity and opulence of Languedoc Roussillon, France.
                 <p>
-                    Although connected to the owners' house via a covered terrace, The Bijou is an independent dwelling with its own gates, driveway, parking for 3 cars and entrance door.
+                    The Bijou is an independent dwelling with it's own gates, driveway, parking for 3 cars and entrance door. The owners live conveniently next door and are therefore available to offer help and suggestions to maximise your holiday experience.
                 </p>
                 <p>
                     Relax, barbecue and dine alfresco under the magnificent 300 year old oak tree after an energetic game of Petanque!
@@ -81,9 +81,7 @@
                     <br />
                     We regret that the villa is not wheelchair friendly and a car is highly desirable (available to rent at airports and TGV stations).
                 </p>
-                <p>
-                    Languages spoken, English, French, German and Italian.
-                </p>
+                </>
             </td>
         </tr>
     </table>
