@@ -61,10 +61,20 @@ A {
     color: #5e5e5e;
 }
 
-    A:hover {
-        text-decoration: none;
-        color: #0e0e0e;
-    }
+A:hover {
+    text-decoration: none;
+    color: #0e0e0e;
+}
+
+.ObviousLink {
+    text-decoration: none;
+    color: #0e0e0e;
+}
+
+.ObviousLink:hover {
+    text-decoration: none;
+    color: royalblue;
+}
 
 .pagination {
     text-decoration: none;

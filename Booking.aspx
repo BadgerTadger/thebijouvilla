@@ -218,8 +218,14 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td align="center" colspan="2">
-                            <h4>Please complete the form below and click the &quot;Reservation&quot; button at the bottom.</h4>
+                        <td colspan="2">
+                            <strong>To make an online reservation with credit card payment, please visit our property on 
+                            <a class="ObviousLink" href="https://homeaway.co.uk/p6883483">Homeaway.co.uk</a></strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <strong>Alternatively, please complete the form below and click the &quot;Reservation&quot; button at the bottom.</strong>
                         </td>
                     </tr>
                     <tr>
