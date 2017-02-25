@@ -77,8 +77,8 @@
                                 </tr>
                                 <tr>
                                     <td>31-Dec-2016 - 29-Apr-2017</td>
-                                    <td>&#8364;428.58</td>
-                                    <td>From &#8364;142.86</td>
+                                    <td>&#8364;507.00</td>
+                                    <td>From &#8364;169.00</td>
                                 </tr>
                                 <tr>
                                     <td><em>3 nights minimum stay</em></td>
@@ -95,8 +95,8 @@
                                 </tr>
                                 <tr>
                                     <td>30-Apr-2017 - 03-Jun-2017</td>
-                                    <td>&#8364;471.42</td>
-                                    <td>From &#8364;157.14</td>
+                                    <td>&#8364;555.00</td>
+                                    <td>From &#8364;185.00</td>
                                 </tr>
                                 <tr>
                                     <td><em>3 nights minimum stay</em></td>
@@ -113,8 +113,8 @@
                                 </tr>
                                 <tr>
                                     <td>4-Jun-2017 - 23-Sep-2017</td>
-                                    <td>&#8364;1249.99</td>
-                                    <td>From &#8364;178.57</td>
+                                    <td>&#8364;1477.00</td>
+                                    <td>From &#8364;211.00</td>
                                 </tr>
                                 <tr>
                                     <td><em>7 nights minimum stay</em></td>
@@ -131,8 +131,8 @@
                                 </tr>
                                 <tr>
                                     <td>24-Sep-2017 - 28-Oct-2017</td>
-                                    <td>&#8364;471.42</td>
-                                    <td>From &#8364;157.14</td>
+                                    <td>&#8364;555.00</td>
+                                    <td>From &#8364;185.00</td>
                                 </tr>
                                 <tr>
                                     <td><em>3 nights minimum stay</em></td>
@@ -149,8 +149,8 @@
                                 </tr>
                                 <tr>
                                     <td>29-Oct-2016 - 30-Dec-2017</td>
-                                    <td>&#8364;428.58</td>
-                                    <td>From &#8364;142.86</td>
+                                    <td>&#8364;507.00</td>
+                                    <td>From &#8364;169.00</td>
                                 </tr>
                                 <tr>
                                     <td><em>3 nights minimum stay</em></td>
@@ -162,8 +162,8 @@
                                 </tr>
                                 <tr>
                                     <td><strong>My standard rate</strong></td>
-                                    <td>&#8364;1000.02</td>
-                                    <td>From &#8364;142.86</td>
+                                    <td>&#8364;1183.00</td>
+                                    <td>From &#8364;169.00</td>
                                 </tr>
                             </table>
                         </td>
