@@ -5,55 +5,64 @@
     <link rel="stylesheet" href="Content/Gallery.css" type="text/css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <table style="width: 100%; height: 100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>&nbsp;</td>
+            <td align="center" width="1000" valign="top">
+                Cliquez sur une image pour l'agrandir
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
     <div class="gallery">
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/29A.jpg"></a>
+            <img class="galleryaimg" src="images/Gallery/Town.jpg"></a>
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/gorges%20Ardeche.jpg" />
         <a class="gallerya" tabindex="1">
             <img class="galleryaimg" src="images/Gallery/5A.jpg" /></a>
+        </a>
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/languedoc-roussillon%201.jpg" />
+        </a>
+
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/lavender%20region.jpg" />
+        </a>
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/Nimes.jpg" />
+        </a>
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/Oak.jpg" />
+        </a>
+        <a class="gallerya" tabindex="1">
+            <img class="galleryaimg" src="images/Gallery/Pont%20du%20Gard%20free.jpg" />
+        </a>
+
         <a class="gallerya" tabindex="1">
             <img class="galleryaimg" src="images/Gallery/avignon.png" />
         </a>
         <a class="gallerya" tabindex="1">
             <img class="galleryaimg" src="images/Gallery/Camargue1.jpg" />
         </a>
-
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Covered%20terrace.jpg" />
+            <img class="galleryaimg" src="images/Gallery/Building.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Diningkitchen.jpg" />
-        </a>
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Diningsalon.jpg" />
-        </a>
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/ello-hdpi-5da91a04.jpg" />
+            <img class="galleryaimg" src="images/Gallery/Sunflower%20region.jpg" />
         </a>
 
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/ello-hdpi-cfb7fb3f.jpg" />
+            <img class="galleryaimg" src="images/Gallery/Uzes%20atmosphere.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/ello-hdpi-eac18384.jpg" />
+            <img class="galleryaimg" src="images/Gallery/Uzes%20market.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Gaujac%20castle.jpg" />
+            <img class="galleryaimg" src="images/Gallery/uzes%20market2.jpg" />
         </a>
         <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Gaujac%20village.jpg" />
-        </a>
-
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Gite2.jpg" />
-        </a>
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Gite3.jpg" />
-        </a>
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Gitebed1.jpg" />
-        </a>
-        <a class="gallerya" tabindex="1">
-            <img class="galleryaimg" src="images/Gallery/Gitebed2.jpg" />
+            <img class="galleryaimg" src="images/Gallery/uzesmarket3.jpg" />
         </a>
         <span class="closed">+</span>
         <span class="closed-layer"></span>
@@ -69,10 +78,6 @@
             <tr>
                 <td></td>
                 <td colspan="3" class="gris11" style="text-align: center"><a href="Gallery2Fr.aspx">Page 2&nbsp;&gt;&gt;</a></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td height="50" colspan="3" class="gris11" style="text-align: center">Photographies de Rodney Love <a href="https://ello.co/rodneylove">https://ello.co/rodneylove</a></td>
             </tr>
         </table>
     </div>

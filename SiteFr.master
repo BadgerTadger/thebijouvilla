@@ -46,14 +46,6 @@
                             <img src="/images/drapeau-uk-off.gif" alt="version anglaise " border="0" /></a>
                         </td>
                         <td align="left" width="80">
-                            <div id="divAnonymous" runat="server">
-                                <a runat="server" href="~/Account/Login">Log in</a>
-                            </div>
-                            <div id="divLoggedIn" runat="server" visible="false">
-                                <a runat="server" href="~/Account/Login?l=1">Log off</a>
-                                &nbsp;
-                                <a runat="server" href="~/Admin/Admin.aspx">Admin</a>
-                            </div>
                         </td>
                     </tr>
                     <tr>

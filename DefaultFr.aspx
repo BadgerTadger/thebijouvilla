@@ -212,7 +212,11 @@
             </tr>
             <tr>
                 <td></td>
-                <td height="50" colspan="3" class="gris11" style="text-align: center">Photographies de Rodney Love <a href="https://ello.co/rodneylove">https://ello.co/rodneylove</a></td>
+                <td height="50" colspan="3" class="gris11" style="text-align: center">Merci beaucoup à Rodney Love pour les belles photos<br /><a target="_blank" href="https://ello.co/rodneylove">https://ello.co/rodneylove</a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td height="50" colspan="3" class="gris8" style="text-align: right">Site web par Daren Cantrell - 2016</td>
             </tr>
         </table>
     </div>

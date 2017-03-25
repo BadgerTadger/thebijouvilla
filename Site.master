@@ -43,9 +43,9 @@
                         <td align="left" width="55"><a href="/gallery.aspx">GALLERY</a></td>
                         <td align="left" width="60"><a href="/contact.aspx">CONTACT</a></td>
                         <td align="left" width="130">&nbsp;
-<%--                            <a href="/DefaultFr.aspx">
+                            <a href="/DefaultFr.aspx">
                                 <img src="/images/drapeau-fr-off.gif" alt="french version " border="0" />
-                            </a>--%>
+                            </a>
                         </td><%-- Above column widths should total 460 --%>
                         <td align="left" width="80">
                             <div id="divAnonymous" runat="server">
