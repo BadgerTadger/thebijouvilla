@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Réservation" Language="C#" MasterPageFile="~/SiteFr.master" AutoEventWireup="true" CodeFile="BookingFr.aspx.cs" Inherits="BookingFr" %>
+﻿<%@ Page Title="Réservations" Language="C#" MasterPageFile="~/SiteFr.master" AutoEventWireup="true" CodeFile="BookingFr.aspx.cs" Inherits="BookingFr" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta charset="utf-8">
@@ -63,25 +63,25 @@
                                     <td colspan="3">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Période de taux</strong></td>
-                                    <td><strong>Taux minimum</strong></td>
-                                    <td><strong>Nuit supplémentaire</strong></td>
+                                    <td><strong>Période</strong></td>
+                                    <td><strong>Tarif</strong></td>
+                                    <td><strong>Nuit suppl.</strong></td>
                                 </tr>
                                 <tr>
                                     <td colspan="3">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Basse saison</strong></td>
+                                    <td><strong>Hiver</strong></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td>31-Dec-2016 - 29-Apr-2017</td>
+                                    <td>31.12.2016 - 29.04.2017</td>
                                     <td>&#8364;429.00</td>
-                                    <td>De &#8364;143.00</td>
+                                    <td>&#8364;143.00</td>
                                 </tr>
                                 <tr>
-                                    <td><em>3 nuits minimum de séjour</em></td>
+                                    <td><em>3 nuits min.</em></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
@@ -89,17 +89,17 @@
                                     <td colspan="3">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Mi-saison</strong></td>
+                                    <td><strong>Printemps</strong></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td>30-Apr-2017 - 03-Jun-2017</td>
+                                    <td>30.04.2017 - 03.06.2017</td>
                                     <td>&#8364;471.00</td>
-                                    <td>De &#8364;157.00</td>
+                                    <td>&#8364;157.00</td>
                                 </tr>
                                 <tr>
-                                    <td><em>3 nuits minimum de séjour</em></td>
+                                    <td><em>3 nuits min.</em></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
@@ -107,17 +107,17 @@
                                     <td colspan="3">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Haute saison</strong></td>
+                                    <td><strong>Eté</strong></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td>4-Jun-2017 - 23-Sep-2017</td>
+                                    <td>04.06.2017 - 23.09.2017</td>
                                     <td>&#8364;1250.00</td>
-                                    <td>De &#8364;179.00</td>
+                                    <td>&#8364;179.00</td>
                                 </tr>
                                 <tr>
-                                    <td><em>7 nuits minimum de séjour</em></td>
+                                    <td><em>7 nuits min.</em></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
@@ -125,17 +125,17 @@
                                     <td colspan="3">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>L'automne</strong></td>
+                                    <td><strong>Automne</strong></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td>24-Sep-2017 - 28-Oct-2017</td>
+                                    <td>24.09.2017 - 28.10.2017</td>
                                     <td>&#8364;471.00</td>
-                                    <td>De &#8364;157.00</td>
+                                    <td>&#8364;157.00</td>
                                 </tr>
                                 <tr>
-                                    <td><em>3 nuits minimum de séjour</em></td>
+                                    <td><em>3 nuits min.</em></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
@@ -148,12 +148,12 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td>29-Oct-2016 - 30-Dec-2017</td>
+                                    <td>29.10.2017 - 30.12.2017</td>
                                     <td>&#8364;429.00</td>
-                                    <td>De &#8364;143.00</td>
+                                    <td>&#8364;143.00</td>
                                 </tr>
                                 <tr>
-                                    <td><em>3 nuits minimum de séjour</em></td>
+                                    <td><em>3 nuits min.</em></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
@@ -161,9 +161,9 @@
                                     <td colspan="3">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Mon taux standard</strong></td>
+                                    <td><strong>Tarif hebdomadaire moyen</strong></td>
                                     <td>&#8364;1000.00</td>
-                                    <td>De &#8364;143.00</td>
+                                    <td>&#8364;143.00</td>
                                 </tr>
                             </table>
                         </td>
@@ -176,25 +176,24 @@
                     <tr>
                         <td colspan="3">
                             <p>
-                                <strong>Les réservations sont 1600 samedi à 1100 samedi</strong><br />
-                                Pour confirmer la disponibilité, demander une réservation ou demander disponibilité et tarifs pour des périodes plus courtes, utilisez le formulaire de demande ci-dessous ou envoyez un courriel aux propriétaires à <a href="mailto:info@thebijouvilla.com">info@thebijouvilla.com</a>
+                                <strong>Réservations du Samedi 16h au Samedi 11h</strong><br />
+                                Pour demander la disponibilité et les conditions pour une période plus courte ou pour confirmer une réservation, merci d’utiliser le formulaire ci-dessous ou faire la demande par courriel adressé à <a href="mailto:info@thebijouvilla.com">info@thebijouvilla.com</a>
                             </p>
                         </td>
                     </tr>
                     <tr>
                         <td style="vertical-align: top">
                             <p>
-                                Utilisez le calendrier à droite pour trouver les dates disponibles.<br />
-                                Les dates indiquées en rose sont provisoirement réservées.<br />
-                                (Envoyez-nous un courriel à <a href="mailto:info@thebijouvilla.com">info@thebijouvilla.com</a> Si vous souhaitez être contacté si ces dates deviennent disponibles.)<br />
-                                Les dates indiquées en rouge ne sont pas disponibles.<br />
-                                Dès réception de votre réservation, nous vous enverrons un e-mail avec les détails du paiement afin que vous puissiez confirmer votre réservation. 
-                                Les réservations sont conservées pendant une semaine et confirmées sur preuve de paiement.
+                                Vous pouvez consulter le calendrier ci-joint.<br />
+                                Les dates en rose sont réservées temporairement (merci de nous consulter pour une confirmation)<br />
+                                Les dates en rouges ne sont plus disponibles.<br />
+                                Avec la  confirmation de la disponibilité,  nous vous enverrons les détails pour effectuer le paiement afin de confirmer votre réservation. 
+                                Les réservations sont bloquées une semaine, dans l’attente de la copie de votre paiement.
                             </p>
                             <p>
-                                <strong>Modalités de paiement</strong><br />
-                                50&#37; À la réservation<br />
-                                50&#37; 60 jours avant l'arrivée
+                                <strong>Conditions de paiements</strong><br />
+                                50&#37; à la réservation<br />
+                                50&#37; 60 jours avant votre arrivée.
                             </p>
                         </td>
                         <td>&nbsp;</td>
@@ -220,7 +219,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <strong>Pour effectuer une réservation en ligne avec paiement par carte de crédit, veuillez visiter notre site sur Homeaway.fr en cliquant sur le lien suivant ou en le collant dans votre navigateur: 
+                            <strong>Le paiement en ligne avec carte de crédit, peut se faire avec Home Away où nous  sommes listés en cliquant sur: 
                             <a class="ObviousLink" target="_blank" href="http://www.homeaway.co.uk/p6883483">http://www.homeaway.co.uk/p6883483</a></strong>
                         </td>
                     </tr>
@@ -230,19 +229,19 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <strong>Vous pouvez aussi remplir le formulaire ci-dessous et cliquer sur le bouton &quot;Réservation&quot; Bouton en bas.</strong>
+                            <strong>Ou en complétant le formulaire ci-dessous en cliquant sur la touche &quot;Réservation&quot;.</strong>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <p>
-                                Sélectionnez le début de la semaine que vous aimeriez séjourner à The Bijou.
+                                Sélectionnez le premier jour de la période  qui vous intéresse.
                             </p>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="Label1" runat="server" Text="Date de début (cliquez pour sélectionner)"></asp:Label>
+                            <asp:Label ID="Label1" runat="server" Text="Début de la période"></asp:Label>
                         </td>
                         <td>
                             <asp:TextBox ID="txtStartDate" runat="server"></asp:TextBox>
@@ -251,12 +250,12 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <h4>About you:</h4>
+                            <h4>Vos données :</h4>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="Label3" runat="server" Text="Nom complet"></asp:Label>
+                            <asp:Label ID="Label3" runat="server" Text="Nom et prénom"></asp:Label>
                         </td>
                         <td>
                             <asp:TextBox ID="txtTenantName" runat="server" Width="500"></asp:TextBox>
@@ -264,7 +263,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="Label4" runat="server" Text="Première ligne d'adresse"></asp:Label>
+                            <asp:Label ID="Label4" runat="server" Text="Adresse"></asp:Label>
                         </td>
                         <td>
                             <asp:TextBox ID="txtAddress1" runat="server" Width="500"></asp:TextBox>
@@ -272,7 +271,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="Label5" runat="server" Text="Deuxième ligne d'adresse"></asp:Label>
+                            <asp:Label ID="Label5" runat="server" Text="2eme ligne adresse"></asp:Label>
                         </td>
                         <td>
                             <asp:TextBox ID="txtAddress2" runat="server" Width="500"></asp:TextBox>
@@ -280,7 +279,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="Label6" runat="server" Text="Province"></asp:Label>
+                            <asp:Label ID="Label6" runat="server" Text="Lieu"></asp:Label>
                         </td>
                         <td>
                             <asp:TextBox ID="txtTown" runat="server" Width="500"></asp:TextBox>
@@ -296,7 +295,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="Label8" runat="server" Text="Région"></asp:Label>
+                            <asp:Label ID="Label8" runat="server" Text="Département"></asp:Label>
                         </td>
                         <td>
                             <asp:TextBox ID="txtCounty" runat="server" Width="500"></asp:TextBox>
@@ -320,7 +319,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="Label11" runat="server" Text="Email"></asp:Label>
+                            <asp:Label ID="Label11" runat="server" Text="Adresse email"></asp:Label>
                         </td>
                         <td>
                             <asp:TextBox ID="txtEmail" runat="server" Width="500"></asp:TextBox>
@@ -336,7 +335,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="Label13" runat="server" Text="Numéro de portable"></asp:Label>
+                            <asp:Label ID="Label13" runat="server" Text="Téléphone portable"></asp:Label>
                         </td>
                         <td>
                             <asp:TextBox ID="txtMobile" runat="server" Width="250"></asp:TextBox>
@@ -344,7 +343,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <asp:Label ID="Label14" runat="server" Text="Commentaires - (inclure les dates préférées si la réservation pendant les périodes creuses)"></asp:Label>
+                            <asp:Label ID="Label14" runat="server" Text="Message (inclure dates souhaitées pour les périodes autres que 7nuits minimum)"></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -354,7 +353,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <asp:Label ID="Label2" runat="server" Text="Dites-nous comment vous avez entendu parler de nous. (Agence, Recommandation, Moteur de recherche, etc.)"></asp:Label>
+                            <asp:Label ID="Label2" runat="server" Text="Vous avez découvert The Bijou sur (agence, recommandation, site internet, etc.)"></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -366,7 +365,7 @@
                 <asp:Label ID="lblWarning" CssClass="WarningText" runat="server" Text="" Visible="false"></asp:Label>
                 <p>
                     <asp:Button ID="btnBook" runat="server" Text="Réservation" OnClick="btnBook_Click" />
-                    <asp:Button ID="btnClear" runat="server" Text="Clair" OnClick="btnClear_Click" />
+                    <asp:Button ID="btnClear" runat="server" Text="Annuler" OnClick="btnClear_Click" />
                 </p>
             </td>
             <td>&nbsp;</td>

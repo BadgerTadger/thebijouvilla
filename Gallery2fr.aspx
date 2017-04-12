@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteFr.master" AutoEventWireup="true" CodeFile="Gallery2Fr.aspx.cs" Inherits="Gallery2" %>
+﻿<%@ Page Title="Galerie" Language="C#" MasterPageFile="~/SiteFr.master" AutoEventWireup="true" CodeFile="Gallery2Fr.aspx.cs" Inherits="Gallery2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -9,7 +9,7 @@
         <tr>
             <td>&nbsp;</td>
             <td align="center" width="1000" valign="top">
-                Cliquez sur une image pour l'agrandir
+                Cliquer sur la photo pour l’agrandir
             </td>
             <td>&nbsp;</td>
         </tr>

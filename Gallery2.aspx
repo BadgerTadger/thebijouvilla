@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Gallery2.aspx.cs" Inherits="Gallery2" %>
+﻿<%@ Page Title="Gallery" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Gallery2.aspx.cs" Inherits="Gallery2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">

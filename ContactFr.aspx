@@ -1,14 +1,15 @@
-﻿<%@ Page Title="Contactez nous" Language="C#" MasterPageFile="~/SiteFr.master" AutoEventWireup="true" CodeFile="ContactFr.aspx.cs" Inherits="ContactFr" %>
+﻿<%@ Page Title="Conctac" Language="C#" MasterPageFile="~/SiteFr.master" AutoEventWireup="true" CodeFile="ContactFr.aspx.cs" Inherits="ContactFr" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
-    <h3>Vous pouvez contacter &#39;The Bijou&#39; par courrier à:</h3>
+    <h3>Nous sommes joignables par</h3>
+    <h3>Poste</h3>
     <address>
-        Marie and Robert Pyle<br />
+        Marie et Robert Pyle<br />
         The Bijou<br />
-        15, Domaine du Pre Cabrian<br />
+        15, Domaine du Pré Cabrian<br />
         30330 GAUJAC<br />
         France<br />
         <br />
@@ -16,8 +17,10 @@
     </address>
 
     <address>
-    <h3>Ou par courriel à:</h3>
+    <h3>E-mail</h3>
         <strong>Email:</strong>   <a href="mailto:info@thebijouvilla.com">info@thebijouvilla.com</a><br />
     </address>
+    <h3>en complétant le formulaire de réservation</h3>
+    <p>Nous parlons français, anglais, allemand et italien.</p>
 </asp:Content>
 

@@ -6,24 +6,24 @@
     <table style="width: 100%; height: 100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
             <td style="padding-top: 13px; padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px" align="justify">
-                <span style="font-size: 18px">Bienvenue à la tranquillité!</span>
+                <span style="font-size: 18px">Bienvenue dans la tranquillité!</span>
                 <p>
-                    Le Bijou est une villa élégante située dans l'extraordinaire beauté, la tranquillité et l'opulence du Languedoc Roussillon, en France.
+                    The Bijou est une villa élégante sise dans la beauté extraordinaire, la tranquillité et la richesse du Languedoc-Roussillon, France.
                 <p>
-                    Le Bijou est une habitation indépendante avec ses propres portes, allée, parking pour 3 voitures et porte d'entrée. Les propriétaires vivent commodément à côté et sont donc disponibles pour offrir de l'aide et des suggestions pour maximiser votre expérience de vacances.
+                    The Bijou est une villa indépendante, avec son portail sécurisé, parking pour 3 voitures et entrée privative. Les propriétaires vivent juste à côté. Ils sont volontiers à votre écoute en cas de besoin mais sinon très discrets.
                 </p>
                 <p>
-                    Détendez-vous, barbecue et dîner en plein air sous le magnifique chêne de 300 ans après un jeu énergique de pétanque!
+                    Détendez-vous, profitez du barbecue en dînant sous le magnifique chêne tricentenaire après une partie énergique de pétanque !
                 <p>
-                    Les vues sont spectaculaires avec un crépuscule différent étourdissant chaque soir que le soleil coule derrière l'Oppidum (ruines romaines), baigner la villa dans une lueur dorée.
+                    La vue sur les collines de l’Oppidum est spectaculaire et on se prélasse devant les magnifiques  couchers de soleil qui baignent la villa de lumière dorée.
                 </p>
                 <p>
-                    Il ya une piscine éclairée 10m x 5m attenante à la terrasse couverte avec une autre grande terrasse ensoleillée, équipée de chaises longues et parasol, juste à l'extérieur du salon.
+                    La villa a sa piscine privative illuminée de 10m x 5m, une terrasse couverte, une terrasse ensoleillée accueillant les transats et parasols, deux salons de jardin et une table pour les repas.
                 </p>
                 <p>
-                    Le Bijou a été conçu pour le confort et la détente. Il a été construit à une très haute spécification, intégrant de nombreuses caractéristiques provençales authentiques tels que exposés 
-                    exposés poutres et tuiles, combinée avec les besoins de la vie moderne comme les fenêtres à double vitrage et le chauffage par le sol et le refroidissement. Il est décoré avec l'art 
-                    collecté par les propriétaires qui ont voyagé partout dans le monde les 30 dernières années.
+                    The Bijou a été créé pour le confort et la relaxation. Cette villa d’architecte a conservé des éléments typiquement provençaux tout en bénéficiant du confort moderne comme 
+                    le chauffage/climatisation au sol et le double vitrage. La villa est décorée avec des pièces rapportées des quatre coins du monde par ses propriétaires qui ont vécu à 
+                    l’étranger ces 30 dernières années.
                 </p>
             </td>
             <td style="padding-top: 25px;" align="center">
@@ -31,25 +31,25 @@
                     <img src="../images/Covered terrace.jpg" alt="Outside" title="Outside" border="0" />
                 </a>
                 <br />
-                <a href="OutsideFr.aspx">Cliquez pour voir plus de photos de l'extérieur</a>
+                <a href="OutsideFr.aspx">Cliquer pour d’autres photos des extérieurs</a>
             </td>
         </tr>
         <tr>
             <td colspan="2" style="padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px" align="justify">
                 <p>
-                    Il comporte:
+                    L’intérieur comprend:
                 </p>
                 <p>
-                    Deux chambres doubles (une avec 2 lits simples 90 cm qui peuvent être poussés ensemble), chacun avec sa propre opulente salle de bains / douche à l'italienne. Armoires encastrées, poutres apparentes.
+                    Deux chambres doubles (une avec deux lits simples qui peuvent être réunis), chacune avec sa salle d’eau, douche à l’italienne et wc.
                 </p>
                 <p>
-                    Une salle à manger / cuisine entièrement équipée et un magnifique salon avec un plafond "cathédrale".
+                    Une cuisine totalement équipée avec son coin repas et un salon cathédral.
                 </p>
                 <p>
-                    Les caractéristiques comprennent: cuisinière électrique, four à micro-ondes, réfrigérateur-congélateur, lave-vaisselle, machine à laver, machine à café Nespresso. Il ya aussi un barbecue à gaz de 4 brûleurs sur la terrasse couverte.
+                    L’équipement comprend : une cuisinière et four électriques, un frigo-congélateur, un four à micro-ondes, un lave-vaisselle et un lave-linge et une machine à café Nespresso. Un barbecue à gaz et un parasol chauffant se trouvent sur la terrasse.
                 </p>
                 <p>
-                    Pour votre confort, vous trouverez un accès Wi-Fi, un téléviseur plasma de 42 pouces / DVD / Home Cinéma système et un système britannique Freesat.
+                    Le salon comprend un système Home Cinéma avec TV grand écran plat et lecteur DVD.  Les chaînes anglaises sont disponibles.
                 </p>
             </td>
         </tr>
@@ -61,25 +61,27 @@
                     <img src="../images/3A_SMALL.jpg" alt="Inside" title="Inside" border="0" />
                 </a>
                 <br />
-                <a href="InsideFr.aspx">Cliquez pour voir plus de photos de l'intérieur</a>
+                <a href="InsideFr.aspx">Cliquer pour d’autres photos de l'intérieur</a>
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px" align="justify">
-                <p>Notre location comprend l'utilisation exclusive de la piscine, le terrain adjacent à la villa, y compris le terrain de boules / pétanque, tous les lits, linge de bain et de cuisine et serviettes de piscine.</p>
                 <p>
-                    Sur demande, nous serons heureux de faire vos achats avant votre arrivée.
-                    <br />
-                    Les réservations pour le restaurant 'La Maison' de Gaujac doivent être faites bien à l'avance.
-                    <br />
-                    Si vous souhaitez profiter de manucure, pédicure, massage de la tête, il peut être organisé pour vous.
-                    <br />
-                    Des visites guidées par chauffeur peuvent être organisées (dégustations de vins, visite de festivals, etc.).
+                    La location du gîte inclue l’usage exclusif de la piscine, des extérieurs du gîte, du cours de pétanque, du linge de lit et de maison ainsi que la taxe de séjour.
                 </p>
                 <p>
-                    Le Bijou a été conçu pour accueillir confortablement quatre adultes. 
+                    Sur demande, nous ferons volontiers les achats de première nécessité avant votre arrivée.
                     <br />
-                    Il s'agit d'une villa non-fumeurs et pas d'animaux sont autorisés que 3 chattes vivent à côté. 
+                    Les réservations au Restaurant &quot;La Maison&quot; (listé au guide Michelin) doivent être faites au moins deux semaines à l’avance durant la saison estivale.
                     <br />
-                    Nous regrettons que la villa ne soit pas adaptée aux fauteuils roulants et qu'une voiture soit hautement souhaitable (disponible à la location dans les aéroports et les gares TGV).
+                    Nous pouvons également arranger des rendez-vous pour ceux et celles qui souhaitent profiter d’un massage, d’un coiffeur ou d’une manucure/pédicure.
+                    <br />
+                    Possibilité de visites des festivals ou dégustations de vin avec voiture et chauffeur en supplément.
+                </p>
+                <p>
+                    The Bijou a été conçu pour accueillir  très confortablement un maximum de 4 adultes. 
+                    <br />
+                    Il n’est pas permis de fumer dans la villa et les animaux de compagnie ne sont malheureusement pas autorisés étant donné que les 3 chats des propriétaires vivent juste à côté.
+                    <br />
+                    . Nous regrettons que la villa ne soit pas accessible aux fauteuils roulants de par ses différents niveaux. Une voiture est fortement recommandée pour apprécier pleinement le séjour au Bijou et visiter la région (location possible aux aéroports et gares TGV).
                 </p>
                 </>
             </td>

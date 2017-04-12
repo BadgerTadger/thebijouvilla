@@ -195,7 +195,7 @@
         </div>
         <div style="position: relative; z-index: 11;">
             <a href="">
-                <img src="images/TBVlogo.gif" border="0"></a>
+                <img src="images/TBVlogoFR.gif" border="0"></a>
         </div>
     </div>
     <div class="footer">
@@ -212,11 +212,11 @@
             </tr>
             <tr>
                 <td></td>
-                <td height="50" colspan="3" class="gris11" style="text-align: center">Merci beaucoup à Rodney Love pour les belles photos<br /><a target="_blank" href="https://ello.co/rodneylove">https://ello.co/rodneylove</a></td>
+                <td height="50" colspan="3" class="gris11" style="text-align: center">Mille mercis à Rodney Love pour ses magnifiques photos<br /><a target="_blank" href="https://ello.co/rodneylove">https://ello.co/rodneylove</a></td>
             </tr>
             <tr>
                 <td></td>
-                <td height="50" colspan="3" class="gris8" style="text-align: right">Site web par Daren Cantrell - 2016</td>
+                <td height="50" colspan="3" class="gris8" style="text-align: right">Site internet : Daren Cantrell - 2016</td>
             </tr>
         </table>
     </div>
