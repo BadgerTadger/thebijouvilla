@@ -12,9 +12,11 @@
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p>
-                    <strong>La piscine et les terrasses: </strong>Il ya une piscine éclairée 10m x 5m attenante à la terrasse 
-                    couverte avec une autre grande terrasse ensoleillée, équipée de chaises longues et de parasols, juste à l'extérieur 
-                    du salon. A l'arrière du gîte il ya un terrain de pétanque avec encore un autre coin salon sous le magnifique chêne de 300 ans.
+                    <strong>La piscine et les espaces de relaxation</strong>
+                </p>
+                <p>
+                    La piscine éclairée de 10m x 5m a d’un côté une 
+                    terrasse couverte et de l’autre une terrasse ensoleillée équipée de transats, de parasols et d’un coin repas avec barbecue..
                 </p>
             </td>
         </tr>
@@ -98,10 +100,16 @@
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p>
-                    <strong>Le Jardin et Vues: </strong>Grâce à l'amour des propriétaires britanniques, le jardin a une atmosphère provençale avec des oliviers, des vignes et des 
-                    plantes méditerranéennes parmi les murs en pierre typique, mais est assez luxuriant pour fournir une profusion de couleurs et de parfums tout au long de l'année. 
-                    Il met en place magnifiquement les vues des collines.<br />
+                    <strong>Le jardin méditerranéen</strong>
+                </p>
+                <p>
+                    Les propriétaires britanniques apportent un grand soin au jardin de sorte que des fleurs à profusion mettent en valeur le mur de pierre sèche typiquement provençal qui orne les oliviers et les quelques pieds de vigne.
+                </p>
+                <p>
                     Les couchers de soleil sont spectaculaires avec un crépuscule différent chaque soir que le soleil coule derrière l'Oppidum (ruines romaines), baigner la villa dans une lueur dorée.
+                </p>
+                <p>
+                    A l’arrière du gîte, à l’ombre du chêne tricentenaire, et au pied de la fontaine, il y a un terrain de pétanque et un salon de jardin.
                 </p>
             </td>
         </tr>

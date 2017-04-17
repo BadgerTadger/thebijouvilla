@@ -12,9 +12,15 @@
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p>
-                    <strong>Salon: </strong>Le salon a un magnifique plafond cathédrale et d'énormes fenêtres voûtées ouvrant sur la terrasse et le jardin. 
-                    Le faisceau ajoute du caractère à la pièce sans le rendre rustique. Les caractéristiques comprennent un canapé deux places et trois fauteuils, 
-                    table basse. Un téléviseur à écran plasma de 42 pouces / DVD / système Home Cinéma et UK système Freesat. WI FI est disponible dans tout le gîte.
+                    <strong>Salon</strong>
+                </p>
+                <p>
+                    Le salon a un magnifique plafond cathédrale et une grande baie vitrée ouvrant sur la terrasse et le jardin. 
+                    Les poutres apparentes ajoutent du caractère sans être pour autant trop rustique.
+                </p>
+                <p>
+                    Il y a un canapé deux places et trois fauteuils autour de la table basse. 
+                    Un grand téléviseur plat avec DVD système Home Cinéma. Les chaînes anglaises sont disponibles avec le système Freesat. La WIFI est disponible dans tout le gîte.
                 </p>
             </td>
         </tr>
@@ -40,9 +46,12 @@
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p>
-                    <strong>Cuisine: </strong>La cuisine est bien équipée avec un grand réfrigérateur / congélateur, cuisinière électrique, 
-                    micro onde, une machine Nespresso, grille-pain, bouilloire, lave-vaisselle, machine à laver, une table fixe pour 4, 
-                    beaucoup de vaisselle et appareils de cuisine
+                    <strong>Cuisine</strong>
+                </p>
+                <p>
+                    La cuisine est bien équipée avec un grand réfrigérateur / congélateur, cuisinière  et four électriques, 
+                    four micro-ondes, une machine Nespresso, grille-pain, bouilloire, lave-vaisselle, machine à laver, une table fixe pour 4, 
+                    beaucoup de vaisselle et appareils de cuisine. Sur la terrasse devant la cuisine il y a le barbecue à gaz et un parasol chauffant.
                 </p>
             </td>
         </tr>
@@ -76,9 +85,11 @@
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p>
-                    <strong>Chambre principale et salle de bains: </strong>La chambre principale dispose d'un grand lit double et a accès à 
-                    la terrasse et le jardin par une fenêtre. Il ya une grande armoire intégrée avec beaucoup d'espace de suspension et tiroirs.<br /> 
-                    Une porte mène à la salle de bains avec double vasque en marbre, wc et douche à l'italienne. Il est lumineux et aéré avec deux fenêtres.
+                    <strong>Chambre principale et salle d’eau </strong>
+                </p>
+                <p>
+                    La chambre principale dispose d'un lit double 180x200 et a accès à la terrasse et le jardin par une porte-fenêtre. Il y a une grande armoire intégrée avec beaucoup d'espace de rangement.<br />
+                    Une porte mène à la salle d’eau avec double vasque en marbre, wc et douche à l'italienne. Elle est lumineuse et aérée avec deux fenêtres.
                 </p>
             </td>
         </tr>
@@ -112,9 +123,12 @@
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p>
-                    <strong>Chambre Twin et salle de bains: </strong>Les caractéristiques comprennent deux lits simples qui peuvent être mis en place sur demande.<br /> 
-                    Grande armoire intégrée avec beaucoup d'espace suspendu et d'étagère. Deux fenêtres et une porte menant à la salle de bains.<br />
-                    La salle de bains dispose d'un bassin avec deux grands tiroirs, un wc, une douche. Il a deux fenêtres.
+                    <strong>2eme chambre et salle d’eau</strong>
+                </p>
+                <p>
+                    La deuxième chambre dispose de deux lits simples qui peuvent être réunis sur demande.<br />
+                    Il y a une grande armoire intégrée avec beaucoup d'espace de rangement, deux fenêtres et une porte menant à la salle d’eau avec deux grands tiroirs sous le bassin, 
+                    un wc et une douche à l’italienne. Il a deux fenêtres.
                 </p>
             </td>
         </tr>
