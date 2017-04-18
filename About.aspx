@@ -10,7 +10,7 @@
                 <p>
                     The Bijou is an elegant villa located within the extraordinary beauty, tranquillity and opulence of Languedoc Roussillon, France.
                 <p>
-                    The Bijou is an independent dwelling with it's own gates, driveway, parking for 3 cars and entrance door. The owners live conveniently next door and are therefore available to offer help and suggestions to maximise your holiday experience.
+                    The Bijou is an independent dwelling with its own gates, driveway, parking for 3 cars and entrance door. The owners live conveniently next door and are therefore available to offer help and suggestions to maximise your holiday experience.
                 </p>
                 <p>
                     Relax, barbecue and dine alfresco under the magnificent 300 year old oak tree after an energetic game of Petanque!
@@ -46,7 +46,7 @@
                     A fully fitted dining/kitchen area and a magnificent salon with a "cathedral" ceiling.
                 </p>
                 <p>
-                    Features include: electric cooker, microwave oven, fridge-freezer, dishwasher, washing machine, Nespresso coffee machine. There is also a 4-burner gas barbeque on the covered terrace.
+                    Features include: electric cooker, microwave oven, fridge-freezer, dishwasher, washing machine, Nespresso coffee machine. There is also a 4-burner gas barbecue on the covered terrace.
                 </p>
                 <p>
                     For your comfort you will find Wi-Fi access, a 42" plasma TV/DVD/Home Cinema system and a UK Freesat system.
@@ -64,7 +64,7 @@
                 <a href="Inside.aspx">Click to see more pictures of inside</a>
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px" align="justify">
-                <p>Our rental includes the exclusive use of the swimming pool, the grounds adjacent to the villa including the boules/petanque court, all bed, bath and kitchen linens and pool towels.</p>
+                <p>Our rental includes the exclusive use of the swimming pool, the grounds adjacent to the villa including the boules/petanque court, all bed, bath and kitchen linens and pool towels and the taxe de séjour.</p>
                 <p>
                     On request we will gladly shop for your first necessity before your arrival.
                     <br />

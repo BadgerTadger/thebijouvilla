@@ -150,7 +150,7 @@
         </tr>
         <tr>
             <td width="50%" style="padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px">
-                <img src="../images/9_SMALL.jpg" width="450" alt="Twin Bedroom" title="Twin Bedroom" border="0" />
+                <img src="../images/DSC01218.jpg" width="450" alt="Twin Bedroom" title="Twin Bedroom" border="0" />
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p></p>

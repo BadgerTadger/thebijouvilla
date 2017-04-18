@@ -81,7 +81,7 @@
                     <br />
                     Il n’est pas permis de fumer dans la villa et les animaux de compagnie ne sont malheureusement pas autorisés étant donné que les 3 chats des propriétaires vivent juste à côté.
                     <br />
-                    . Nous regrettons que la villa ne soit pas accessible aux fauteuils roulants de par ses différents niveaux. Une voiture est fortement recommandée pour apprécier pleinement le séjour au Bijou et visiter la région (location possible aux aéroports et gares TGV).
+                    Nous regrettons que la villa ne soit pas accessible aux fauteuils roulants de par ses différents niveaux. Une voiture est fortement recommandée pour apprécier pleinement le séjour au Bijou et visiter la région (location possible aux aéroports et gares TGV).
                 </p>
                 </>
             </td>

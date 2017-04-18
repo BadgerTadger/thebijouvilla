@@ -55,7 +55,7 @@
                                 <tr>
                                     <td colspan="3">
                                         <p>
-                                            <strong>Rates for 2017.</strong><br />
+                                            <strong>Rates for 2017</strong><br />
                                         </p>
                                     </td>
                                 </tr>
@@ -71,7 +71,7 @@
                                     <td colspan="3">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Low Season</strong></td>
+                                    <td><strong>Winter</strong></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
@@ -89,7 +89,7 @@
                                     <td colspan="3">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Mid Season</strong></td>
+                                    <td><strong>Spring</strong></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
@@ -107,7 +107,7 @@
                                     <td colspan="3">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>High Season</strong></td>
+                                    <td><strong>Summer</strong></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
@@ -148,7 +148,7 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td>29-Oct-2016 - 30-Dec-2017</td>
+                                    <td>29-Oct-2017 - 30-Dec-2017</td>
                                     <td>&#8364;429.00</td>
                                     <td>From &#8364;143.00</td>
                                 </tr>

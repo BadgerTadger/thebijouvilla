@@ -55,7 +55,7 @@
                                 <tr>
                                     <td colspan="3">
                                         <p>
-                                            <strong>Tarifs pour 2017.</strong><br />
+                                            <strong>Tarifs pour 2017</strong><br />
                                         </p>
                                     </td>
                                 </tr>
@@ -186,12 +186,12 @@
                             <p>
                                 Vous pouvez consulter le calendrier ci-joint.<br />
                                 Les dates en rose sont réservées temporairement (merci de nous consulter pour une confirmation)<br />
-                                Les dates en rouges ne sont plus disponibles.<br />
+                                Les dates en rouge ne sont plus disponibles.<br />
                                 Avec la  confirmation de la disponibilité,  nous vous enverrons les détails pour effectuer le paiement afin de confirmer votre réservation. 
                                 Les réservations sont bloquées une semaine, dans l’attente de la copie de votre paiement.
                             </p>
                             <p>
-                                <strong>Conditions de paiements</strong><br />
+                                <strong>Conditions de paiement</strong><br />
                                 50&#37; à la réservation<br />
                                 50&#37; 60 jours avant votre arrivée.
                             </p>

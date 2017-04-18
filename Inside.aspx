@@ -41,7 +41,7 @@
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p>
                     <strong>Kitchen: </strong>The kitchen is well equipped with a large fridge/freezer, electric cooker, micro wave, a Nespresso machine, toaster, kettle, dishwasher, 
-                    washing machine, a fixed table for 4, plenty of crockery and kitchen appliances, iron and ironing board
+                    washing machine, a fixed table for 4, plenty of crockery and kitchen appliances, iron and ironing board. There is a gas barbecue on the terrace in front of the kitchen.
                 </p>
             </td>
         </tr>
@@ -75,7 +75,7 @@
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p>
-                    <strong>Master bedroom and ensuite: </strong>The master bedroom features a large double bed and has access to the terrace and garden through a 
+                    <strong>Master bedroom and ensuite: </strong>The master bedroom features a 180x200 double bed and has access to the terrace and garden through a 
                     French window. There is a large built in wardrobe with plenty of hanging space and draws.<br /> 
                     A door leads into the ensuite with double marble basin, wc and walk-in shower. 
                     It is bright and airy with two windows.
@@ -112,7 +112,7 @@
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p>
-                    <strong>Twin bedroom and ensuite: </strong>Features includes two single beds that can be put together upon request.<br /> 
+                    <strong>Twin bedroom and ensuite: </strong>Features include two single beds that can be put together upon request.<br /> 
                     Large built in wardrobe with plenty of hanging and shelf space. Two windows and a door leading into the ensuite.<br />
                     The ensuite features a basin with two big drawers, a wc, a walk in shower. It has two windows.
                 </p>
@@ -136,7 +136,7 @@
         </tr>
         <tr>
             <td width="50%" style="padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px">
-                <img src="../images/9_SMALL.jpg" width="450" alt="Twin Bedroom" title="Twin Bedroom" border="0" />
+                <img src="../images/DSC01218.jpg" width="450" alt="Twin Bedroom" title="Twin Bedroom" border="0" />
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p></p>
