@@ -43,7 +43,7 @@
                     Deux chambres doubles (une avec deux lits simples qui peuvent être réunis), chacune avec sa salle d’eau, douche à l’italienne et wc.
                 </p>
                 <p>
-                    Une cuisine totalement équipée avec son coin repas et un salon cathédral.
+                    Une cuisine totalement équipée avec son coin repas et un salon cathédrale.
                 </p>
                 <p>
                     L’équipement comprend : une cuisinière et four électriques, un frigo-congélateur, un four à micro-ondes, un lave-vaisselle et un lave-linge et une machine à café Nespresso. Un barbecue à gaz et un parasol chauffant se trouvent sur la terrasse.
@@ -65,7 +65,7 @@
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px" align="justify">
                 <p>
-                    La location du gîte inclue l’usage exclusif de la piscine, des extérieurs du gîte, du cours de pétanque, du linge de lit et de maison ainsi que la taxe de séjour.
+                    La location du gîte inclut l’usage exclusif de la piscine, des extérieurs du gîte, du cours de pétanque, du linge de lit et de maison ainsi que la taxe de séjour.
                 </p>
                 <p>
                     Sur demande, nous ferons volontiers les achats de première nécessité avant votre arrivée.

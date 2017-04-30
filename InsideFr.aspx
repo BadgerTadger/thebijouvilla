@@ -128,7 +128,7 @@
                 <p>
                     La deuxième chambre dispose de deux lits simples qui peuvent être réunis sur demande.<br />
                     Il y a une grande armoire intégrée avec beaucoup d'espace de rangement, deux fenêtres et une porte menant à la salle d’eau avec deux grands tiroirs sous le bassin, 
-                    un wc et une douche à l’italienne. Il a deux fenêtres.
+                    un wc et une douche à l’italienne. Il y a deux fenêtres.
                 </p>
             </td>
         </tr>
