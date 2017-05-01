@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
+    <h2><%: Title %></h2>
     <h3>Nous sommes joignables par</h3>
     <h3>Poste</h3>
     <address>

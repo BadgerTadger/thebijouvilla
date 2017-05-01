@@ -64,7 +64,7 @@
         <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 12px 12px 20px 0;"></span>The booking will be permanently deleted and cannot be recovered. Are you sure?</p>
     </div>
     <div>
-        <h2><%: Title %>.</h2>
+        <h2><%: Title %></h2>
         <div class="row">
             <div class="col-md-12">
                 <asp:Button ID="btnEditRates" runat="server" Text="Edit Rates" OnClick="btnEditRates_Click" />

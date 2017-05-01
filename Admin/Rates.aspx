@@ -26,7 +26,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div>
-        <h2><%: Title %>.</h2>
+        <h2><%: Title %></h2>
         <div class="row">
             <div class="col-md-12">
                 <asp:Button ID="btnAdmin" runat="server" Text="Back to Admin" OnClick="btnAdmin_Click" />
