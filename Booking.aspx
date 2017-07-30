@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script>
-        $(function () {
+<%--        $(function () {
             $('#<%= txtStartDate.ClientID %>').datepicker({
                 firstDay: 6,
                 dateFormat: "dd/mm/yy",
@@ -24,7 +24,7 @@
                     return [day == 6, ""];
                 }
             });
-        });
+        });--%>
         <%--        $(function () {
             $('#<%= txtEndDate.ClientID %>').datepicker({
                 firstDay: 6,
@@ -45,6 +45,40 @@
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="Server">
     <table style="width: 100%; height: 100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>&nbsp;</td>
+            <td align="center" width="1000" valign="top">
+                <table style="width: 80%; height: 100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td colspan="3">
+                            <table style="width: 100%; height: 100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td colspan="3">
+                                        <p>
+                                            To check availability or  make an online reservation with credit card payment, please visit our property on 
+                                            <a href="http://Homeaway.co.uk" target="_blank">Homeaway.co.uk</a> 
+                                            by clicking the following link, or by pasting it into your browser:<br /><br /> 
+                                            <a href="http://www.homeaway.co.uk/p6883483" target="_blank">http://www.homeaway.co.uk/<wbr>p6883483</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>
+                                            Alternatively, reservations can be requested via French Connections, property reference 168056, with payment made by bank transfer.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+<%--    <table style="width: 100%; height: 100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
             <td>&nbsp;</td>
             <td align="center" width="1000" valign="top">
@@ -370,6 +404,6 @@
             </td>
             <td>&nbsp;</td>
         </tr>
-    </table>
+    </table>--%>
 </asp:Content>
 
