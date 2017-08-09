@@ -44,37 +44,41 @@
     </script>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="Server">
-    <table style="width: 100%; height: 100%" border="0" cellspacing="0" cellpadding="0">
+    <table style="width: 100%; height: 100%" border="0" cellspacing="20" cellpadding="0">
         <tr>
-            <td>&nbsp;</td>
-            <td align="center" width="1000" valign="top">
-                <table style="width: 80%; height: 100%" border="0" cellspacing="0" cellpadding="0">
+            <td align="center">
+                <table style="width: 80%; height: 100%" border="0" cellspacing="20" cellpadding="0">
                     <tr>
-                        <td colspan="3">
-                            <table style="width: 100%; height: 100%" border="0" cellspacing="0" cellpadding="0">
-                                <tr>
-                                    <td colspan="3">
-                                        <p>
-                                            To check availability or  make an online reservation with credit card payment, please visit our property on 
-                                            <a href="http://Homeaway.co.uk" target="_blank">Homeaway.co.uk</a> 
-                                            by clicking the following link, or by pasting it into your browser:<br /><br /> 
-                                            <a href="http://www.homeaway.co.uk/p6883483" target="_blank">http://www.homeaway.co.uk/<wbr>p6883483</a>
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p>
-                                            Alternatively, reservations can be requested via French Connections, property reference 168056, with payment made by bank transfer.
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
+                        <td>&nbsp;</td>
+                        <td align="center" width="1000" valign="top">
+                            Pour demander la disponibilité ou effectuer une réserver en ligne par carte de crédit, merci de nous retrouver 
+                            sur le site de Homeaway en cliquant sur le lien ci-dessous ou en le recopiant sur votre écran:
                         </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td align="center" width="1000" valign="top">
+                            <a href="http://www.homeaway.co.uk/p6883483" target="_blank">http://www.homeaway.co.uk/</a>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td align="center" width="1000" valign="top">
+                            Vous pouvez également le faire sur le site de French Connections avec transfert bancaire
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td align="center" width="1000" valign="top">
+                            <a href="http://www.frenchconnections.co.uk/listing/168056?unit_id=168051" target="_blank">http://www.frenchconnections.co.uk/listing/168056?unit_id=168051</a>
+                        </td>
+                        <td>&nbsp;</td>
                     </tr>
                 </table>
             </td>
-            <td>&nbsp;</td>
         </tr>
     </table>
 
