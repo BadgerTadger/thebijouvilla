@@ -51,8 +51,8 @@
                     <tr>
                         <td>&nbsp;</td>
                         <td align="center" width="1000" valign="top">
-                            Pour demander la disponibilité ou effectuer une réserver en ligne par carte de crédit, merci de nous retrouver 
-                            sur le site de Homeaway en cliquant sur le lien ci-dessous ou en le recopiant sur votre écran:
+                            Pour demander la disponibilité ou effectuer une réservation en ligne par carte de crédit merci de nous 
+                            retrouver sur le site de Homeaway en cliquant sur le lien ci-dessous ou en le recopiant sur votre écran:
                         </td>
                         <td>&nbsp;</td>
                     </tr>
@@ -66,7 +66,7 @@
                     <tr>
                         <td>&nbsp;</td>
                         <td align="center" width="1000" valign="top">
-                            Vous pouvez également le faire sur le site de French Connections avec transfert bancaire
+                            Vous pouvez également le faire sur le site de French Connections par transfert bancaire
                         </td>
                         <td>&nbsp;</td>
                     </tr>
