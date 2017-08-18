@@ -59,7 +59,7 @@
                     <tr>
                         <td>&nbsp;</td>
                         <td align="center" width="1000" valign="top">
-                            <a href="http://www.homeaway.co.uk/p6883483" target="_blank">http://www.homeaway.co.uk/</a>
+                            <a href="http://www.homeaway.co.uk/p6883483" target="_blank">http://www.homeaway.co.uk/<wbr>p6883483</a>
                         </td>
                         <td>&nbsp;</td>
                     </tr>
