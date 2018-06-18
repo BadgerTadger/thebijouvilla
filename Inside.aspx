@@ -92,7 +92,7 @@
         </tr>
         <tr>
             <td width="50%" style="padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px">
-                <img src="../images/27_SMALL.jpg" width="450" alt="Master Bedroom" title="Master Bedroom" border="0" />
+                <img src="../images/Raj.jpg" width="450" alt="Master Bedroom" title="Master Bedroom" border="0" />
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
                 <p></p>
