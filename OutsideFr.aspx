@@ -154,6 +154,14 @@
                 <p></p>
             </td>
         </tr>
+        <tr>
+            <td width="50%" style="padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px">
+                <img src="../images/Raj.jpg" width="450" alt="Raj" title="Raj" border="0" />
+            </td>
+            <td style="padding-left: 13px; padding-right: 13px; text-align: left; vertical-align: top; font-size: 12px">
+                <p></p>
+            </td>
+        </tr>
     </table>
     <p><a href="InsideFr.aspx">Cliquez ici pour voir les photos de l'intérieur</a></p>
 </asp:Content>
