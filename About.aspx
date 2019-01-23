@@ -64,7 +64,7 @@
                 <a href="Inside.aspx">Click to see more pictures of inside</a>
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px" align="justify">
-                <p>Our rental includes the exclusive use of the swimming pool, the grounds adjacent to the villa including the boules/petanque court, all bed, bath and kitchen linens and pool towels and the taxe de séjour.</p>
+                <p>Our rental includes the exclusive use of the swimming pool, the grounds adjacent to the villa including the boules/petanque court, all bed, bath and kitchen linens and pool towels.</p>
                 <p>
                     On request we will gladly shop for your first necessity before your arrival.
                     <br />

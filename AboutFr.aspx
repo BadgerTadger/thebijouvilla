@@ -65,7 +65,7 @@
             </td>
             <td style="padding-left: 13px; padding-right: 13px; text-align: justify; vertical-align: top; font-size: 12px" align="justify">
                 <p>
-                    La location du gîte inclut l’usage exclusif de la piscine, des extérieurs du gîte, du cours de pétanque, du linge de lit et de maison ainsi que la taxe de séjour.
+                    La location du gîte inclut l’usage exclusif de la piscine, des extérieurs du gîte, du cours de pétanque et du linge de lit.
                 </p>
                 <p>
                     Sur demande, nous ferons volontiers les achats de première nécessité avant votre arrivée.
