@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.Mobile.master.cs" Inherits="SiteMobileMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="KEYWORDS" content="Villa rental,South of France,thedeepsouth,Provence,deepsouth,Holidays,Languedoc,Gard,Independent,Uzes,Garrigue,Gard-Provence,Pool,Views,Tranquil,Secluded,Exclusive,Villa Lilas,Wine,">
+    <meta name="DESCRIPTION" content="Stunning Villa for rent in a pretty village of Western Provence, South of France.">
+    <title><%: Page.Title %> - The Bijou</title>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery.ui.combined" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+            </Scripts>
+        </asp:ScriptManager>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+        <div id="PageContainer">
+            <div id="mainmenu">
+                <table style="width: 100%; height: 61px">
+                    <tr valign="bottom">
+                        <td align="left" width="40"><a href="/default.aspx">HOME</a></td>
+                        <td align="left" width="60"><a href="/about.aspx">THE BIJOU</a></td>
+                        <td align="left" width="60"><a href="/booking.aspx">BOOKINGS</a></td>
+                        <td align="left" width="70"><a href="/region.aspx">THE REGION</a></td>
+                        <td align="left" width="55"><a href="/gallery.aspx">GALLERY</a></td>
+                        <td align="left" width="60"><a href="/contact.aspx">CONTACT</a></td>
+                        <td align="left" width="130">&nbsp;
+                            <a href="/DefaultFr.aspx">
+                                <img src="/images/drapeau-fr-off.gif" alt="french version " border="0" />
+                            </a>
+                        </td><%-- Above column widths should total 460 --%>
+                        <td align="left" width="80">
+                            <div id="divAnonymous" runat="server">
+                                <a runat="server" href="~/Account/Login.aspx">Admin</a>
+                            </div>
+                            <div id="divLoggedIn" runat="server" visible="false">
+                                <a runat="server" href="~/Account/Login.aspx?l=1">Log Out</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="8">
+                            <img src="/images/carre-gris.gif" width="980" height="1" border="0" alt="" /></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="container body-content">
+                <div id="wrapper">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div class="container body-content">
+                <div class="footer">
+                    <table cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td colspan="4">
+                                <img src="/images/carre-gris.gif" width="980" height="1" border="0" alt="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="70" height="25">&nbsp;</td>
+                            <td width="362"></td>
+                            <td width="363"></td>
+                            <td width="80"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
